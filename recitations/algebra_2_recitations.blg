@@ -1,0 +1,9 @@
+[0] Config.pm:304> INFO - This is Biber 2.14 (beta)
+[0] Config.pm:307> INFO - Logfile is 'algebra_2_recitations.blg'
+[56] biber:322> INFO - === Sun Oct 23, 2022, 16:30:39
+[67] Biber.pm:415> INFO - Reading 'algebra_2_recitations.bcf'
+[118] Biber.pm:943> INFO - Found 0 citekeys in bib section 0
+[124] Utils.pm:293> WARN - The file 'algebra_2_recitations.bcf' does not contain any citations!
+[131] bbl.pm:652> INFO - Writing 'algebra_2_recitations.bbl' with encoding 'UTF-8'
+[131] bbl.pm:755> INFO - Output to algebra_2_recitations.bbl
+[131] Biber.pm:128> INFO - WARNINGS: 1
