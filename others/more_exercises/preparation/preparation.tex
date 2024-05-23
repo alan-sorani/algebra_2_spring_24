@@ -42,6 +42,73 @@ style=alphabetic,
 \begin{document}
 \maketitle
 
+\section*{סימונים}
+
+\begin{itemize}
+\item[-]
+נסמן ב־%
+$\brs{n} \coloneqq \set{1, 2, 3, \ldots, n}$
+את אוסף המספרים הטבעיים החיוביים עד
+$n$.
+
+\item[-]
+משמעות הסימון
+$\sum_{i \in \brs{n}} a_i$
+היא סכום האיברים
+$a_1, \ldots, a_n$.
+
+\item[-]
+משמעות הסימון
+$\prod_{i \in \brs{n}} a_i$
+היא מכפלת האיברים
+$a_1, \ldots, a_n$.
+
+\item[-]
+עבור פולינום
+\[\text{,} p\prs{x} = \sum_{i = 0}^n a_i x^i \in \mbb{F}\brs{x}\]
+הנגזרת הפורמלית
+$p'\prs{x}$
+היא
+\[\text{.} p'\prs{x} = \sum_{i=0}^{n-1} a_{i+1} \prs{i+1} x^i \in \mbb{F}\brs{x}\]
+אם
+$\mbb{F} = \mbb{R}$
+זאת אותה נגזרת מהקורס אינפי 1.
+
+\item[-]
+עבור כל שני ביטויים מתמטיים
+$x,y$
+נסמן
+\[\text{.}\delta_{x,y} = \begin{cases} 1 & x = y \\ 0 & x \neq y \end{cases}\]
+סימון זה נקרא
+\emph{הדלתא של קרונקר}.
+
+\item[-]
+נסמן ב־%
+$\Mat_{m \times n}\prs{\mbb{F}}$
+את מרחב המטריצות עם
+$m$
+שורות ו־%
+$n$
+עמודות עם מקדמים בשדה
+$\mbb{F}$.
+נסמן לעתים
+$\Mat_{n}\prs{\mbb{F}} = \Mat_{n \times n}\prs{\mbb{F}}$.
+
+\item[-]
+עבור מרחבים וקטוריים
+$V,W$
+מעל אותו שדה
+$\mbb{F}$
+נסמן ב־%
+$\hom_{\mbb{F}}\prs{V,W}$
+את אוסף ההעתקות הלינאריות מ־%
+$V$
+ל־%
+$W$.
+נסמן גם
+$\End_{\mbb{F}}\prs{V} = \hom_{\mbb{F}}\prs{V,V}$.
+\end{itemize}
+
 \section{מטריצות מייצגות}
 
 \begin{definition}[מטריצה מייצגת]
@@ -134,6 +201,62 @@ b_1 & i = n
 לפי הבסיס
 $B$.
 \end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+בכל אחד מהסעיפים הבאים, מיצאו העתקה לינארית
+$T \colon V \to V$
+עבורה
+$\brs{T}_B = A$.
+\begin{enumerate}
+\item
+\begin{align*}
+V &= \mbb{R}^3 \\
+B &= \prs{e_2, e_3, e_1} \\
+A &= \pmat{1 & 2 & 3 \\ 4 & 5 & 6 \\ 7 & 8 & 9}
+\end{align*}
+\item
+\begin{align*}
+V &= \mbb{R}_2\brs{x} \\
+B &= \prs{1, x, x^2} \\
+A &= J_3\prs{1} \coloneqq \pmat{1 & 1 & 0 \\ 0 & 1 & 1 \\ 0 & 0 & 1}
+\end{align*}
+\item
+\begin{align*}
+V &= \Mat_{2 \times 2}\prs{\mbb{C}} \\
+B &= \prs{E_{1,1}, E_{1,2}, E_{2,1}, E_{2,2}} \\
+A &= \pmat{0 & 1 & 0 & 0 \\ 1 & 0 & 0 & 0 \\ 0 & 0 & 0 & 1 \\ 0 & 0 & 1 & 0}
+\end{align*}
+
+\item
+$V$
+מרחב הפונקציות
+$\brs{4} \to \mbb{R}$.
+הבסיס
+$B$
+הוא
+$\prs{\chi_1, \chi_2, \chi_3, \chi_4}$
+כאשר
+$\chi_i\prs{j} = \delta_{i,j}$.
+המטריצה
+$A$
+היא
+\[\text{.} A = \pmat{1 & 1 & 0 & 0 \\ 0 & 1 & 0 & 0 \\ 0 & 0 & 1 & 1 \\ 0 & 0 & 0 & 1}\]
+\end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+הוכיחו/הפריכו את הטענה הבאה:
+תהי
+$T \colon V \to V$
+העתקה לינארית ויהיו שני בסיסים
+$B,C$
+של
+$V$
+עבורם
+$\brs{T}_B = \brs{T}_C$.
+אז
+$B = C$.
 \end{exercise}
 
 \section{הדטרמיננטה}
