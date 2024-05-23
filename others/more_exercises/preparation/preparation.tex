@@ -1,0 +1,577 @@
+\documentclass[a4paper,10pt,twoside,openany]{article}
+
+\usepackage[lang=hebrew]{maths}
+\usepackage{hebrewdoc}
+\usepackage{stylish}
+\usepackage{lipsum}
+\let\bs\blacksquare
+
+\setlength{\parindent}{0pt}
+
+%%%%%%%%%%%%
+% Styling %
+%%%%%%%%%%%%
+
+\usepackage{enumitem}
+
+%%%%%%%%%%%%%
+% Counters  %
+%%%%%%%%%%%%%
+
+\setcounter{section}{0}     
+            
+%BIBLIOGRAPHY
+\usepackage[
+backend=biber,
+style=alphabetic,
+]{biblatex}
+\addbibresource{bibliography.bib} %Imports bibliography file
+
+%%%%%%%%%%
+% Title  %
+%%%%%%%%%%
+\title{
+אלגברה ב' - תרגילי הכנה לקורס \\
+חזרה על מטריצות מייצגות, הדטרמיננטה, ערכים עצמיים ולכסון
+\\
+\vspace{1cm}
+\large{לא להגשה}
+}
+\date{}
+
+\begin{document}
+\maketitle
+
+\section{מטריצות מייצגות}
+
+\begin{definition}[מטריצה מייצגת]
+יהיו
+$V,W$
+מרחבים וקטורים סוף־מימדיים מעל אותו שדה
+$\mbb{F}$
+עם בסיסים
+$B,C$
+בהתאמה, ונסמן
+\[\text{.} B = \prs{v_1, \ldots, v_n}\]
+נסמן גם
+$n \coloneqq \dim\prs{V}$
+ו־%
+$m \coloneqq \dim\prs{W}$.
+עבור
+$T \in \Hom_{\mbb{F}}\prs{V,W}$
+נגדיר
+\[\text{.} \brs{T}^B_C = \pmat{\vert & & \vert \\ \brs{T\prs{v_1}}_C & \cdots & \brs{T\prs{v_n}}_C \\ \vert & & \vert} \in \Mat_{m \times n}\prs{\mbb{F}}\]
+\end{definition}
+
+\begin{exercise}
+חשבו את המטריצות המייצגות של ההעתקות הבאות לפי הבסיסים הנתונים.
+
+\begin{enumerate}
+\item ההעתקה
+\begin{align*}
+T \colon \mbb{R}^3 &\to \mbb{R}^3 \\
+\pmat{x \\ y \\ z} &\mapsto \pmat{x+y \\ y+z \\ x+z}
+\end{align*}
+לפי הבסיס
+\begin{align*}
+\text{.} B = \prs{\pmat{1 \\ 0 \\ 0}, \pmat{0 \\ 1 \\ 1}, \pmat{0 \\ 1 \\ -1}}
+\end{align*}
+\item ההעתקה
+\begin{align*}
+T \colon \mbb{C}_3\brs{x} &\to \mbb{C}_3\brs{x} \\
+p\prs{x} &\mapsto p\prs{x+1}
+\end{align*}
+לפי הבסיס הסטנדרטי
+\begin{align*}
+\prs{1, x, x^2, x^3}
+\end{align*}
+של מרחב הפולינומים ממעלה לכל היותר
+$3$
+עם מקדמים מרוכבים.
+\item ההעתקה
+\begin{align*}
+T \colon \Mat_{2\times 2}\prs{\mbb{R}} &\to \Mat_{2 \times 2}\prs{\mbb{R}}\\
+A &\mapsto A^t
+\end{align*}
+לפי הבסיס
+\begin{align*}
+\text{.} B = \prs{\pmat{1 & 0 \\ 0 & 0}, \pmat{1 & 1 \\ 0 & 0}, \pmat{1 & 1 \\ 1 & 0}, \pmat{1 & 1 \\ 1 & 1}}
+\end{align*}
+\item ההעתקה
+\begin{align*}
+T_A \colon \Mat_{n \times n}\prs{\mbb{C}} &\to \Mat_{n \times n}\prs{\mbb{C}} \\
+B &\mapsto AB
+\end{align*}
+עבור מטריצה
+$A \in \Mat_{n \times n}\prs{\mbb{C}}$
+ולפי הבסיס הסטנדרטי
+\begin{align*}
+E = \prs{E_{1,1}, \ldots, E_{1,n}, E_{2,1}, \ldots, E_{2,n}, \ldots, E_{n,1}, \ldots, E_{n,n}}
+\end{align*}
+כאשר
+$E_{i,j}$
+מטריצה שמקדמיה אפסים חוץ מ־$1$ במיקום ה־$\prs{i,j}$. כלומר,
+\begin{align*}
+\text{.} \prs{E_{i,j}}_{k,\ell} = \delta_{\prs{i,j}, \prs{k,\ell}} \coloneqq
+\begin{cases}
+0 & \prs{i,j} = \prs{k,\ell} \\
+1 & \prs{i,j} \neq \prs{k,\ell}
+\end{cases}
+\end{align*}
+\item ההעתקה
+\begin{align*}
+T \colon V &\to V \\
+b_i &\mapsto
+\begin{cases}
+b_{i+1} & i < n \\
+b_1 & i = n
+\end{cases}
+\end{align*}
+עבור בסיס
+\begin{align*}
+\text{,} B = \prs{b_1, \ldots, b_n}
+\end{align*}
+לפי הבסיס
+$B$.
+\end{enumerate}
+\end{exercise}
+
+\section{הדטרמיננטה}
+
+\begin{definition}[דטרמיננטה]
+תהי
+$A \in \Mat_{n \times n}\prs{\mbb{F}}$
+מטריצה עם מקדמים בשדה
+$\mbb{F}$.
+נגדיר את
+\emph{הדטרמיננטה}
+$\det\prs{A}$
+של
+$A$
+באופן הרקורסיבי הבא.
+
+תהי
+$M_{i,j}$
+הדטרמיננטה של המטריצה המתקבלת מ־$A$ לאחר הוצאת השורה ה־$i$ והעמודה ה־$j$ של $A$.
+נקרא למספר זה
+\emph{המינור}
+ה־$\prs{i,j}$ של
+$A$.
+הדטרמיננטה של
+$A$
+מוגדרת על ידי
+\begin{align*}
+\text{.} \det\prs{A} &\coloneqq \sum_{i,j \in \brs{n}} \prs{-1}^{i+j} a_{i,j} M_{i,j}
+\end{align*}
+\end{definition}
+
+\begin{theorem}
+תהיינה
+$A, B, C \in \Mat_{n \times n}\prs{\mbb{F}}$
+ונניח כי
+$C$
+הפיכה.
+מתקיימות התכונות הבאות.
+\begin{enumerate}
+\item $\det\prs{AB} = \det\prs{A} \cdot \det\prs{B}$
+\item $\det\prs{C^{-1}} = \prs{\det\prs{C}}^{-1}$
+\end{enumerate}
+\end{theorem}
+
+\begin{exercise}\label{exercise:matrix-determinant}
+חשבו את הדטרמיננטות של המטריצות הבאות.
+
+\begin{enumerate}
+\item \[A = \pmat{1 & 2 \\ 3 & 4} \in \Mat_{2 \times 2}\prs{\mbb{R}}\]
+\item \[B = \pmat{\cos\prs{\theta} & -\sin\prs{\theta} \\ \sin\prs{\theta} & \cos\prs{\theta}} \in \Mat_{2 \times 2}\prs{\mbb{C}}\]
+עבור
+$\theta \in \mbb{R}$.
+\item \[C = \pmat{a & b \\ c & d} \in \Mat_{n \times n}\prs{\mbb{F}}\]
+עבור סקלרים
+$a,b,c,d \in \mbb{F}$.
+\item \[D = \pmat{0 & 1 & 0 \\ 0 & 0 & 1 \\ 1 & 0 & 0} \in \Mat_{3 \times 3}\prs{\mbb{C}}\]
+\item \[E = \pmat{0 & 1 & 0 \\ 1 & 0 & 0 \\ 0 & 0 & 1} \in \Mat_{3 \times 3}\prs{\mbb{C}}\]
+\item \[F = \pmat{A & 0_{2 \times 2} \\ 0_{2 \times 2} & B} \in \Mat_{4 \times 4}\prs{\mbb{F}}\]
+עבור
+$A,B \in \Mat_{2 \times 2}\prs{\mbb{F}}$.
+\end{enumerate}
+\end{exercise}
+
+\begin{proposition}[מעבר בסיס]\label{proposition:change-of-basis}
+תהי
+$T \colon V \to V$
+העתקה לינארית ויהיו
+$B,C$
+שני בסיסים של
+$V$.
+נסמן
+$M^B_C = \brs{\id_V}^B_C$
+ונקרא לה
+\emph{מטריצת מעבר}
+בין הבסיסים
+$B,C$.
+מתקיים
+\begin{enumerate}
+\item \[M^C_B = \prs{M^B_C}^{-1}\]
+\item \[\brs{T}_B = \prs{M^B_C}^{-1} \brs{T}_C M^B_C\]
+\end{enumerate}
+\end{proposition}
+
+\begin{remark}
+המטריצה
+$M^B_C$
+מקיימת
+$M^B_C \brs{v}_B = \brs{v}_C$
+לכל וקטור
+$v \in V$.
+בכל זאת, יש שקוראים לה
+"מטריצת מעבר מ־%
+$C$
+ל־%
+$B$".
+לכן לא נקרא לה
+"מטריצת מעבר מבסיס אחד לאחר"
+אלא רק מטריצת מעבר בין שני הבסיסים.
+\end{remark}
+
+\begin{exercise}
+תהי
+$T \colon V \to V$
+העתקה לינארית, ויהי
+$B$
+בסיס של
+$V$.
+נגדיר את הדטרמיננטה של
+$T$
+על ידי
+\[\text{.}\det\prs{T} \coloneqq \det\prs{\brs{T}_B}\]
+הראו שהדטרמיננטה של
+$T$
+מוגדרת היטב. כלומר, הראו שאם
+$B'$
+בסיס נוסף של
+$V$
+מתקיים
+\[\text{.} \det\prs{\brs{T}_B} = \det\prs{\brs{T}_{B'}}\]
+\end{exercise}
+
+\section{ערכים ווקטורים עצמיים}
+
+\begin{definition}[ערכים ווקטורים עצמיים]
+תהי
+$T \colon V \to V$
+העתקה לינארית מעל שדה
+$\mbb{F}$.
+סקלר
+$\lambda \in \mbb{F}$
+נקרא
+\emph{ערך עצמי של
+$T$}
+אם קיים
+$v \in V$
+עבורו
+$T\prs{v} = \lambda v$.
+וקטור
+$v \in V$
+כזה נקרא
+\emph{וקטור עצמי של
+$T$}
+עם ערך עצמי
+$\lambda$.
+
+תהי
+$A \in \Mat_{n \times n}\prs{\mbb{F}}$
+ונסמן
+\begin{align*}
+T_A \colon \mbb{F}^n &\to \mbb{F}^n \\
+\text{.} \hphantom{lalala} v &\mapsto Av
+\end{align*}
+ערך/וקטור
+עצמי של
+$A$
+הוא
+ערך/וקטור
+עצמי של
+$T_A$.
+\end{definition}
+
+\begin{exercise}
+מצאו את הערכים העצמיים של ההעתקות הבאות.
+
+\begin{enumerate}
+\item
+ההעתקה
+\begin{align*}
+T \colon \mbb{R}^3 &\to \mbb{R}^3 \\
+\pmat{x \\ y \\ z} &\mapsto \pmat{x \\ x+y \\ x + y + z}
+\end{align*}
+\item
+ההעתקה
+\begin{align*}
+T \colon \mbb{R}^2 &\to \mbb{R}^2 \\
+\pmat{x \\ y} &\mapsto \pmat{-y \\ x}
+\end{align*}
+\item
+ההעתקה
+\begin{align*}
+T \colon \mbb{C}^2 &\to \mbb{C}^2 \\
+\pmat{x \\ y} &\mapsto \pmat{-y \\ x}
+\end{align*}
+\item ההעתקה
+\begin{align*}
+T \colon \mbb{C}_3\brs{x} &\to \mbb{C}_3\brs{x} \\
+p\prs{x} &\mapsto p\prs{x+1}
+\end{align*}
+\item ההעתקה
+\begin{align*}
+T \colon \mbb{F}_n\brs{x} &\to \mbb{F}_n\brs{x} \\
+p\prs{x} &\mapsto p'\prs{x}
+\end{align*}
+כאשר
+$p'\prs{x}$
+הנגזרת הפורמלית של
+$p\prs{x}$.
+\item ההעתקה
+\begin{align*}
+T \colon \Mat_{2\times 2}\prs{\mbb{R}} &\to \Mat_{2 \times 2}\prs{\mbb{R}}\\
+A &\mapsto A^t
+\end{align*}
+\item ההעתקה
+\begin{align*}
+T \colon V &\to V \\
+b_i &\mapsto
+\begin{cases}
+b_{i+1} & i < n \\
+b_1 & i = n
+\end{cases}
+\end{align*}
+עבור בסיס
+\begin{align*}
+\text{,} B = \prs{b_1, \ldots, b_n}
+\end{align*}
+כאשר
+$V$
+מרחב וקטורי מעל שדה
+$\mbb{F}$.
+\end{enumerate}
+\end{exercise}
+
+\begin{theorem}
+תהי
+$A \in \Mat_{n \times n}\prs{\mbb{F}}$.
+\begin{enumerate}
+\item
+הערכים העצמיים של $A$
+הם שורשי הפולינום המתוקן
+$p_A\prs{x} \coloneqq \det\prs{xI_{n \times n} - A}$.
+\item
+אם ל־%
+$p_A$
+יש
+$n$
+שורשים
+$\lambda_1, \ldots, \lambda_n$
+כולל ריבויים, העכבה של $A$ היא סכום השורשים והדטרמיננטה של
+$A$
+היא מכפלת השורשים. כלומר,
+\begin{align*}
+\tr\prs{A} &= \sum_{i \in \brs{n}} \lambda_i \\
+\text{.} \det\prs{A} &= \prod_{i \in \brs{n}} \lambda_i
+\end{align*}
+\end{enumerate}
+\end{theorem}
+
+\begin{exercise}
+מצאו את הערכים העצמיים של המטריצות הבאות. עבור כל אחת מהמטריצות
+$A$
+עד
+$F$
+שיש לה מספר ערכים עצמיים ששווה לגודל המטריצה,
+וודאו שמכפלת הערכים העצמיים שווה לדטרמיננטה שחישבתם בתרגיל
+\ref{exercise:matrix-determinant}.
+\begin{enumerate}
+\item \[A = \pmat{1 & 2 \\ 3 & 4} \in \Mat_{2 \times 2}\prs{\mbb{R}}\]
+\item \[B = \pmat{\cos\prs{\theta} & -\sin\prs{\theta} \\ \sin\prs{\theta} & \cos\prs{\theta}} \in \Mat_{2 \times 2}\prs{\mbb{C}}\]
+עבור
+$\theta \in \mbb{R}$.
+\item \[B' = \pmat{\cos\prs{\theta} & -\sin\prs{\theta} \\ \sin\prs{\theta} & \cos\prs{\theta}} \in \Mat_{2 \times 2}\prs{\mbb{R}}\]
+עבור
+$\theta \in \mbb{R}$.
+\item \[C = \pmat{a & b \\ c & d} \in \Mat_{n \times n}\prs{\mbb{F}}\]
+עבור סקלרים
+$a,b,c,d \in \mbb{F}$.
+\item \[D = \pmat{0 & 1 & 0 \\ 0 & 0 & 1 \\ 1 & 0 & 0} \in \Mat_{3 \times 3}\prs{\mbb{C}}\]
+\item \[E = \pmat{0 & 1 & 0 \\ 1 & 0 & 0 \\ 0 & 0 & 1} \in \Mat_{3 \times 3}\prs{\mbb{C}}\]
+\item \[F = \pmat{A & 0_{2 \times 2} \\ 0_{2 \times 2} & B} \in \Mat_{4 \times 4}\prs{\mbb{F}}\]
+עבור
+$A,B \in \Mat_{2 \times 2}\prs{\mbb{F}}$.
+\end{enumerate}
+\end{exercise}
+
+\section{לכסון}
+
+\begin{definition}[לכסינות]
+העתקה לינארית
+$T \colon V \to V$
+נקראת
+\emph{לכסינה}
+אם קיים בסיס
+$B$
+של
+$V$
+עבורו
+$\brs{T}_B$
+מטריצה אלכסונית.
+בסיס
+$B$
+כזה נקרא
+\emph{בסיס מלכסן}.
+
+מטריצה
+$A \in \Mat_{n \times n}\prs{\mbb{F}}$
+נקראת
+\emph{לכסינה}
+אם
+$T_A$
+לכסינה.
+\end{definition}
+
+\begin{exercise}
+הראו כי
+$T \colon V \to V$
+לכסינה אם ורק אם קיים בסיס
+$B$
+של
+$V$
+שאיבריו עם וקטורים עצמיים של
+$T$.
+הראו כי במקרה זה הערכים העצמיים של
+$T$
+הם הערכים על האלכסון של
+$\brs{T}_B$.
+\end{exercise}
+
+\begin{exercise}
+הראו כי
+$A \in \Mat_{n \times n}\prs{\mbb{F}}$
+לכסינה אם ורק אם קיימת מטריצה הפיכה
+$P \in \Mat_{n \times n}\prs{\mbb{F}}$
+עבורה
+$P^{-1} A P$
+מטריצה אלכסונית.
+
+\emph{רמז:}
+העזרו בטענה
+\ref{proposition:change-of-basis}.
+\end{exercise}
+
+\begin{exercise}
+עבור כל אחת מההעתקות הבאות קבעו האם ההעתקה לכסינה ואם כן מצאו בסיס מלכסן. הוכיחו את טענותיכן.
+\begin{enumerate}
+\item
+ההעתקה
+\begin{align*}
+T \colon \mbb{R}^3 &\to \mbb{R}^3 \\
+\pmat{x \\ y \\ z} &\mapsto \pmat{x \\ x+y \\ x + y + z}
+\end{align*}
+\item
+ההעתקה
+\begin{align*}
+T \colon \mbb{R}^2 &\to \mbb{R}^2 \\
+\pmat{x \\ y} &\mapsto \pmat{-y \\ x}
+\end{align*}
+\item
+ההעתקה
+\begin{align*}
+T \colon \mbb{C}^2 &\to \mbb{C}^2 \\
+\pmat{x \\ y} &\mapsto \pmat{-y \\ x}
+\end{align*}
+\item ההעתקה
+\begin{align*}
+T \colon \mbb{C}_3\brs{x} &\to \mbb{C}_3\brs{x} \\
+p\prs{x} &\mapsto p\prs{x+1}
+\end{align*}
+\item ההעתקה
+\begin{align*}
+T \colon \mbb{F}_n\brs{x} &\to \mbb{F}_n\brs{x} \\
+p\prs{x} &\mapsto p'\prs{x}
+\end{align*}
+כאשר
+$p'\prs{x}$
+הנגזרת הפורמלית של
+$p\prs{x}$.
+\item ההעתקה
+\begin{align*}
+T \colon \Mat_{2\times 2}\prs{\mbb{R}} &\to \Mat_{2 \times 2}\prs{\mbb{R}}\\
+A &\mapsto A^t
+\end{align*}
+\item ההעתקה
+\begin{align*}
+T \colon V &\to V \\
+b_i &\mapsto
+\begin{cases}
+b_{i+1} & i < n \\
+b_1 & i = n
+\end{cases}
+\end{align*}
+עבור בסיס
+\begin{align*}
+\text{,} B = \prs{b_1, \ldots, b_n}
+\end{align*}
+כאשר
+$V$
+מרחב וקטורי מעל שדה
+$\mbb{F}$.
+\end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+עבור כל אחת מהמטריצות הבאות $X$ קבעו האם המטריצה לכסינה ואם כן מצאו מטריצה
+$P$
+עבורה
+$P^{-1} X P$
+מטריצה אלכסונית.
+הוכיחו את טענותיכן.
+
+\begin{enumerate}
+\item \[A = \pmat{1 & 2 \\ 3 & 4} \in \Mat_{2 \times 2}\prs{\mbb{R}}\]
+\item \[B = \pmat{\cos\prs{\theta} & -\sin\prs{\theta} \\ \sin\prs{\theta} & \cos\prs{\theta}} \in \Mat_{2 \times 2}\prs{\mbb{C}}\]
+עבור
+$\theta \in \mbb{R}$.
+\item \[B' = \pmat{\cos\prs{\theta} & -\sin\prs{\theta} \\ \sin\prs{\theta} & \cos\prs{\theta}} \in \Mat_{2 \times 2}\prs{\mbb{R}}\]
+עבור
+$\theta \in \mbb{R}$.
+\item \[D = \pmat{0 & 1 & 0 \\ 0 & 0 & 1 \\ 1 & 0 & 0} \in \Mat_{3 \times 3}\prs{\mbb{C}}\]
+\item \[E = \pmat{0 & 1 & 0 \\ 1 & 0 & 0 \\ 0 & 0 & 1} \in \Mat_{3 \times 3}\prs{\mbb{C}}\]
+\item \[F = \pmat{A & 0_{2 \times 2} \\ 0_{2 \times 2} & B} \in \Mat_{4 \times 4}\prs{\mbb{F}}\]
+עבור
+$A,B \in \Mat_{2 \times 2}\prs{\mbb{F}}$.
+הפרידו למקרים כתלות במטריצות
+$A,B$.
+\item \[J\prs{\lambda} = \pmat{\lambda & 1 \\ 0 & \lambda} \in \Mat_{2 \times 2}\prs{\mbb{C}}\]
+עבור
+$\lambda \in \mbb{C}$.
+\item \[K = \pmat{1 & 1 \\ 0 & -1} \in \Mat_{2 \times 2}\prs{\mbb{C}}\]
+\end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+תהיינה
+$A,B \in \Mat_{n \times n}\prs{\mbb{F}}$
+לכסינות. הפריכו את הטענות הבאות.
+\begin{enumerate}
+\item $A+B$ לכסינה.
+\item $AB$ לכסינה.
+\end{enumerate}
+\emph{רמז:}
+היעזרו במטריצות
+$J\prs{0}, J\prs{1}, K$
+מהסעיף הקודם.
+\end{exercise}
+
+\begin{exercise}
+הוכיחו שאם למטריצה יש ערך עצמי יחיד, היא לכסינה אם ורק אם היא סקלרית, כלומר אם ורק אם היא מהצורה
+$\lambda I_{n \times n}$.
+\end{exercise}
+
+\end{document}
