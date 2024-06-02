@@ -3,3 +3,8 @@
 \contentsline {chapter}{\numberline {1}מטריצות מייצגות}{3}{chapter.1}%
 \contentsline {section}{\numberline {1.1}הגדרות בסיסיות}{3}{section.1.1}%
 \contentsline {section}{\numberline {1.2}גרעין ותמונה}{10}{section.1.2}%
+\contentsline {chapter}{\numberline {2}סכומים ישרים, הדטרמיננטה ולכסינות}{14}{chapter.2}%
+\contentsline {section}{\numberline {2.1}סכומים ישרים}{14}{section.2.1}%
+\contentsline {section}{\numberline {2.2}הדטרמיננטה}{16}{section.2.2}%
+\contentsline {section}{\numberline {2.3}לכסינות}{18}{section.2.3}%
+\contentsline {section}{\numberline {2.4}מרחבים שמורים}{20}{section.2.4}%

@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2022/dev/Debian) (preloaded format=xelatex 2024.3.16)  2 JUN 2024 17:39
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2022/dev/Debian) (preloaded format=xelatex 2024.3.16)  2 JUN 2024 18:48
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2031,9 +2031,37 @@ ut line 287.
 Underfull \vbox (badness 3375) has occurred while \output is active []
 
  [8]
-[9] [10] [11] [12]
+[9] [10] [11] [12] [13]
+פרק 2.
+[14
 
-LaTeX Warning: Empty bibliography on input line 1015.
+] [15]
+Overfull \hbox (6.80733pt too wide) in paragraph at lines 1379--1395
+[][]\TU/FrankRuehlCLM(0)/m/n/10 נשלים את $\OML/cmm/m/it/10 B$ \TU/FrankRuehlCLM
+(0)/m/n/10 לבסיס של $\OML/cmm/m/it/10 V$ \TU/FrankRuehlCLM(0)/m/n/10 על ידי הוס
+פת וקטורים מ־$\OML/cmm/m/it/10 C$\TU/FrankRuehlCLM(0)/m/n/10 . נוסיף את $\OT1/c
+mr/m/n/10 1 [] \OML/cmm/m/it/10 U$ \TU/FrankRuehlCLM(0)/m/n/10 כדי לקבל $\OML/c
+mm/m/it/10 B[] \OT1/cmr/m/n/10 = []$[]
+ []
+
+[16] [17]
+Package hyperref Info: bookmark level for unknown corollary defaults to 0 on in
+put line 1697.
+
+Overfull \hbox (16.8405pt too wide) in paragraph at lines 1697--1705
+[][]\TU/FrankRuehlCLM(0)/m/it/10 איבר $\OML/cmm/m/it/10 ^^U \OMS/cmsy/m/n/10 2 
+\U/msb/m/n/10 F$ \TU/FrankRuehlCLM(0)/m/it/10 הוא ערך עצמי של $\OML/cmm/m/it/10
+ T$ \TU/FrankRuehlCLM(0)/m/it/10 אם ורק אם $[] [] \OMS/cmsy/m/n/10 6\OT1/cmr/m/
+n/10 = 0$\TU/FrankRuehlCLM(0)/m/it/10 , אם ורק אם $\OML/cmm/m/it/10 p[] [] \OT1
+/cmr/m/n/10 = [] [] =$[]
+ []
+
+[18] [19] [20] [21]
+Package hyperref Info: bookmark level for unknown example defaults to 0 on inpu
+t line 2403.
+ [22]
+
+LaTeX Warning: Empty bibliography on input line 2548.
 
 \tf@thm=\write8
 \openout8 = `algebra_2_recitations.thm'.
@@ -2088,7 +2116,7 @@ braces):
 >  {english/babelname}  =>  {american}
 >  {english/localnumeral}  =>  {polyglossia@C@localnumeral}
 >  {english/Localnumeral}  =>  {polyglossia@C@localnumeral}.
-[13] (./algebra_2_recitations.aux Setting \if@calendar@hebrew
+[23] (./algebra_2_recitations.aux Setting \if@calendar@hebrew
 Setting \if@calendar@hebrew
 LaTeX Info: Redefining \rmfamily on input line 21.
 LaTeX Info: Redefining \sffamily on input line 21.
@@ -2096,18 +2124,18 @@ LaTeX Info: Redefining \ttfamily on input line 21.
  Setting \if@calendar@hebrew
 Setting \if@calendar@hebrew)
 Package rerunfilecheck Info: File `algebra_2_recitations.out' has not changed.
-(rerunfilecheck)             Checksum: 2745D7C58B1BA260008831B463E02E63;736.
+(rerunfilecheck)             Checksum: 6B3777EE7302344C81C932D81F155E73;1598.
 Package logreq Info: Writing requests to 'algebra_2_recitations.run.xml'.
 \openout1 = `algebra_2_recitations.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 43125 strings out of 476191
- 916385 string characters out of 5812072
- 1851662 words of memory out of 5000000
- 63088 multiletter control sequences out of 15000+600000
+ 43129 strings out of 476191
+ 916457 string characters out of 5812072
+ 1856641 words of memory out of 5000000
+ 63092 multiletter control sequences out of 15000+600000
  477256 words of font info for 99 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  115i,19n,118p,1293b,878s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on algebra_2_recitations.pdf (15 pages).
+Output written on algebra_2_recitations.pdf (25 pages).
