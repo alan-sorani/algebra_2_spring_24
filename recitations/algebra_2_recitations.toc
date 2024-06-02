@@ -1,5 +1,5 @@
 \selectlanguage *[calendar=gregorian]{hebrew}
-\contentsline {part}{I\hspace {1em}חלק ראשון - מרחבים שמורים}{1}{part.1}%
-\contentsline {chapter}{\numberline {1}מטריצות מייצגות}{2}{chapter.1}%
-\contentsline {section}{\numberline {1.1}הגדרות בסיסיות}{2}{section.1.1}%
-\contentsline {section}{\numberline {1.2}גרעין ותמונה}{8}{section.1.2}%
+\contentsline {part}{I\hspace {1em}חלק ראשון - מרחבים שמורים}{2}{part.1}%
+\contentsline {chapter}{\numberline {1}מטריצות מייצגות}{3}{chapter.1}%
+\contentsline {section}{\numberline {1.1}הגדרות בסיסיות}{3}{section.1.1}%
+\contentsline {section}{\numberline {1.2}גרעין ותמונה}{9}{section.1.2}%

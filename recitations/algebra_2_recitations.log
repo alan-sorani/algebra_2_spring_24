@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2022/dev/Debian) (preloaded format=xelatex 2024.3.16)  21 MAY 2024 18:20
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2022/dev/Debian) (preloaded format=xelatex 2024.3.16)  2 JUN 2024 17:37
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2004,31 +2004,32 @@ Setting \if@calendar@hebrew)
 
 ] [1
 
+] [2
 
 ]
 פרק 1.
 Package hyperref Info: bookmark level for unknown definitionx defaults to 0 on 
-input line 64.
+input line 93.
 Package hyperref Info: bookmark level for unknown remark defaults to 0 on input
- line 88.
+ line 117.
 Package hyperref Info: bookmark level for unknown theoremx defaults to 0 on inp
-ut line 115.
+ut line 144.
 Package hyperref Info: bookmark level for unknown exercisechap defaults to 0 on
- input line 142.
+ input line 171.
 Package hyperref Info: bookmark level for unknown proposition defaults to 0 on 
-input line 155.
-[2
+input line 184.
+[3
 
 ]
 Package hyperref Info: bookmark level for unknown proof defaults to 0 on input 
-line 173.
+line 202.
 Package hyperref Info: bookmark level for unknown notation defaults to 0 on inp
-ut line 205.
+ut line 234.
 Package hyperref Info: bookmark level for unknown solution defaults to 0 on inp
-ut line 258.
- [3] [4] [5] [6] [7] [8] [9] [10]
+ut line 287.
+ [4] [5] [6] [7] [8] [9] [10] [11]
 
-LaTeX Warning: Empty bibliography on input line 986.
+LaTeX Warning: Empty bibliography on input line 1015.
 
 \tf@thm=\write8
 \openout8 = `algebra_2_recitations.thm'.
@@ -2083,7 +2084,7 @@ braces):
 >  {english/babelname}  =>  {american}
 >  {english/localnumeral}  =>  {polyglossia@C@localnumeral}
 >  {english/Localnumeral}  =>  {polyglossia@C@localnumeral}.
-[11] (./algebra_2_recitations.aux Setting \if@calendar@hebrew
+[12] (./algebra_2_recitations.aux Setting \if@calendar@hebrew
 Setting \if@calendar@hebrew
 LaTeX Info: Redefining \rmfamily on input line 21.
 LaTeX Info: Redefining \sffamily on input line 21.
@@ -2097,12 +2098,12 @@ Package logreq Info: Writing requests to 'algebra_2_recitations.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 43123 strings out of 476191
- 916352 string characters out of 5812072
+ 43124 strings out of 476191
+ 916375 string characters out of 5812072
  1852662 words of memory out of 5000000
- 63086 multiletter control sequences out of 15000+600000
+ 63087 multiletter control sequences out of 15000+600000
  477256 words of font info for 99 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  115i,19n,118p,1293b,878s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on algebra_2_recitations.pdf (13 pages).
+Output written on algebra_2_recitations.pdf (14 pages).
