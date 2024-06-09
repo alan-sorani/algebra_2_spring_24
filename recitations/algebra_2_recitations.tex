@@ -2545,5 +2545,263 @@ $\bar{\lambda}$,
 \end{enumerate}
 \end{solution}
 
+\chapter{צורת ז'ורדן}
+
+כדי לבצע חישובים על אופרטורים לינאריים, בדרך כלל יש לקחת בסיס ולערוך את החישובים על המטריצות המייצגות.
+נרצה לקחת בסיס שיתן לנו מטריצה שתאפשר חישובים פשוטים ככל הניתן: מטריצה אלכסונית. אין לכל אופרטור צורה אלכסונית, אבל, מעל שדה סגור אלגברית יש צורה
+``כמעט אלכסונית'' שנקראת
+\emph{צורת ז'ורדן}.
+
+\begin{definition}
+יהי
+$\lambda \in \mbb{F}$.
+נגדיר
+\emph{בלוק ז'ורדן מגודל
+$m$
+עם ערך עצמי
+$\lambda$}
+בתור
+\begin{align*}
+\text{.} J_m\prs{\lambda} \coloneqq \pmat{\lambda & 1 & & \\ & \lambda & \ddots & \\ & & \ddots & 1 \\ & & & \lambda} \in \Mat_m\prs{\mbb{F}}
+\end{align*}
+\end{definition}
+
+\begin{definition}[מטריצת ז'ורדן]
+מטריצה
+$A \in \Mat_n\prs{\mbb{F}}$
+נקראת
+\emph{מטריצת ז'ורדן}
+אם היא מטריצה אלכסונית בלוקים שכל הבלוקים בה הם בלוקי ז'ורדן.
+\end{definition}
+
+\begin{definition}[בסיס ז'ורדן]
+יהי
+$T \in \End_{\mbb{F}}\prs{V}$.
+\emph{בסיס ז'ורדן}
+עבור
+$T$
+הוא בסיס
+$B$
+של
+$V$
+עבורו
+$\brs{T}_B$
+מטריצת ז'ורדן.
+\end{definition}
+
+\begin{definition}[שדה סגור אלגברית]
+שדה
+$\mbb{F}$
+נקרא
+\emph{סגור אלגברית}
+אם לכל פולינום
+$p \in \mbb{F}\brs{x}$
+שאינו קבוע יש שורש.
+\end{definition}
+
+\begin{theorem}[משפט ז'ורדן]
+יהי
+$\mbb{F}$
+שדה סגור אלגברית, יהי
+$V$
+מרחב וקטורי סוף־מימדי מעל
+$\mbb{F}$
+ויהי
+$T \in \End_{\mbb{F}}\prs{V}$.
+קיים בסיס ז'ורדן עבור
+$T$,
+וצורת ז'ורדן של
+$T$
+יחידה עד כדי שינוי סדר הבלוקים.
+\end{theorem}
+
+בהוכחת משפט ז'ורדן בהרצאה, הסתכלנו קודם כל על אופרטורים שעבורם הערך העצמי היחיד הוא
+$0$,
+שהינם אופרטורים
+\emph{נילפוטנטיים}.
+נדון תחילה במשפט ז'ורדן עבור אופרטורים אלו.
+
+\section{אופרטורים נילפוטנטיים}
+
+עבור בלוק ז'ורדן
+$A = J_n\prs{0}$
+מתקיים
+$A^n = 0$,
+ולכן גם
+$T_A^n = 0$.
+נוכל באופן דומה לדבר על אופרטורים כלליים עם תכונה זאת.
+
+\begin{definition}[אופרטור נילפוטנטי]
+אופרטור
+$T \in \End_{\mbb{F}}\prs{V}$
+נקרא
+\emph{נילפוטנטי}
+אם קיים
+$i \in \mbb{N}_+$
+עבורו
+$T^i = 0$.
+
+הערך
+$k$
+המינימלי עבורו
+$T^k = 0$
+נקרא
+\emph{אינדקס הנילפוטנטיות}
+של
+$T$.
+\end{definition}
+
+התרגיל הבא מראה שאלו בדיוק האופרטורים שמעניינים אותנו כאשר אנו רוצות להתייחס רק לערך עצמי
+$0$.
+
+\begin{exercisechap}
+יהי
+$V$
+מרחב וקטורי סוף־מימדי מעל שדה
+\emph{סגור אלגברית}
+$\mbb{F}$,
+ויהי
+$T \in \End_{\mbb{F}}\prs{V}$.
+אז
+$T$
+נילפוטנטי אם ורק אם
+$0$
+הוא הערך העצמי היחיד של
+$T$.
+\end{exercisechap}
+
+\begin{solution}
+נניח כי
+$T$
+נילפוטנטי מאינדקס
+$k$, ויהי
+$\lambda$
+ערך עצמי של
+$T$
+עם וקטור עצמי
+$v$.
+אז
+$0 = T^k\prs{v} = \lambda^k v$
+וכיוון ש־%
+$v \neq 0$
+נקבל
+$\lambda^k = 0$
+ואז
+$\lambda = 0$.
+
+בכיוון השני, נניח כי
+$0$
+הוא הערך העצמי היחיד.
+ממשפט ז'ורדן, קיים בסיס
+$B$
+של
+$V$
+עבורו
+\begin{align*}
+\text{.} \brs{T}_B = \pmat{J_{m_1}\prs{0} & & \\ & \ddots & \\ & & J_{m_k}\prs{0}}
+\end{align*}
+לכל
+$i \in [k]$
+מתקיים
+$J_{m_i}\prs{0}^{m_i} = 0$,
+ולכן אם ניקח
+$m = \max_{i \in [k]} m_i$
+נקבל כי
+\begin{align*}
+\brs{T}_B^m = \pmat{J_{m_1}\prs{0}^m & & \\ & \ddots & \\ & & J_{m_k}\prs{0}^m} = 0
+\end{align*}
+ואז
+$T^m = 0$.
+\end{solution}
+
+\begin{exercisechap}
+יהי
+$T \in \End_{\mbb{F}}\prs{V}$
+נילפוטנטי מאינדקס
+$k$
+ונסמן
+$n_i \coloneqq \dim \ker\prs{T^i}$
+לכל
+$i \in \mbb{N}$.
+הראו כי
+\[\text{.} 0 < n_1 < n_2 < \ldots < n_{k-1} < n_k = n\]
+\end{exercisechap}
+
+\begin{solution} 
+לכל
+$v \in \ker\prs{T^i}$
+מתקיים
+$T^{i+1}\prs{v} = 0$
+ולכן
+$\ker\prs{T} \subseteq \ker\prs{T^2} \subseteq \ldots \subseteq \ker\prs{T^k} = V$.
+
+אם
+$\ker\prs{T^i} = \ker\prs{T^{i+1}}$
+נראה כי
+$T^i = 0$.
+אחרת, יש
+$j > i$
+עבורו
+$\ker\prs{T^j} \supsetneq \ker\prs{T^i}$.
+ניקח
+$j$
+מינימלי כזה וניקח
+$v \in \ker\prs{T^j} \setminus \ker\prs{T^i}$.
+נכתוב
+$j = i + r$
+ואז
+\begin{align*}
+T^{i+1}\prs{T^{r-1}\prs{v}} &= T^{i+r}\prs{v} = T^j\prs{v} = 0 \\
+T^i\prs{T^{r-1}\prs{v}} &= T^{i+r-1}\prs{v} = T^{j-1}\prs{v} \neq 0
+\end{align*}
+כאשר
+$T^0 = \id_V$
+וכאשר
+$T^{j-1}\prs{v} \neq 0$
+כי
+$v \notin \ker\prs{T^i} = \ker\prs{T^{j-1}}$.
+\end{solution}
+
+\begin{exercisechap}
+תהי
+$T$
+נילפוטנטית מאינדס
+$k$.
+הראו שהעתקות
+$\prs{\id_V \pm T}$
+הפיכות ומצאו את ההופכיות שלהן.
+\end{exercisechap}
+
+\begin{solution}
+אנו יודעות כי
+\[\sum_{k \in \mbb{N}} r^k = \frac{1}{1-r}\]
+עבור
+$r < 0$.
+נרצה אם כן שההופכית של
+$\id_V - T$
+תהיה
+$\id_V + T + \ldots + T^{k-1}$.
+אכן,
+\begin{align*}
+\prs{\id_V - T}\prs{\id_V + T + \ldots + T^{k-1}} &= \sum_{i = 0}^{k-1} T^{i} - \sum_{i = 1}^k T^^i
+\\&= \id_V - T^k
+\\&= \id_V - 0
+\\ \text{.} \hphantom{\prs{\id_V - T}\prs{\id_V + T + \ldots + T^{k-1}}} &= \id_V
+\end{align*}
+
+כעת, אם
+$T$
+נילפוטנטית מאינדקס
+$k$
+גם
+$-T$
+נילפוטנטית מאינדקס
+$k$,
+לכן ההופכית של
+$\id_V + T = \id_V - \prs{-T}$
+היא
+\[\text{.} \id_V - T + T^2 - T^3 + \ldots + \prs{-1}^{k-1} T^{k-1}\]
+\end{solution}
+
 \printbibliography
 \end{document}

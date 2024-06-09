@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2022/dev/Debian) (preloaded format=xelatex 2024.3.16)  2 JUN 2024 18:48
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2022/dev/Debian) (preloaded format=xelatex 2024.3.16)  9 JUN 2024 15:33
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2059,9 +2059,13 @@ n/10 = 0$\TU/FrankRuehlCLM(0)/m/it/10 , אם ורק אם $\OML/cmm/m/it/10 p[] [
 [18] [19] [20] [21]
 Package hyperref Info: bookmark level for unknown example defaults to 0 on inpu
 t line 2403.
- [22]
+ [22] [23]
+פרק 3.
+[24
 
-LaTeX Warning: Empty bibliography on input line 2548.
+]
+
+LaTeX Warning: Empty bibliography on input line 2806.
 
 \tf@thm=\write8
 \openout8 = `algebra_2_recitations.thm'.
@@ -2116,15 +2120,21 @@ braces):
 >  {english/babelname}  =>  {american}
 >  {english/localnumeral}  =>  {polyglossia@C@localnumeral}
 >  {english/Localnumeral}  =>  {polyglossia@C@localnumeral}.
-[23] (./algebra_2_recitations.aux Setting \if@calendar@hebrew
+[25] (./algebra_2_recitations.aux Setting \if@calendar@hebrew
 Setting \if@calendar@hebrew
 LaTeX Info: Redefining \rmfamily on input line 21.
 LaTeX Info: Redefining \sffamily on input line 21.
 LaTeX Info: Redefining \ttfamily on input line 21.
  Setting \if@calendar@hebrew
 Setting \if@calendar@hebrew)
-Package rerunfilecheck Info: File `algebra_2_recitations.out' has not changed.
-(rerunfilecheck)             Checksum: 6B3777EE7302344C81C932D81F155E73;1598.
+
+Package rerunfilecheck Warning: File `algebra_2_recitations.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `algebra_2_recitations.out':
+(rerunfilecheck)             Before: 6B3777EE7302344C81C932D81F155E73;1598
+(rerunfilecheck)             After:  1904D4B899C6EA0FEF55C5A2846295C0;1956.
 Package logreq Info: Writing requests to 'algebra_2_recitations.run.xml'.
 \openout1 = `algebra_2_recitations.run.xml'.
 
@@ -2138,4 +2148,4 @@ Here is how much of TeX's memory you used:
  1348 hyphenation exceptions out of 8191
  115i,19n,118p,1293b,878s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on algebra_2_recitations.pdf (25 pages).
+Output written on algebra_2_recitations.pdf (27 pages).
