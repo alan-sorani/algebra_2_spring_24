@@ -10,3 +10,4 @@
 \contentsline {section}{\numberline {2.4}מרחבים שמורים}{20}{section.2.4}%
 \contentsline {chapter}{\numberline {3}צורת ז'ורדן}{24}{chapter.3}%
 \contentsline {section}{\numberline {3.1}אופרטורים נילפוטנטיים}{24}{section.3.1}%
+\contentsline {subsection}{\numberline {3.1.1}מציאת בסיס ז'ורדן עבור אופרטורים נילפוטנטיים}{25}{subsection.3.1.1}%

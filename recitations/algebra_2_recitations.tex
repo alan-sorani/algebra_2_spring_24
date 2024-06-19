@@ -2803,5 +2803,219 @@ $\id_V + T = \id_V - \prs{-T}$
 \[\text{.} \id_V - T + T^2 - T^3 + \ldots + \prs{-1}^{k-1} T^{k-1}\]
 \end{solution}
 
+\subsection{מציאת בסיס ז'ורדן עבור אופרטורים נילפוטנטיים}
+
+\begin{definition}[אופרטור הזזה]
+יהי
+$V$
+מרחב וקטורי עם בסיס
+$B = \prs{v_1, \ldots, v_n}$
+ויהי
+$T \in \End_{\mbb{F}}\prs{V}$.
+נגיד כי
+$T$
+\emph{אופרטור הזזה ביחס לבסיס
+$B$}
+אם מתקיים
+\[\text{,} T\prs{v_i} = \fcases{v_{i-1} & i > 1 \\ 0 & i = 1}\]
+או באופן שקול אם
+$\brs{T}_B = J_n\prs{0}$.
+\end{definition}
+
+כדי למצוא בסיס ז'ורדן עבור אופרטור הזזה, נרצה למצוא וקטור
+$v \in V$
+עבורו
+$T^n\prs{v} = 0$
+אבל
+$T^{n-1}\prs{v} \neq 0$,
+ואז
+$\prs{T^{n-1}\prs{v}, T^{n-2}\prs{v}, \ldots, T\prs{v}, v}$
+יהיה בסיס ז'ורדן.
+
+\begin{exercisechap}
+תהי
+\begin{align*}
+A = \pmat{0 & 1 & 0 \\ 1 & 1 & 1 \\ -1 & -2 & -1} \in \Mat_3\prs{\mbb{C}}
+\end{align*}
+ויהי
+$T = T_A \in \End_{\mbb{C}}\prs{\mbb{C}^3}$.
+מיצאו בסיס ז'ורדן עבור
+$T$.
+\end{exercisechap}
+
+\begin{solution}
+מתקיים
+\begin{align*}
+A^2 &= \pmat{1 & 1 & 1 \\ 0 & 0 & 0 \\ -1 & -1 & -1} \\
+A^3 &= 0
+\end{align*}
+ולכן
+$A$
+נילפוטנטית מסדר
+$3 = \dim_{\mbb{C}}\prs{\mbb{C}^3}$.
+מתקיים
+$\ker\prs{T^2} = \Span\prs{e_1 - e_2, e_1 - e_3}$
+כי שני הוקטורים נמצאים בגרעין וכי
+$\dim\ker\prs{T^2} = 3 - \rank\prs{A^2} = 2$.
+ניקח
+$v \in \ker\prs{T^3} \setminus \ker\prs{T^2}$
+ואז יתקיים
+$T^3\prs{v} = 0$
+וגם
+$T^2\prs{v} \neq 0$.
+למשל, ניקח
+$v = e_1$,
+ואת הבסיס
+\[\text{.} \prs{T^2\prs{e_1}, T\prs{e_1}, e_1} = \prs{e_1 - e_3, e_2 - e_3, e_1}\]
+\end{solution}
+
+כעת, יתכנו אופרטורים נילפוטנטיים שאינם אופרטורי הזזה. באופן כללי, עבור אופרטורים כאלה, נשלים בסיס של
+$\ker\prs{T^{k-1}}$
+לבסיס של
+$\ker\prs{T^k}$
+ונסתכל על
+\emph{השרשראות}
+$\prs{T^{k-1}\prs{v}, \ldots, T\prs{v}, v}$
+שמתקבלות מהוקטורים המתאימים. אם שרשור השרשראות מאורך ששווה למימד של
+$V$,
+נקבל בסיס ז'ורדן
+\[\text{.}\prs{T^{k-1}\prs{v_1}, \ldots, T\prs{v_1}, v_1, T^{k-1}\prs{v_2}, \ldots, T\prs{v_2}, v_2, \ldots, T^{k-1}\prs{v_k}, \ldots, T\prs{v_k}, v_k}\]
+אבל, יתכן שזה לא המצב. במקרה זה, נחפש שרשראות קצרות יותר, שיתחילו בוקטורים באיזשהו
+$v \in \ker\prs{T^i} \setminus \ker\prs{T^{i-1}}$
+ויהיו מהצורה
+\[\text{.} \prs{T^{i-1}\prs{v}, \ldots, T\prs{v}, v}\]
+נראה בהמשך נוסחא לחישוב מספר בלוקי ז'ורדן מכל גודל, וכיוון שכל שרשרת כזאת תתאים לבלוק ז'ורדן, נוכל לדעת בדיוק אילו ערכי
+$i$
+לבדוק.
+
+\begin{exercisechap}
+יהי
+$V = \mbb{C}^7$,
+יהי
+$T \in \End_{\mbb{C}}\prs{V}$
+אופרטור הזזה ביחס לבסיס הסטנדרטי, ויהי
+$S = T^3$.
+מיצאו בסיס ז'ורדן עבור
+$S$.
+\end{exercisechap}
+
+\begin{solution}
+נשים לב ראשית שמתקיים
+\begin{align*}
+\text{.} S\prs{e_i} = \fcases{e_{i-3} & i > 3 \\
+0 & i \leq 3}
+\end{align*}
+מתקיים אם כן
+$S^2\prs{e_7} = e_{7-2 \cdot 3} = e_1 \neq 0$
+וגם
+$S^3 = 0$
+ולכן
+$S$
+נילפוטנטי מאינדקס
+$3$.
+מתקיים
+$\ker\prs{S^2} = \Span\prs{e_1, \ldots, e_6}$.
+ניקח
+$e_7 \in \ker\prs{S^3} \setminus \ker\prs{S^2}$
+שיתאים לשרשרת ז'ורדן
+$\prs{S^2\prs{e_7}, S\prs{e_7}, e_7} = \prs{e_1, e_4, e_7}$.
+אורך השרשרת הוא
+$3$
+ואילו
+$\dim_{\mbb{C}}\prs{\mbb{C}^7} = 7$,
+ולכן יש למצוא עוד שרשראות ז'ורדן.
+
+מתקיים
+$\dim \ker\prs{S^2} - \dim \ker\prs{S} = 6-3 = 3$,
+ואילו השרשרת שמצאנו ``תורמת'' וקטור יחיד ל־%
+$\ker\prs{S^2} \setminus \ker\prs{S}$,
+לכן נחפש עוד שני וקטורים כאן, שיפתחו שרשראות נוספות.
+מתקיים
+$e_5, e_6 \in \ker\prs{S^2} \setminus \ker\prs{S}$
+ושני וקטורים אלו יחד בלתי תלויים בשרשרת
+$\prs{e_1, e_4, e_7}$
+שמצאנו. נשרשר את השרשרת שמצאנו עם השרשראות
+$\prs{S\prs{e_5}, e_5}, \prs{S\prs{e_6},e_6}$
+ונקבל בסיס ז'ורדן
+\[B = \prs{e_1, e_4, e_7, e_2, e_5, e_3, e_6}\]
+שעבורו
+\[\text{.} \brs{T}_B = \pmat{J_3\prs{0} & & \\ & J_2\prs{0} & \\ & & J_2\prs{0}}\]
+נשים לב שהבלוק מגודל
+$3$
+מופיע ראשון בדיוק כי השרשרת מאורך
+$3$
+היא זאת שכתבנו ראשונה. אם היינו משנות את סדר השרשראות, היה משתנה סדר הבלוקים.
+\end{solution}
+
+\begin{exercisechap}
+\begin{enumerate}
+\item הראו כי
+$J_n\prs{\lambda}^t \cong J_n\prs{\lambda}$,
+מעל
+$\mbb{C}$.
+\item הסיקו כי
+$A \cong A^t$
+לכל
+$A \in \Mat_n\prs{\mbb{C}}$.
+\end{enumerate}
+\end{exercisechap}
+
+\begin{solution}
+\begin{enumerate}
+\item
+נכתוב
+$T = T_{J_n\prs{\lambda}^t}$
+ונרצה למצוא בסיס
+$B$
+עבורו
+$\brs{T}_B = J_n\prs{\lambda}$.
+נניח תחילה כי
+$\lambda = 0$
+כשבמקרה זה מתקיים
+\[\text{.} T\prs{e_i} = \fcases{e_{i+1} & i < n \\ 0 & i = n}\]
+אז הבסיס
+$B = \prs{e_n, e_{n-1}, \ldots, e_2, e_1}$
+מקיים את הנדרש.
+
+באופן כללי,
+\[T = T_{J_n\prs{0}^t + \lambda I} = T_{J_n\prs{0}^t} + \lambda \id_{\mbb{C}^n}\]
+ולכן
+\[\brs{T}_B = \brs{T_{J_n\prs{0}^t}}_B + \lambda \brs{\id_{\mbb{C}^n}}_B = J_n\prs{0} + \lambda I = J_n\prs{\lambda}\]
+ולכן הבסיס
+$B$
+עדיין עובד.
+
+\item
+ממשפט ז'ורדן, קיימת מטריצה הפיכה
+$P \in \Mat_n\prs{\mbb{C}}$
+עבורה
+$P^{-1} A P = \diag{J_{m_1}\prs{\lambda_1}, \ldots, J_{m_k}\prs{\lambda_k}}$
+מטריצה אלכסונית בלוקים עם בלוקים
+$J_{m_i}\prs{\lambda_i}$.
+אז
+\[\text{.} P^t A^t \prs{P^t}^{-1} = \diag\prs{J_{m_1}\prs{\lambda_1}^t, \ldots, J_{m_k}\prs{\lambda_k}^t}\]
+כעת,
+$J_{m_1}\prs{\lambda_1}^t \cong J_{m_1}\prs{\lambda_1}$ 
+ולכן קיימות מטריצות
+$Q_i \in \Mat_n\prs{\mbb{C}}$
+הפיכות עבורן
+$Q_i^{-1} J_{m_i}\prs{\lambda_i}^t Q_i = J_{m_i}\prs{\lambda_i}$.
+ולכן אם נסמן
+$Q \coloneqq \diag\prs{Q_1, \ldots, Q_n}$
+נקבל כי
+\begin{align*}
+Q^{-1} \prs{P^t A^t \prs{P^t}^{-1}} Q &=
+Q^{-1} \diag\prs{J_{m_1}\prs{\lambda_1}^t, \ldots, J_{m_k}\prs{\lambda_k}^t} Q
+\\&= \diag\prs{Q_1^{-1} J_{m_1}\prs{\lambda_1}^t Q_1, \ldots, Q_k^t J_{m_k}\prs{\lambda_k}^t Q_k}
+\\&= \diag\prs{J_{m_1}\prs{\lambda_1}, \ldots, J_{m_k}\prs{\lambda_k}}
+\\&= P^{-1} A P
+\end{align*}
+כלומר
+\[A = \prs{P Q^{-1} P^t} A^t \prs{\prs{P^t}^{-1} Q P^{-1}} = \prs{P Q^{-1} P^t} A^t \prs{P Q^{-1} P^t}^{-1}\]
+ולכן
+$A \cong A^t$.
+\end{enumerate}
+\end{solution}
+
 \printbibliography
 \end{document}

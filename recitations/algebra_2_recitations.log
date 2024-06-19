@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2022/dev/Debian) (preloaded format=xelatex 2024.3.16)  9 JUN 2024 15:33
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2022/dev/Debian) (preloaded format=xelatex 2024.3.16)  19 JUN 2024 23:59
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2063,9 +2063,9 @@ t line 2403.
 פרק 3.
 [24
 
-]
+] [25] [26]
 
-LaTeX Warning: Empty bibliography on input line 2806.
+LaTeX Warning: Empty bibliography on input line 3020.
 
 \tf@thm=\write8
 \openout8 = `algebra_2_recitations.thm'.
@@ -2120,7 +2120,7 @@ braces):
 >  {english/babelname}  =>  {american}
 >  {english/localnumeral}  =>  {polyglossia@C@localnumeral}
 >  {english/Localnumeral}  =>  {polyglossia@C@localnumeral}.
-[25] (./algebra_2_recitations.aux Setting \if@calendar@hebrew
+[27] (./algebra_2_recitations.aux Setting \if@calendar@hebrew
 Setting \if@calendar@hebrew
 LaTeX Info: Redefining \rmfamily on input line 21.
 LaTeX Info: Redefining \sffamily on input line 21.
@@ -2133,19 +2133,19 @@ Package rerunfilecheck Warning: File `algebra_2_recitations.out' has changed.
 (rerunfilecheck)                or use package `bookmark'.
 
 Package rerunfilecheck Info: Checksums for `algebra_2_recitations.out':
-(rerunfilecheck)             Before: 6B3777EE7302344C81C932D81F155E73;1598
-(rerunfilecheck)             After:  1904D4B899C6EA0FEF55C5A2846295C0;1956.
+(rerunfilecheck)             Before: 1904D4B899C6EA0FEF55C5A2846295C0;1956
+(rerunfilecheck)             After:  63BC5574293A69DFEDAA6F6A421E3AA8;2367.
 Package logreq Info: Writing requests to 'algebra_2_recitations.run.xml'.
 \openout1 = `algebra_2_recitations.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 43129 strings out of 476191
- 916457 string characters out of 5812072
- 1856641 words of memory out of 5000000
- 63092 multiletter control sequences out of 15000+600000
+ 43130 strings out of 476191
+ 916468 string characters out of 5812072
+ 1857027 words of memory out of 5000000
+ 63093 multiletter control sequences out of 15000+600000
  477256 words of font info for 99 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  115i,19n,118p,1293b,878s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on algebra_2_recitations.pdf (27 pages).
+Output written on algebra_2_recitations.pdf (29 pages).
