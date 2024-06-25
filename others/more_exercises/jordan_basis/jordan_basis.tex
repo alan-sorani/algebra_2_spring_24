@@ -1,0 +1,93 @@
+\documentclass[a4paper,10pt,twoside,openany]{article}
+
+\usepackage[lang=hebrew]{maths}
+\usepackage{hebrewdoc}
+\usepackage{stylish}
+\usepackage{lipsum}
+\let\bs\blacksquare
+
+\setlength{\parindent}{0pt}
+
+%%%%%%%%%%%%
+% Styling %
+%%%%%%%%%%%%
+
+\usepackage{enumitem}
+
+%%%%%%%%%%%%%
+% Counters  %
+%%%%%%%%%%%%%
+
+\setcounter{section}{0}     
+            
+%BIBLIOGRAPHY
+\usepackage[
+backend=biber,
+style=alphabetic,
+]{biblatex}
+\addbibresource{bibliography.bib} %Imports bibliography file
+
+%%%%%%%%%%
+% Title  %
+%%%%%%%%%%
+\title{
+אלגברה ב' - תרגילים על חישוב בסיס ז'ורדן \\
+\vspace{1cm}
+\large{לא להגשה}
+}
+\date{}
+
+\begin{document}
+\maketitle
+
+\section*{תרגילים}
+
+\begin{exercise}[בסיס ז'ורדן למטריצות נילפוטנטיות]
+עבור כל אחת מהמטריצות הנילפוטנטיות
+$A$
+הבאות, מיצאו מטריצה
+$P$
+הפיכה עבורה
+$P^{-1} A P$
+מטריצת ז'ורדן, ומיצאו את צורת ז'ורדן של
+$A$.
+
+\include{nil_ex.tex}
+\end{exercise}
+
+\begin{exercise}[בסיס ז'ורדן למטריצות כלליות]
+עבור כל אחת מהמטריצות
+$A$
+הבאות, מיצאו מטריצה
+$P$
+הפיכה עבורה
+$P^{-1} A P$
+מטריצת ז'ורדן, ומיצאו את צורת ז'ורדן של
+$A$.
+
+נתון כי כל הערכים העצמיים של
+$A$
+שלמים.
+
+\include{general_ex.tex}
+\end{exercise}
+
+\section*{פתרונות}
+
+\begin{solution}
+בפתרונות הבאים מופיעות דוגמאות למטריצות
+$P$
+העונות על השאלה. יכולות להיות מטריצות אחרות מאלו.
+
+\include{nil_sol.tex}
+\end{solution}
+
+\begin{solution}
+בפתרונות הבאים מופיעות דוגמאות למטריצות
+$P$
+העונות על השאלה. יכולות להיות מטריצות אחרות מאלו.
+
+\include{general_sol.tex}
+\end{solution}
+
+\end{document}

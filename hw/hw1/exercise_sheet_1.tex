@@ -1,0 +1,144 @@
+\documentclass[a4paper,10pt,twoside,openany]{article}
+
+\usepackage[lang=hebrew]{maths}
+\usepackage{hebrewdoc}
+\usepackage{stylish}
+\usepackage{lipsum}
+\let\bs\blacksquare
+
+\setlength{\parindent}{0pt}
+
+%%%%%%%%%%%%
+% Styling %
+%%%%%%%%%%%%
+
+\usepackage{enumitem}
+
+%%%%%%%%%%%%%
+% Counters  %
+%%%%%%%%%%%%%
+
+\setcounter{section}{1}     
+            
+%BIBLIOGRAPHY
+\usepackage[
+backend=biber,
+style=alphabetic,
+]{biblatex}
+\addbibresource{bibliography.bib} %Imports bibliography file
+
+%%%%%%%%%%
+% Title  %
+%%%%%%%%%%
+\title{
+אלגברה ב' - גיליון תרגילי בית 1 \\
+מטריצות מייצגות ודטרמיננטה
+\\
+\vspace{1cm}
+\large{תאריך הגשה: 24.06.2024}
+}
+\date{}
+
+\begin{document}
+\maketitle
+
+\begin{exercise}
+יהי
+$V$
+מרחב וקטורי מעל
+$\mbb{R}$
+ותהי
+$T \colon V \to V$
+לינארית המקיימת
+$T^2 = -5 \id_V$.
+\begin{enumerate}
+\item הוכיחו כי לכל
+$v \in V \setminus \set{0}$
+הקבוצה
+$\set{v, Tv}$
+בלתי־תלויה לינארית.
+\item נתון גם כי
+$\dim V = 2$.
+הוכיחו כי קיים בסיס בו
+$T$
+מיוצגת על ידי
+$\pmat{0 & 1 \\ -5 & 0}$.
+\end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+יהי
+$B = \prs{v_i}_{i \in [n]}$
+בסיס למרחב וקטורי
+$V$.
+נתונה
+$T \colon V \to V$
+הפיכה המקיימת
+\[\text{.} T\prs{v_1 + 2 v_2} = \sum_{i \in [n]} v_i\]
+מצאו את סכום איברי
+$\brs{T^{-1}}_B$.
+\end{exercise}
+
+\begin{exercise}
+חשבו את הדטרמיננטה של המטריצות המרוכבות הבאות.
+\begin{align*}
+A &= \pmat{1 & 2 & 3 \\ 4 & 5 & 6 \\ 7 & 8 & 9} \\
+B &= \pmat{0 & 1 & 0 & 0 & 0 & 0 & 0
+\\ 1 & 0 & 0 & 0 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0 & 0 & 1 & 0 \\
+0 & 0 & 1 & 0 & 0 & 0 & 0 \\
+0 & 0 & 0 & 1 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0 & 0 & 0 & 1 \\
+0 & 0 & 0 & 0 & 1 & 0 & 0}\\
+C &= \pmat{4 & 0 & 7 & 0 & 5 & 2 \\ 4 & 0 & -5 & 0 & 4 & -3 \\ 1 & 0 & 1 & 0 & 0 & 0 \\ -2 & 3 & -3 & 5 & 15 & -9 \\ -6 & 0 & 5 & 2 & 4 & -5 \\ 0 & 0 & 5 & 0 & 0 & 0}
+\end{align*}
+\end{exercise}
+
+\newpage
+
+\begin{exercise}
+יהי
+$p = \sum_{i = 0}^n a_i x^i \in \mbb{F}\brs{x}$
+פולינום
+\emph{מתוקן}
+(כלומר,
+$a_n = 1$).
+ותהי
+\[\text{.} C\prs{p} \ceq \pmat{0 & 0 & \cdots & 0 & -a_0 \\ 1 & 0 & \cdots & 0 & -a_1 \\ 0 & 1 & \cdots & 0 & -a_2 \\ \vdots & \vdots & \ddots & \vdots & \vdots \\ 0 & 0 & \dots & 1 & -a_{n-1}} \in \Mat_n\prs{\mbb{F}}\]
+הראו כי
+\[\text{.} \det\prs{xI - C\prs{p}} = p\prs{x}\]
+\end{exercise}
+
+\begin{exercise}
+תהי
+$T \colon V \to V$
+העתקה לינארית ויהיו
+$B$
+בסיס של
+$V$.
+ראינו בתרגול שאפשר להגדיר
+\begin{align*}
+\det T &\ceq \det\prs{\brs{T}_B}
+\end{align*}
+ושההגדרה אינה תלויה בבחירת הבסיס.
+
+יהי
+$V = \Mat_2\prs{\mbb{C}}$
+ותהי
+\begin{align*}
+T \colon V &\to V \\
+\text{.} \hphantom{lala} A &\mapsto \pmat{0 & 1 \\ 1 & 0} A \pmat{0 & 1 \\ 1 & 0}
+\end{align*}
+חשבו את
+$\det\prs{T}$.
+\end{exercise}
+
+\begin{exercise}
+תהי
+$A \in \Mat_n\prs{\mbb{R}}$
+בלי ערכים עצמיים ממשיים.
+הראו כי
+$\det\prs{A} > 0$.
+\end{exercise}
+
+\end{document}
