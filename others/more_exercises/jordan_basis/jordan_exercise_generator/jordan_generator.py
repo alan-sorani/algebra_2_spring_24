@@ -6,13 +6,10 @@ import numpy as np
 from numpy.random import randint
 from numpy import sort
 
-MAX_SIZE = 8
 MAX_NUM_EIGENVALS = 4
 MAX_EIGENVALUE = 20
 MAX_INVERTIBLE_COEFFICIENT = 3
-
-NILPOTENT_EXERCISES = 200
-GENERAL_EXERCISES = 200
+MAX_COEFFICIENT = 200
 
 def jordan_form(block_data):
     """
@@ -27,7 +24,7 @@ def jordan_form(block_data):
     A Jordan matrix with the given eigenvalues and block sizes, where the eigenvalues/block sizes that appear first, appear further to the top-left of the matrix.
     """
     blocks = [Matrix.jordan_block(*data) for data in block_data]
-    return block_diag(*blocks)
+    return Matrix(block_diag(*blocks))
 
 def random_with_sum(sum : int, length : int = 0):
     """
@@ -42,7 +39,7 @@ def random_with_sum(sum : int, length : int = 0):
             temp = randint(1,remaining_sum+1)
             res += [temp]
             remaining_sum -= temp
-        return sort(res)[::-1]
+        return list(sort(res)[::-1])
 
     remaining_elements = length
     while(remaining_elements > 1):
@@ -51,16 +48,19 @@ def random_with_sum(sum : int, length : int = 0):
         remaining_elements -= 1
         remaining_sum -= temp
     res += [remaining_sum]
-    return sort(res)[::-1]
+    return list(sort(res)[::-1])
 
 def random_jordan(n : int, num_eigenvals : int, max_eigenval : int, invertible : bool = False):
     """
-    Returns a random jordan matrix of a given size with integer eigenvalues with a specified maximal absolute value and a given number of eigenvalues.
+    Returns a random non-scalar jordan matrix of a given size with integer eigenvalues with a specified maximal absolute value and a given number of eigenvalues.
     """
     assert(n >= num_eigenvals)
     # the dimensions of the generalised eigenspaces
     gen_eigenspace_dims = random_with_sum(sum = n, length = num_eigenvals)
     block_sizes = [random_with_sum(dim) for dim in gen_eigenspace_dims]
+    # if there's a single eigenvalue, make sure the matrix isn't scalar
+    while((num_eigenvals == 1) and (block_sizes == [[1 for i in range(n)]])):
+        block_sizes = [random_with_sum(dim) for dim in gen_eigenspace_dims]
     eigenvals = sort(randint(-max_eigenval, max_eigenval+1, num_eigenvals))[::-1]
     while((len(set(eigenvals)) != num_eigenvals) or (invertible and 0 in eigenvals)):
         eigenvals = sort(randint(-max_eigenval, max_eigenval+1, num_eigenvals))[::-1]
@@ -114,23 +114,31 @@ def rand_matrix(n : int, num_eigenvals : int, max_eigenval : int, max_coefficien
         A,J have num_eigenvals different eigenvalues each of which is at most max_eigenval in absolute value.
         The value of max_coefficients is the max value for the coefficients of a matrix M such that P is given from M as the unimodular matrix in its collumn-style Hermite normal form
     """
-    J = random_jordan(n, num_eigenvals, max_eigenval)
-    P = rand_unimodular(n, max_coefficient)
-    A = P @ J[0] @ P.inv()
+    A = float('inf')
+    while((np.abs(np.array(A)) > MAX_COEFFICIENT).any()):
+        J = random_jordan(n, num_eigenvals, max_eigenval)
+        P = rand_unimodular(n, max_coefficient)
+        A = P @ J[0] @ P.inv()
+
     return (A,J,P)
 
-def create_exercises(num_exercises : int, max_eigenval : int):
+def create_exercises(sizes : dict[int, int], max_eigenval : int):
     """
     Create a list of exercises of the form (A,J,P) where A is a matrix, J is its Jordan form, and P is a matrix such that P^{-1} * A * P = J.
     """
     res = []
-    for i in range(num_exercises):
-        size = randint(2, MAX_SIZE)
-        num_eigenvals = randint(1, np.min([size,MAX_NUM_EIGENVALS, 2*max_eigenval+1])+1)
-        A,J,P = rand_matrix(size, num_eigenvals, max_eigenval, MAX_INVERTIBLE_COEFFICIENT)
-        while(A == J[0]):
+    prev_matrices = []
+    for size, num_exercises in sizes.items():
+        i = 1
+        while(i <= num_exercises):
+            num_eigenvals = randint(1, np.min([size,MAX_NUM_EIGENVALS, 2*max_eigenval+1])+1)
             A,J,P = rand_matrix(size, num_eigenvals, max_eigenval, MAX_INVERTIBLE_COEFFICIENT)
-        res += [(A,J[1],P)]
+            while(A == J[0]):
+                A,J,P = rand_matrix(size, num_eigenvals, max_eigenval, MAX_INVERTIBLE_COEFFICIENT)
+            if(A not in prev_matrices):
+                res += [(A,J[1],P)]
+                prev_matrices += [A]
+                i += 1
     return res
 
 def matrix_to_latex(mat : Matrix):
@@ -168,8 +176,10 @@ def exercises_to_latex(exercise_list):
     return exercises, solutions
         
 if(__name__ == "__main__"):
-    nil_ex_list = create_exercises(NILPOTENT_EXERCISES,0)
-    general_ex_list = create_exercises(GENERAL_EXERCISES, MAX_EIGENVALUE)
+    nil_sizes = {2 : 20, 3: 100, 4 : 100, 5 : 100, 6 : 50, 7 : 50}
+    general_sizes = nil_sizes
+    nil_ex_list = create_exercises(nil_sizes, 0)
+    general_ex_list = create_exercises(general_sizes, MAX_EIGENVALUE)
     nil_ex, nil_sol = exercises_to_latex(nil_ex_list)
     general_ex, general_sol = exercises_to_latex(general_ex_list)
     with open("nil_ex.tex", "w") as file:
