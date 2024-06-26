@@ -1,0 +1,203 @@
+\documentclass[a4paper,10pt,twoside,openany]{article}
+
+\usepackage[lang=hebrew]{maths}
+\usepackage{hebrewdoc}
+\usepackage{stylish}
+\usepackage{lipsum}
+\let\bs\blacksquare
+
+\setlength{\parindent}{0pt}
+
+%%%%%%%%%%%%
+% Styling %
+%%%%%%%%%%%%
+
+\usepackage{enumitem}
+
+%%%%%%%%%%%%%
+% Counters  %
+%%%%%%%%%%%%%
+
+\setcounter{section}{1}     
+            
+%BIBLIOGRAPHY
+\usepackage[
+backend=biber,
+style=alphabetic,
+]{biblatex}
+\addbibresource{bibliography.bib} %Imports bibliography file
+
+%%%%%%%%%%
+% Title  %
+%%%%%%%%%%
+\title{
+אלגברה ב' - גיליון תרגילי בית 2 \\
+מטריצות מייצגות ודטרמיננטה
+\\
+\vspace{1cm}
+\large{תאריך הגשה: 24.06.2024}
+}
+\date{}
+
+\begin{document}
+\maketitle
+
+\begin{exercise}
+יהי
+$V$
+מרחב וקטורי סוף־מימדי, יהי
+$T \in \End_{\mbb{F}}\prs{V}$
+ויהיו
+$V_1, \ldots, V_k \leq V$
+כולם
+$T$%
+־שמורים וכך שמתקיים
+$V = \bigoplus_{i \in [k]} V_i$.
+
+\begin{enumerate}
+\item 
+הראו כי
+\begin{align*}
+\ker\prs{T} &= \bigoplus_{i \in [k]} \ker\prs{\left. T \right|_{V_i}} \\
+\text{.} \im\prs{T} &= \bigoplus_{i \in [k]} \im\prs{\left. T \right|_{V_i}}
+\end{align*}
+
+\item
+הראו כי
+\begin{align*}
+\ker\prs{T - \lambda \id_V} &= \bigoplus_{i \in [k]} \ker\prs{\left. T \right|_{V_i} - \lambda \id_{V_i}}
+\end{align*}
+לכל
+$\lambda \in \mbb{F}$,
+והסיקו שהערכים העצמיים של
+$T$
+הם אלו של כל ה־%
+$\left. T \right|_{V_i}$
+והראו כי
+\begin{align*}
+r_{T,a}\prs{\lambda} &= \sum_{i \in \brs{k}} r_{\left. T \right|_{V_i}, a}\prs{\lambda} \\
+r_{T,g}\prs{\lambda} &= \sum_{i \in \brs{k}} r_{\left. T \right|_{V_i}, g}\prs{\lambda}
+\end{align*}
+לכל
+$\lambda \in \mbb{F}$
+וכאשר
+$r_{S,a}\prs{\lambda}, r_{S,g}\prs{\lambda}$
+הריבויים האלגברי והגיאומטרי של
+$\lambda$
+כערך עצמי של
+$S \in \End_{\mbb{F}}\prs{V}$.
+\end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+יהי
+$T = T_{J_n\prs{0}} \in \Mat_n\prs{\mbb{C}}$
+אופרטור הכפל במטריצה
+$J_n\prs{0}$
+משמאל.
+מיצאו בסיס ז'ורדן עבור
+$T^2$.
+\end{exercise}
+
+\begin{exercise}
+תהי
+$A = \pmat{-1 & 1 & 0 \\ -2 & 2 & 1 \\ 1 & -1 & -1} \in \Mat_3\prs{\mbb{C}}$
+ויהי
+$T = T_A$
+אופרטור הכפל ב־%
+$A$
+משמאל.
+
+\begin{enumerate}
+\item הראו כי
+$T$
+נילפוטנטי מאינדקס
+$3$
+והסיקו כי הוא אופרטור הזזה.
+
+\item
+מיצאו בסיס
+$B$
+של
+$\mbb{C}^3$
+כך ש־%
+$T$
+אופרטור הזזה ביחס לבסיס
+$B$.
+\end{enumerate}
+\end{exercise}
+
+\pagebreak
+
+\begin{exercise}
+יהי
+$V$
+מרחב וקטורי סוף־מימדי, יהי
+$T \in \End_{\mbb{F}}\prs{V}$
+ויהי
+$B$
+בסיס של
+$V$.
+
+\begin{enumerate}
+\item נסמן
+$A = \brs{T}_B$
+ונזכיר כי
+\begin{align*}
+T_A \colon \mbb{F}^n &\to \mbb{F}^n \\
+v &\mapsto Av
+\end{align*}
+וכי
+\begin{align*}
+\rho_B \colon V &\to \mbb{F}^n \\
+\text{.} \hphantom{lalala} v &\mapsto \brs{v}_B
+\end{align*}
+הראו כי
+\[\text{.} T = \rho_B^{-1} \circ T_A \circ \rho_B\]
+
+\item
+הראו כי
+$W \leq V$
+הינו
+$T$%
+־שמור אם ורק אם
+$\rho_B\prs{W}$
+הינו
+$T_A$%
+־שמור.
+\end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+יהי
+$V$
+מרחב וקטורי סוף־מימדי, יהי
+$T \in \End_{\mbb{F}}\prs{V}$
+ויהי
+$B = \prs{v_1, \ldots, v_n}$
+בסיס של
+$V$.
+\begin{enumerate}
+\item נניח כי
+$\brs{T}_B = J_n\prs{\lambda}$.
+מיצאו את המרחבים ה־%
+$T$%
+־שמורים של
+$V$.
+
+\item
+יהי
+$V = \Mat_2\prs{\mbb{C}}$
+ויהי
+\begin{align*}
+T \colon V &\to V \\
+\text{.} \pmat{a & b \\ c & d} &\mapsto \pmat{d & a \\ b & 0}
+\end{align*}
+מיצאו את כל התת־מרחבים ה־%
+$T$%
+־שמורים של
+$V$.
+\end{enumerate}
+\end{exercise}
+
+\end{document}
