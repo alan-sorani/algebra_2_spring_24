@@ -66,7 +66,9 @@ def random_jordan(n : int, num_eigenvals : int, max_eigenval : int, invertible :
     while((len(set(eigenvals)) != num_eigenvals) or (invertible and 0 in eigenvals)):
         eigenvals = sort(randint(-max_eigenval, max_eigenval+1, num_eigenvals))[::-1]
     jordan_data = [(eigenval, blocks) for eigenval, blocks in zip(eigenvals, block_sizes)]
-    block_data = [(jordan_data[i][1][j],jordan_data[i][0]) for i in range(len(jordan_data)) for j in range(len(jordan_data[i][1]))]
+    block_data = [(
+        jordan_data[i][1][j],jordan_data[i][0]
+        ) for i in range(len(jordan_data)) for j in range(len(jordan_data[i][1]))]
     block_names = [f"J_{{{data[0]}}}({data[1]})" for data in block_data]
     matrix = jordan_form(block_data)
     compact_form = "diag" + chr(40)
