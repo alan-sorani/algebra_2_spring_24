@@ -5,9 +5,10 @@ from hsnf import column_style_hermite_normal_form as hnf
 import numpy as np
 from numpy.random import randint
 from numpy import sort
+import json
 
+#TODO move these values to json
 MAX_NUM_EIGENVALS = 4
-MAX_EIGENVALUE = 20
 MAX_INVERTIBLE_COEFFICIENT = 3
 MAX_COEFFICIENT = 200
 
@@ -157,6 +158,57 @@ def matrix_to_latex(mat : Matrix):
     res += chr(125)
     return res
 
+def generic_vector(dim : int, space: str = "euclidean"):
+    if(space == "euclidean"):
+        res = "\\pmat" + chr(123)
+        for i in range(dim):
+            res += f"v_{{{i+1}}} \\\\ "
+        res = res[:-3]
+        res += chr(125)
+        return res
+    if(space == "matrices"):
+        res = "\\pmat" + chr(123)
+        size = int(np.sqrt(dim))
+        for i in range(size):
+            for j in range(size):
+                res += f"a_{{{i+1},{j+1}}} & "
+            res = res[:-2]
+            res += "\\\\ "
+        res = res[:-3]
+        res += chr(125)
+        return res
+    if(space == "polynomials"):
+        res = f"\\sum_{{i=0}}^{{{dim-1}}} a_{{i}} x^{{i}}"
+        return res
+
+def image_vector(matrix : Matrix,
+                 space : str = "euclidean"
+                 ):
+    dim = matrix.shape[0]
+    
+    #TODO fill in vectors
+    if(space == "euclidean"):
+        res = ""
+    if(space == "matrices"):
+        res = ""
+    if(space == "polynomials"):
+        res = ""
+
+
+def matrix_to_transformation(mat: Matrix,
+                             space: str = "euclidean"):
+    dim = mat.shape[0]
+    vector_space = {
+        "euclidean": f"\\mathbb{{R}}^{{{dim}}}",
+        "matrices": f"\\mathrm{{Mat}}_{{{int(np.sqrt(dim))} \
+\\times {int(np.sqrt(dim))}}}",
+        "polynomials": f"\\mathbb{{R}}_{{{dim - 1}}}[x]"
+    }[space]
+    res = f"T \\colon {vector_space} &\\rightarrow {vector_space} \\\\\n"
+    res += f"{generic_vector(dim, space)} &\\mapsto "
+    res += f"A" #TODO fill in image
+    return res
+
 def exercises_to_latex(exercise_list):
     exercises = "\\begin{enumerate}\n\n"
     solutions = exercises
@@ -174,23 +226,37 @@ def exercises_to_latex(exercise_list):
     exercises += "\\end{enumerate}\n"
     solutions += "\\end{enumerate}\n"
     return exercises, solutions
-        
+
+def get_parameters():
+    with open('config.json') as file:
+        params = json.load(file)
+    for d in {'nilpotent_exercises', 'general_exercises'}:
+        params[d] = dict(
+                [
+                (int(key), value) for key,value in params[
+                    d
+                    ].items()
+                ])
+    return params
+
 if(__name__ == "__main__"):
-    nil_sizes = {2 : 20, 3: 100, 4 : 100, 5 : 100, 6 : 50, 7 : 50}
-    general_sizes = nil_sizes
-    nil_ex_list = create_exercises(nil_sizes, 0)
-    general_ex_list = create_exercises(general_sizes, MAX_EIGENVALUE)
+    params = get_parameters()
+
+    nil_ex_list = create_exercises(
+            params["nilpotent_exercises"],
+            0
+            )
+    general_ex_list = create_exercises(
+            params["general_exercises"],
+            params["max_eigenvalue"]
+            )
     nil_ex, nil_sol = exercises_to_latex(nil_ex_list)
     general_ex, general_sol = exercises_to_latex(general_ex_list)
-    with open("nil_ex.tex", "w") as file:
+    with open(f"{params['filename']}_nil_ex.tex", "w") as file:
         file.write(nil_ex)
-    with open("nil_sol.tex", "w") as file:
+    with open(f"{params['filename']}_nil_sol.tex", "w") as file:
         file.write(nil_sol)
-    with open("general_ex.tex", "w") as file:
+    with open(f"{params['filename']}_general_ex.tex", "w") as file:
         file.write(general_ex)
-    with open("general_sol.tex", "w") as file:
+    with open(f"{params['filename']}_general_sol.tex", "w") as file:
         file.write(general_sol)
-        
-
-
-
