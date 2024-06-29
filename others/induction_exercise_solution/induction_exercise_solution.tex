@@ -1,0 +1,166 @@
+\documentclass[a4paper,10pt,twoside,openany]{article}
+
+\usepackage[lang=hebrew]{maths}
+\usepackage{hebrewdoc}
+\usepackage{stylish}
+\usepackage{lipsum}
+\let\bs\blacksquare
+
+\setlength{\parindent}{0pt}
+
+%%%%%%%%%%%%
+% Styling %
+%%%%%%%%%%%%
+
+\usepackage{enumitem}
+
+%%%%%%%%%%%%%
+% Counters  %
+%%%%%%%%%%%%%
+
+\setcounter{section}{1}     
+            
+%BIBLIOGRAPHY
+\usepackage[
+backend=biber,
+style=alphabetic,
+]{biblatex}
+\addbibresource{bibliography.bib} %Imports bibliography file
+
+%%%%%%%%%%
+% Title  %
+%%%%%%%%%%
+\title{
+אלגברה ב' - פתרון תרגיל מגיליון 1, באינדוקציה
+}
+\date{}
+
+\begin{document}
+\maketitle
+
+\setcounter{exercise}{3}
+
+\begin{exercise}
+יהי
+$p = \sum_{i = 0}^n a_i x^i \in \mbb{F}\brs{x}$
+פולינום
+\emph{מתוקן}
+(כלומר,
+$a_n = 1$).
+ותהי
+\[\text{.} C\prs{p} \ceq \pmat{0 & 0 & \cdots & 0 & -a_0 \\ 1 & 0 & \cdots & 0 & -a_1 \\ 0 & 1 & \cdots & 0 & -a_2 \\ \vdots & \vdots & \ddots & \vdots & \vdots \\ 0 & 0 & \dots & 1 & -a_{n-1}} \in \Mat_n\prs{\mbb{F}}\]
+הראו כי
+\[\text{.} \det\prs{xI - C\prs{p}} = p\prs{x}\]
+\end{exercise}
+
+\begin{solution}
+עבור כל
+$f \in \mbb{F}\brs{x}$
+מדרגה כלשהי
+$m \in \mbb{N}$
+נסמן
+$A\prs{f} \coloneqq xI_m - C\prs{f}$.
+
+נוכיח באינדוקציה על
+$n$
+כי
+$\det\prs{A\prs{f}} = f\prs{x}$
+לכל פולינום
+$f \in \mbb{F}\brs{x}$
+מדרגה
+$n$.
+
+\begin{description}
+\item[בסיס:]
+נניח כי
+$n = 1$
+ונכתוב
+$f\prs{x} = x + \alpha_0$.
+אז
+\[\text{.} C\prs{f} = \pmat{-\alpha_0}\]
+נקבל כי
+\[\text{.} \det\prs{x I - C\prs{f}} = \det\prs{x - \prs{-\alpha_0}} = x + \alpha_0 = f\prs{x}\]
+
+\item[צעד:]
+יהי
+$k \in \mbb{N}_+$
+ונניח כי הטענה נכונה כאשר
+$n < k$.
+נראה כי הטענה נכונה כאשר
+$n = k$.
+
+יהי
+$f = \sum_{i=0}^n \alpha_i x^i \in \mbb{F}\brs{x}$
+מדרגה
+$n=k$.
+חישוב של הדטרמיננטה
+$\det\prs{A\prs{f}}$
+לפי השורה הראשונה מראה כי
+\begin{align*}
+\text{.} \det\prs{A\prs{f}} = x \cdot \det \pmat{0 & 0 & \cdots & 0 & -\alpha_1 \\ 1 & 0 & \cdots & 0 & -\alpha_2 \\ 0 & 1 & \cdots & 0 & -\alpha_3 \\ \vdots & \vdots & \ddots & \vdots & \vdots \\ 0 & 0 & \dots & 1 & -\alpha_{n-1}} + \prs{-1}^{n-1} \cdot \alpha_0 \cdot \det\prs{I_{n-1}}
+\end{align*}
+נגדיר
+\[g\prs{x} = \sum_{i=0}^{n-1} \alpha_{i+1} x^i \in \mbb{F}\brs{x}\]
+ונקבל כי
+\[\text{.} \pmat{0 & 0 & \cdots & 0 & -\alpha_1 \\ 1 & 0 & \cdots & 0 & -\alpha_2 \\ 0 & 1 & \cdots & 0 & -\alpha_3 \\ \vdots & \vdots & \ddots & \vdots & \vdots \\ 0 & 0 & \dots & 1 & -\alpha_{n-1}} = A\prs{g}\]
+כיוון ש־
+$g$
+פולינום מדרגה קטנה מ־%
+$k$,
+נקבל מהנחת האינדוקציה כי
+$\det\prs{A\prs{g}} = g\prs{x}$.
+כיוון שגם
+$\det\prs{-I_{n-1}} = \prs{-1}^{n-1}$
+נקבל כי
+\begin{align*}
+x \cdot \det \pmat{0 & 0 & \cdots & 0 & -\alpha_1 \\ 1 & 0 & \cdots & 0 & -\alpha_2 \\ 0 & 1 & \cdots & 0 & -\alpha_3 \\ \vdots & \vdots & \ddots & \vdots & \vdots \\ 0 & 0 & \dots & 1 & -\alpha_{n-1}} + \prs{-1}^{n-1} \cdot \alpha_0 \cdot \det\prs{I_{n-1}} &= x \cdot g\prs{x} + \prs{-1}^{n-1} \cdot \alpha_0 \cdot \prs{-1}^{n-1}
+\\&= x \cdot g\prs{x} + \prs{-1}^{2\prs{n-1}} \cdot \alpha_0
+\\ \text{.} \hphantom{x \cdot \det \pmat{0 & 0 & \cdots & 0 & -\alpha_1 \\ 1 & 0 & \cdots & 0 & -\alpha_2 \\ 0 & 1 & \cdots & 0 & -\alpha_3 \\ \vdots & \vdots & \ddots & \vdots & \vdots \\ 0 & 0 & \dots & 1 & -\alpha_{n-1}} + \prs{-1}^{n-1} \cdot \alpha_0 \cdot \det\prs{I_{n-1}}} &= x \cdot g\prs{x} + \alpha_0
+\end{align*}
+לכן
+\[\text{.} \det\prs{A\prs{f}} = x \cdot g\prs{x} + \alpha_0\]
+מתקיים
+\begin{align*}
+x \cdot g\prs{x} &= x \sum_{i=0}^{n-1} \alpha_{i+1} x^i
+\\&= \sum_{i=0}^{n-1} \alpha_{i+1} x^{i+1}
+\\&= \sum_{j=1}^n \alpha_j x^j
+\\&= \sum_{i=1}^n \alpha_i x^i
+\end{align*}
+ולכן
+\begin{align*}
+\text{.} x \cdot g\prs{x} + \alpha_0 = \prs{\sum_{i=1}^n \alpha_i x^i} + \alpha_0 x^0 = f\prs{x}
+\end{align*}
+קיבלנו כי
+$A\prs{f\prs{x}} = f\prs{x}$.
+\end{description}
+
+הראינו כי
+$\det\prs{A\prs{f}} = f\prs{x}$
+לכל
+$f \in \mbb{F}\brs{x}$
+מדרגה
+$0$,
+וכי לכל
+$k \in \mbb{N}$,
+אם
+$\det\prs{A\prs{f}} = f\prs{x}$
+לכל
+$f \in \mbb{F}\brs{x}$
+מדרגה קטנה מ־%
+$k$
+אז גם
+$\det\prs{A\prs{f}} = f\prs{x}$
+לכל
+$f \in \mbb{F}\brs{x}$
+מדרגה
+$k$.
+לכן,
+$\det\prs{A\prs{f}} = f\prs{x}$
+לכל
+$f \in \mbb{F}\brs{x}$,
+ובפרט
+$\det\prs{A\prs{p}} = p\prs{x}$,
+כנדרש.
+\end{solution}
+
+\end{document}
