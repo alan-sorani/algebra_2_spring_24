@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2022/dev/Debian) (preloaded format=xelatex 2024.3.16)  25 JUN 2024 11:39
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2022/dev/Debian) (preloaded format=xelatex 2024.3.16)  1 JUL 2024 08:56
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2064,8 +2064,15 @@ t line 2403.
 [24
 
 ] [25] [26]
+Overfull \hbox (4.7878pt too wide) in paragraph at lines 3058--3073
+[][]\TU/FrankRuehlCLM(0)/m/it/10 יהי $\OML/cmm/m/it/10 V$ \TU/FrankRuehlCLM(0)/
+m/it/10 מרחב וקטורי סוף־מימדי מעל שדה סגור אלגברית, יהי $\OML/cmm/m/it/10 T \OM
+S/cmsy/m/n/10 2 [][] []$[]
+ []
 
-LaTeX Warning: Empty bibliography on input line 3020.
+[27] [28] [29] [30]
+
+LaTeX Warning: Empty bibliography on input line 3378.
 
 \tf@thm=\write8
 \openout8 = `algebra_2_recitations.thm'.
@@ -2120,26 +2127,32 @@ braces):
 >  {english/babelname}  =>  {american}
 >  {english/localnumeral}  =>  {polyglossia@C@localnumeral}
 >  {english/Localnumeral}  =>  {polyglossia@C@localnumeral}.
-[27] (./algebra_2_recitations.aux Setting \if@calendar@hebrew
+[31] (./algebra_2_recitations.aux Setting \if@calendar@hebrew
 Setting \if@calendar@hebrew
 LaTeX Info: Redefining \rmfamily on input line 21.
 LaTeX Info: Redefining \sffamily on input line 21.
 LaTeX Info: Redefining \ttfamily on input line 21.
  Setting \if@calendar@hebrew
 Setting \if@calendar@hebrew)
-Package rerunfilecheck Info: File `algebra_2_recitations.out' has not changed.
-(rerunfilecheck)             Checksum: 63BC5574293A69DFEDAA6F6A421E3AA8;2367.
+
+Package rerunfilecheck Warning: File `algebra_2_recitations.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `algebra_2_recitations.out':
+(rerunfilecheck)             Before: 63BC5574293A69DFEDAA6F6A421E3AA8;2367
+(rerunfilecheck)             After:  EA325B42C597E4E561F5C382CEA37191;2894.
 Package logreq Info: Writing requests to 'algebra_2_recitations.run.xml'.
 \openout1 = `algebra_2_recitations.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 43135 strings out of 476191
- 916495 string characters out of 5812072
+ 43136 strings out of 476191
+ 916522 string characters out of 5812072
  1857478 words of memory out of 5000000
- 63098 multiletter control sequences out of 15000+600000
+ 63099 multiletter control sequences out of 15000+600000
  477256 words of font info for 99 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 115i,19n,118p,1293b,878s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 115i,20n,118p,1293b,878s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on algebra_2_recitations.pdf (29 pages).
+Output written on algebra_2_recitations.pdf (33 pages).
