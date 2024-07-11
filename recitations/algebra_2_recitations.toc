@@ -20,3 +20,4 @@
 \contentsline {section}{\numberline {4.2}הגדרות}{36}{section.4.2}%
 \contentsline {section}{\numberline {4.3}תכונות של מכפלות פנימיות, ונורמות}{38}{section.4.3}%
 \contentsline {section}{\numberline {4.4}מטריקות וניצבות}{40}{section.4.4}%
+\contentsline {section}{\numberline {4.5}בסיסים אורתונורמליים והמרחב הניצב}{41}{section.4.5}%

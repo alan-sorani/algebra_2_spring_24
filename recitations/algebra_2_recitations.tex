@@ -4442,5 +4442,525 @@ $T\prs{u} = S\prs{u}$.
 \end{enumerate}
 \end{solution}
 
+\section{בסיסים אורתונורמליים והמרחב הניצב}
+
+כעת, כדי לדבר על המרחק של וקטור
+$v \in V$
+מתת־מרחב
+$W \leq V$,
+נרצה לכתוב את
+$v$
+בתור סכום של שני וקטורים, כאשר אחד מהם מ־%
+$W$
+והשני ניצב ל־%
+$W$.
+ראינו כי
+$V = W \oplus W^{\perp}$
+עבור
+$W^\perp$
+תת־המרחב של הוקטורים הניצבים ל־%
+$W$
+ולכן זה אפשרי.
+ככה, ושהמרחק יצא, כמו במקרה האוקלידי, האורך של החלק הניצב ל־%
+$W$.
+
+\begin{definition}[מרחב ניצב]
+יהי
+$V$
+מרחב מכפלה פנימית, ותהי
+$S \subseteq V$.
+\emph{המרחב הניצב ל־%
+$S$}
+הוא
+\[\text{.} S^\perp = \set{v \in V}{\forall s \in S \colon v \perp s}\]
+\end{definition}
+
+\begin{proposition}
+יהי
+$V$
+מרחב מכפלה פנימית ויהי
+$W \leq V$.
+מתקיים
+$V = W \oplus W^\perp$.
+\end{proposition}
+
+\begin{exercisechap}
+יהי
+$V$
+מרחב מכפלה פנימית ותהיינה
+$S,T \subseteq V$.
+
+\begin{enumerate}
+\item 
+נניח כי
+$S \subseteq T$.
+הראו כי
+$T^\perp \subseteq S^\perp$.
+
+\emph{התאמה כזאת, כמו $S \mapsto S^\perp$, שהופכת יחס הכלה, נקראת
+\emph{התאמת גלואה}.}
+
+\item
+נסמן
+$W = \Span\prs{S}$.
+הראו כי
+$S^\perp = W^\perp$.
+
+\item
+הראו כי
+$\prs{S^{\perp}}^\perp = \Span\prs{S}$.
+\end{enumerate}
+\end{exercisechap}
+
+\begin{solution}
+\begin{enumerate}
+\item
+יהי
+$v \in T^\perp$
+ויהי
+$s \in S$.
+אז
+$s \in T$
+כי
+$S \subseteq T$,
+ולכן
+$v \perp s$,
+כי
+$v$
+ניצב לכל וקטור ב־%
+$T$.
+לכן
+$v \in S^\perp$.
+
+\item
+מתקיים
+$S \subseteq W$
+ולכן
+$W^\perp \subseteq S^\perp$.
+יהי
+$v \in S^\perp$
+ויהי
+$w \in W$.
+כיוון ש־%
+$W = \Span\prs{S}$,
+יש איברים
+$s_1, \ldots, s_k$
+וסקלרים
+$\alpha_1, \ldots, \alpha_k$
+עבורם
+$w = \sum_{i \in [k]} \alpha_i s_i$.
+אז
+\[\trs{v,w} = \trs{v, \sum_{i \in [k]} \alpha_i s_i} = \sum_{i \in [k]} \alpha_i \cancelto{0}{\trs{v_i, s_i}} = 0\]
+ולכן
+$v \in W^\perp$.
+
+\item
+ראינו כי
+$\prs{W^\perp}^\perp = W$
+עבור
+$W \leq V$.
+ניקח
+$W = \Span\prs{S}$.
+מתקיים
+$S \subseteq W$
+ולכן
+$W^\perp \subseteq S^\perp$
+ואז
+$\prs{S^\perp}^\perp \subseteq \prs{W^\perp}^\perp = W$.
+כמו כן,
+$S^\perp = W^\perp$
+תת־מרחב וקטורי ומכיוון ש־%
+$V = S^\perp \oplus \prs{S^\perp}^\perp$,
+נקבל כי
+\[\dim\prs{\prs{S^\perp}^\perp} = \dim\prs{V} - \dim\prs{S^\perp} = \dim\prs{V} - \dim\prs{W^\perp} = \dim\prs{W}\]
+ולכן יש שוויון
+$\prs{S^\perp}^\perp = W = \Span\prs{S}$.
+\end{enumerate}
+\end{solution}
+
+\begin{remark}
+לא יכולנו בתרגיל האחרון להניח כי
+$S$
+אינסופית. באופן כללי,
+\[\Span\prs{S} = \set{\sum_{i \in [k]} \alpha_i s_i}{\substack{\alpha_i \in \mbb{F} \\ s_i \in S}}\]
+גם כאשר
+$S$
+אינסופית.
+\end{remark}
+
+\begin{exercisechap}
+מצאו את
+$W^\perp$
+עבור
+\[\text{.} W \ceq \spn\prs{e_1 + e_2} \leq \mbb{R}^2\]
+\end{exercisechap}
+
+\begin{solution}
+ראינו כי מתקיים
+$v \in \Span\prs{e_1 + e_2}^\perp$
+אם ורק אם
+$v \perp e_1 + e_2$.
+זה מתקיים
+אם ורק אם
+$v_1 + v_2 = 0$
+אם ורק אם
+$v_2 = - v_1$.
+לכן
+\[\text{.} W^\perp = \spn\prs{e_1 - e_2}\]
+\end{solution}
+
+\begin{definition}[בסיס אורתונורמלי]
+יהי
+$V$
+מרחב מכפלה פנימית.
+בסיס
+$B = \prs{v_1, \ldots, v_n}$
+של
+$V$
+נקרא
+\emph{אורתוגונלי}
+אם
+$\trs{v_i, v_j} = 0$
+לכל
+$i \neq j$,
+ו%
+\emph{אורתונורמלי}
+אם
+$\trs{v_i, v_j} = \delta_{i,j} \coloneqq \fcases{0 & i \neq j \\ 1 & i=j}$.
+\end{definition}
+
+\begin{definition}[הטלה אורתוגונלית]
+יהי
+$V$
+מרחב מכפלה פנימית ויהי
+$W \leq V$.
+\emph{ההטלה האורתוגונלית על
+$W$}
+היא ההטלה על
+$W$
+ביחס לסכום הישר
+$V = W \oplus W^\perp$.
+\end{definition}
+
+\begin{proposition}
+יהי
+$V$
+מרחב מכפלה פנימית ויהי
+$W \leq V$.
+יהי
+$B = \prs{w_1, \ldots, w_m}$
+בסיס
+\textbf{אורתונורמלי}
+של
+$W$
+ויהי
+$v \in V$.
+תהי
+$P_W$
+ההטלה האורתוגונלית על
+$W$.
+אז
+\[\text{.} P_W\prs{w} = \sum_{i \in [m]} \trs{v, w_i} w_i\]
+\end{proposition}
+
+\begin{exercisechap}
+יהי
+$V$
+מרחב מכפלה פנימית ויהיו
+$u,v \in V$.
+הראו כי
+$u \perp v$
+אם ורק אם
+\[\norm{u} \leq \norm{u+av}\]
+לכל
+$a \in \mbb{F}$.
+\end{exercisechap}
+
+\begin{solution}
+אם
+$u \perp v$
+ו־%
+$a \in \mbb{F}$,
+נקבל מפיתגורס
+\begin{align*}
+\norm{u+av}^2 &= \norm{u}^2 + \abs{a}^2 \norm{v}^2 \geq \norm{u}^2
+\end{align*}
+ולכן
+$\norm{u} \leq \norm{u+av}$.
+
+נניח כי
+$\trs{u,v} \neq 0$
+ונניח תחילה כי
+$\norm{v} = 1$.
+אז
+\[\trs{\trs{u,v}v, v} = \trs{u,v} \trs{v,v} = \trs{u,v} \norm{v}^2 = \trs{u,v} \neq 0\]
+וגם
+\[\text{.} \trs{u - \trs{u,v}v, v} = \trs{u,v} - \trs{\trs{u,v}v,v} = 0\]
+אז, ממשפט פיתגורס
+\begin{align*}
+\norm{u}^2 &= \norm{u - \trs{u,v}v + \trs{u,v}v}^2
+\\&=
+\norm{u - \trs{u,v}v}^2 + \norm{\trs{u,v}v}^2
+\\&>
+\norm{u-\trs{u,v}v}^2
+\end{align*}
+כאשר האי־שוויון חזק כי
+$\trs{u,v}v \neq 0$
+מההנחה
+$\trs{u,v} \neq 0$.
+לכן, עבור
+$a = \trs{u,v}$
+לא מתקיים
+$\norm{u} \leq \norm{u+av}$.
+
+כעת, אם
+$v$
+כללי, הוקטור
+$\frac{v}{\norm{v}}$
+הינו מאורך
+$1$
+ולכן יש
+$a' \in \mbb{F}$
+עבורו
+$\norm{u} > \norm{u+a' \frac{v}{\norm{v}}}$.
+אז ניקח
+$a = \frac{a'}{\norm{v}}$
+ונקבל כי
+$\norm{u} > \norm{u + av}$.
+\end{solution}
+
+כדי למצוא בסיסים אורתונורמליים ומשלימים ישרים, ניעזר בתהליך שלוקח בסיס כלשהו ומחזיר בסיס אורתונורמלי.
+
+\begin{theorem}[גרם־שמידט]
+יהי
+$V$
+מרחב מכפלה פנימית ויהי
+$B = \prs{u_1, \ldots, u_n}$
+בסיס של
+$V$.
+קיים בסיס אורתונורמלי
+$C = \prs{v_1, \ldots, v_n}$
+של
+$V$
+עבורו
+\[\Span\prs{u_1, \ldots, u_i} = \Span\prs{v_1, \ldots, v_i}\]
+לכל
+$i \in \brs{n}$.
+\end{theorem}
+
+ניסוח זה של המשפט לא מתאר לנו איך למצוא את
+$C$,
+אבל ההוכחה שלו קונסטרוקטיבית ומתארת את האלגוריתם הבא.
+
+\begin{enumerate}
+\item
+עבור
+$i = 1$
+ניקח
+$v_i = \frac{u_i}{\norm{u_i}}$.
+
+\item
+עבור כל
+$i$
+לאחר מכן, לפי הסדר, ניקח
+\[w_i = u_i - \sum_{j \in \brs{i-1}} \trs{u_i, v_j}\]
+ואז
+$v_i = \frac{w_i}{\norm{w_i}}$.
+\end{enumerate}
+
+\begin{corollary}
+יהי
+$W \leq V$
+תת־מרחב במרחב מכפלה פנימית.
+כדי למצוא אורתונורמלי של
+$W$
+ושל
+$W^\perp$
+ניקח בסיס
+$B_W$
+של
+$W$
+ונשלים אותו לבסיס
+$B = B_W \cup B'_W$
+של
+$V$.
+נבצע את תהליך גרם־שמידט על
+$B$
+ונקבל בסיס
+$C = C_W \cup C_W^\perp$
+כך ש־%
+$\Span\prs{C_W} = \Span\prs{B_W} = W$.
+כל הוקטורים ב־%
+$C_W^\perp$
+ניצבים ל־%
+$W$
+כי
+$C$
+אורתונורמלי, ולכן
+$W' \coloneqq \Span\prs{C_W^\perp} \subseteq W^\perp$.
+כמו כן,
+\[\dim\prs{W'} = \dim\prs{V} - \dim\prs{W} = \dim\prs{W^\perp}\]
+כי
+$V = W \oplus W' = W \oplus W^\perp$,
+ולכן יש שוויון
+$W' = W^\perp$.
+\end{corollary}
+
+\begin{theorem}[מרחק של וקטור מתת־מרחב]
+יהי
+$V$
+מרחב מכפלה פנימית, יהי
+$W \leq V$,
+תהי
+$P_W$
+ההטלה האורתוגונלית על
+$W$
+ויהי
+$v \in V$.
+מתקיים
+\[\text{.} d\prs{v,W} = d\prs{v, p_W\prs{v}}\]
+\end{theorem}
+
+\begin{exercisechap}
+יהי
+$V = \Mat_2\prs{\mbb{R}}$
+עם המכפלה הפנימית הסטנדרטית
+\[\trs{A,B} = \tr\prs{B^t A}\]
+ויהי
+$W \leq V$
+התת־מרחב של המטריצות הסימטריות.
+
+\begin{enumerate}
+\item מיצאו בסיס אורתונורמלי עבור
+$W$
+ועבור
+$W^\perp$.
+
+\item
+הראו כי
+$P_W\prs{A} = \frac{A + A^t}{2}$
+בשתי דרכים שונות.
+
+\item
+חשבו את המרחק של
+$A = \pmat{1 & 2 \\ 3 & 4}$
+מ־%
+$W$.
+\end{enumerate}
+\end{exercisechap}
+
+\begin{solution}
+\begin{enumerate}
+\item
+ניקח בסיס
+$B_W = \prs{E_{1,1}, E_{1,2} + E_{2,1}, E_{2,2}}$
+של
+$W$
+ונשלים אותו לבסיס
+\[B = \prs{u_1, u_2, u_3, u_4} = \prs{E_{1,1}, E_{1,2} + E_{2,1}, E_{2,2}, E_{1,2}}\]
+של
+$V$.
+נבצע את תהליך גרם־שמידט כדי לקבל בסיס אורתונורמלי
+$\prs{v_1, v_2, v_3, v_4}$
+עבורו
+$W = \Span\prs{v_1, v_2, v_3}$
+וגם
+$W^\perp = \Span\prs{v_4}$.
+
+נחשב
+\begin{align*}
+v_1 &= \frac{1}{\norm{E_{1,1}}} E_{1,1} = E_{1,1} \\
+w_2 &= u_2 - \trs{u_2,v_1} v_1 = E_{1,2} + E_{2,1} - 0 = E_{1,2} + E_{2,1} \\
+v_2 &= \frac{1}{\norm{w_2}} w_2 = \frac{1}{\sqrt{2}} \prs{E_{1,2} + E_{2,1}} \\
+w_3 &= u_3 - \trs{u_3, v_2} v_2 - \trs{u_3, v_1} v_1 = u_3 = E_{2,2} \\
+v_3 &= \frac{1}{\norm{w_3}} w_3 = E_{2,2} \\
+w_4 &= u_4 - \trs{u_4, v_3}v_3 - \trs{u_4, v_2}v_2 - \trs{u_4, v_1}v_1 \\&= E_{1,2} - \trs{E_{1,2}, \frac{1}{\sqrt{2}} \prs{E_{1,2} + E_{2,1}}} \prs{\frac{1}{\sqrt{2}} \prs{E_{1,2} + E_{2,1}}}
+\\&= E_{1,2} - \frac{1}{2} \prs{E_{1,2} + E_{2,1}}
+\\&= \frac{1}{2} \prs{E_{1,2} - E_{2,1}} \\
+v_4 &= \frac{w_4}{\norm{w_4}} = \frac{1}{\norm{E_{1,2} - E_{2,1}}} \prs{E_{1,2} - E_{2,1}} = \frac{1}{\sqrt{2}} \prs{E_{1,2} - E_{2,1}}
+\end{align*}
+ונקבל כי
+\[\prs{v_1, v_2, v_3} = \prs{E_{1,1}, \frac{1}{\sqrt{2}} \prs{E_{1,2} + E_{2,1}}, E_{2,2}}\]
+בסיס אורתונורמלי של
+$W$
+וכי
+$\frac{1}{\sqrt{2}} \prs{E_{1,2} - E_{2,1}}$
+בסיס אורתונורמלי של
+$W^\perp$.
+אז,
+$W^\perp$
+מרחב המטריצות האנטיסימטריות.
+
+\item
+בדרך אחת, זכור לנו מאלגברה א' כי
+\[A = \frac{A + A^t}{2} + \frac{A - A^t}{2}\]
+כאשר
+$\frac{A + A^t}{2}$
+סימטרית ו־%
+$\frac{A - A^t}{2}$
+אנטי־סימטרית.
+אז
+$\frac{A + A^t}{2} \in W$
+וכיוון ש־%
+$W^\perp$
+מרחב המטריצות האנטיסימטריות, נקבל גם
+$\frac{A - A^t}{2} \in W^\perp$.
+לכן
+$P_W\prs{A} = \frac{A + A^t}{2}$.
+
+אבל, במקרה הכללי, לא נדע מראש איך לכתוב וקטור
+$v \in V$
+בתור סכום של וקטור ב־%
+$W \leq V$
+ווקטור ב־%
+$W^\perp$.
+כדי לחשב את ההטלה
+$P_W\prs{A}$
+נוכל לקחת בסיס אורתונורמלי של
+$W$
+ולהשתמש בנוסחא עבור ההטלה האורתוגונלית לפי בסיס כזה.
+
+אכן,
+\begin{align*}
+P_W\prs{A} &= \sum_{i \in [3]} \trs{A, v_i} v_i \\&= \trs{A, E_{1,1}} E_{1,1} + \trs{A, \frac{1}{\sqrt{2}} \prs{E_{1,2} + E_{2,1}}} \cdot \frac{1}{\sqrt{2}} \prs{E_{1,2} + E_{2,1}} + \trs{A, E_{2,2}}, E_{2,2}
+\\&=
+a_{1,1} E_{1,1} + \frac{1}{2} \prs{a_{1,2} + a_{2,1}} \prs{E_{1,2} + E_{2,1}} + a_{2,2} E_{2,2}
+\\&=
+\pmat{a_{1,1} & \frac{a_{1,2} + a_{2,1}}{2} \\ \frac{a_{1,2} + a_{2,1}}{2} & a_{2,2}}
+\\ \text{.} \hphantom{P_W\prs{A}} &=
+\frac{A + A^t}{2}
+\end{align*}
+
+\item
+נכתוב את
+$A$
+בתור סכום של מטריצה סימטרית ואנטי־סימטרית. ראינו כי
+\[A = \frac{A + A^t}{2} + \frac{A - A^t}{2}\]
+כאשר
+$\frac{A + A^t}{2}$
+סימטרית ו־%
+$\frac{A - A^t}{2}$
+אנטי־סימטרית.
+אז
+$d_W\prs{A} = \frac{A+A^t}{2}$
+ונקבל כי
+המרחק של
+$A$
+מ־%
+$W$
+הוא
+\[\text{.} d\prs{A, \frac{A + A^t}{2}} = \norm{A - \frac{A + A^t}{2}}\]
+מתקיים
+\begin{align*}
+\norm{A - \frac{A + A^t}{2}} &= \norm{\frac{A - A^t}{2}}
+\\&= \frac{1}{2} \norm{\pmat{0 & -1 \\ & 1 & 0}}
+\\&= \frac{1}{2} \cdot \sqrt{2}
+\\&= \frac{1}{\sqrt{2}}
+\end{align*}
+ולכן
+$d\prs{A, W} = \frac{1}{\sqrt{2}}$.
+\end{enumerate}
+\end{solution}
+
 \printbibliography
 \end{document}
