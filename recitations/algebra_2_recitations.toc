@@ -13,3 +13,10 @@
 \contentsline {subsection}{\numberline {3.1.1}מציאת בסיס ז'ורדן עבור אופרטורים נילפוטנטיים}{25}{subsection.3.1.1}%
 \contentsline {section}{\numberline {3.2}משפט ז'ורדן הכללי}{27}{section.3.2}%
 \contentsline {subsection}{\numberline {3.2.1}מציאת בסיס ז'ורדן עבור אופרטור כללי}{28}{subsection.3.2.1}%
+\contentsline {section}{\numberline {3.3}הפולינום המינימלי ופירוק פרימרי}{32}{section.3.3}%
+\contentsline {part}{II\hspace {1em}חלק שני - מרחבי מכפלה פנימית ואלגברה מולטי־לינארית}{35}{part.2}%
+\contentsline {chapter}{\numberline {4}מרחבי מכפלה פנימית}{36}{chapter.4}%
+\contentsline {section}{\numberline {4.1}מוטיבציה}{36}{section.4.1}%
+\contentsline {section}{\numberline {4.2}הגדרות}{36}{section.4.2}%
+\contentsline {section}{\numberline {4.3}תכונות של מכפלות פנימיות, ונורמות}{38}{section.4.3}%
+\contentsline {section}{\numberline {4.4}מטריקות וניצבות}{40}{section.4.4}%
