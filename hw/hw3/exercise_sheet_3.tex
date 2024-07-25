@@ -1,0 +1,215 @@
+\documentclass[a4paper,10pt,twoside,openany]{article}
+
+\usepackage[lang=hebrew]{maths}
+\usepackage{hebrewdoc}
+\usepackage{stylish}
+\usepackage{lipsum}
+\let\bs\blacksquare
+
+\setlength{\parindent}{0pt}
+
+%%%%%%%%%%%%
+% Styling %
+%%%%%%%%%%%%
+
+\usepackage{enumitem}
+
+%%%%%%%%%%%%%
+% Counters  %
+%%%%%%%%%%%%%
+
+\setcounter{section}{1}     
+            
+%BIBLIOGRAPHY
+\usepackage[
+backend=biber,
+style=alphabetic,
+]{biblatex}
+\addbibresource{bibliography.bib} %Imports bibliography file
+
+%%%%%%%%%%
+% Title  %
+%%%%%%%%%%
+\title{
+אלגברה ב' - גיליון תרגילי בית 3 \\
+משפט ז'ורדן, ומרחבי מכפלה פנימית
+\\
+\vspace{1cm}
+\large{תאריך הגשה: 1.8.2024}
+}
+\date{}
+
+\begin{document}
+\maketitle
+
+\begin{exercise}%1
+מיצאו בסיס מז'רדן לכל אחד מהאופרטורים הבאים.
+
+\begin{enumerate}
+\item
+$T_A$
+כאשר
+\[\text{.} A = \pmat{7&1&-8&-1\\0&3&0&0\\4&2&-5&1\\0&-4&0&-1} \in \Mat_4\prs{\mbb{C}}\]
+
+\item
+$T_A$
+כאשר
+\[A=\pmat{1 & 2 & 2 & 1 \\ 2 & - 1 & -3 & -2 \\ -2 & 3 & 5 & 2 \\ -1 & 2 & 2 & 3} \in \Mat_4\prs{\mbb{C}}\]
+ונתון כי
+$2$
+ערך עצמי יחיד.
+
+\item
+\begin{align*}
+T \colon \Mat_3\prs{\mbb{C}} &\to \Mat_3\prs{\mbb{C}} \\
+A &\mapsto J_3\prs{0} A
+\end{align*}
+
+\item
+\begin{align*}
+T \colon \mbb{C}_3\brs{x} &\to \mbb{C}_3\brs{x} \\
+T\prs{p}\prs{x} &= p\prs{x+1}
+\end{align*}
+\end{enumerate}
+\end{exercise}
+
+\begin{exercise}%2
+\begin{enumerate}
+\item מצאו את צורת ז'ורדן של
+$J_n\prs{\lambda}^{-1}$
+עבור
+$\lambda \in \mbb{C}\setminus\set{0}$
+ועבור
+$n \in \mbb{N}_+$.
+
+\item תהי
+$A \in M_n\prs{\mbb{C}}$
+הפיכה.
+מצאו את צורת ז'ורדן של
+$A^{-1}$.
+
+\item מצאו תנאי הכרחי ומספיק על
+$A \in M_n\prs{\mbb{C}}$
+כך שיתקיים
+$A \sim A^{-1}$.
+\end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+ראינו בתרגול שאם
+$A = P J P^{-1}$
+אז
+$A^k = P J^k P^{-1}$
+לכל
+$k \in \mbb{N}$.
+לכן, כדי לחשב חזקות של מטריצה די למצוא בסיס ז'ורדן של ההעתקה המתאימה ולדעת לחשב חזקות של צורת ז'ורדן.
+
+\begin{enumerate}
+\item יהיו
+$n,k \in \mbb{N}_+$.
+חשבו את
+$J_n\prs{0}^k$.
+
+\item
+מתקיים
+$J_n\prs{\lambda} = J_n\prs{0} + \lambda I_n$.
+היעזרו בכך ובסעיף הקודם כדי למצוא נוסחא כללית עבור
+$J_n\prs{\lambda}^n$
+לכל
+$\lambda \in \mbb{F}$
+ולכל
+$n,j \in \mbb{N}_+$.
+\end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+בתרגיל זה נראה כיצד צורת ז'ורדן עוזרת בחישוב בעיות המצריכות חזקות של מטריצות.
+
+\begin{enumerate}
+\item
+תהיינה
+$A,B,P \in \Mat_n\prs{\mbb{C}}$
+כאשר
+$P$
+הפיכה וגם
+$A = P^{-1} B P$.
+הראו כי
+$A^r = P^{-1} B^r P$
+לכל
+$r \in \mbb{N}$.
+
+\item
+בשמורת הטבע ליד הטכניון סין יש היום 2 דרקונים, 600 פנדות ו־20000 במבוקים.
+
+כל שנה הדרקונים, הפנדות והבמבוקים מתרבים ומספרם גדל פי 2.
+
+לאחר מכן, כל פנדה אוכלת במבוק אחד וכל דרקון אוכל שתי פנדות.
+
+אז, רשות הטבע והגנים הסינית משחררת לטבע 4 דרקונים ו־10 פנדות, אם עדיין יש פנדות בשמורה.
+
+לבסוף, אם לא נשאר במבוק בסוף השנה, כל הפנדות מתות.
+
+\begin{enumerate}
+\item
+מיצאו מטריצה
+$A \in \Mat_4\prs{\mbb{C}}$
+וערכים
+$d,p,b$
+עבורם מספרי הדרקונים, הפנדות והבמבוקים בסוף השנה ה־%
+$t$
+הם מקדמים בוקטור
+$A^t \pmat{1 \\ d \\ p \\ b}$
+לכל
+$t \in \mbb{N} \cup \set{0}$.
+
+\item נשיא הטכניון מתכנן לבקר בסין עוד 30 שנה. האם יהיו פנדות בשמורה בזמן הביקור שלו?
+
+\item הטכניון החליט להעביר את הלימודים מסין למאדים עוד 230 שנה. האם ישארו עד אז פנדות בשמורת הטבע?
+\end{enumerate}
+\end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+עבור ההעתקות הבאות $f_i$, קיבעו האם $f_i$ מכפלה פנימית.
+
+\begin{enumerate}
+\item
+\begin{align*}
+f_1 \colon \mbb{R}^3 \times \mbb{R}^3 &\to \mbb{R} \\
+\prs{\pmat{a\\b\\c}, \pmat{x\\y\\z}} &\mapsto ax + by + az
+\end{align*}
+
+\item
+\begin{align*}
+f_2 \colon \mbb{R}^3 \times \mbb{R}^3 &\to \mbb{R} \\
+\prs{\pmat{a\\b\\c}, \pmat{x\\y\\z}} &\mapsto ax + by + cz + xz
+\end{align*}
+
+\item
+\begin{align*}
+f_3 \colon \Mat_n\prs{\mbb{C}} \times \Mat_n\prs{\mbb{C}} &\to \mbb{C} \\
+\prs{A,B} &\mapsto \tr\prs{B^t A}
+\end{align*}
+
+\item
+\begin{align*}
+f_4 \colon \mbb{R}_n\brs{x} \times \mbb{R}_n\brs{x} &\to \mbb{R} \\
+\prs{f,g} &\mapsto f\prs{0} g\prs{0} + \ldots + f\prs{n} g\prs{n}
+\end{align*}
+
+\item
+\begin{align*}
+f_5 \colon \mbb{C}_n\brs{x} \times \mbb{C}_n\brs{x} &\to \mbb{C} \\
+\prs{f,g} &\mapsto f\prs{0} g\prs{0} + \ldots + f\prs{n} g\prs{n}
+\end{align*}
+\end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+היעזרו באי־שוויון קושי־שוורץ כדי להראות שמתקיים
+\[\text{.} \forall x,y,z \in \mbb{R}_+ \colon x + y + z \leq 2 \prs{\frac{x^2}{y+z} + \frac{y^2}{x+z} + \frac{z^2}{x+y}}\]
+\textbf{רמז:}
+חישבו כיצד לפרש את אגף ימין בעזרת נורמה.
+\end{exercise}
+
+\end{document}

@@ -4962,5 +4962,1867 @@ $d\prs{A, W} = \frac{1}{\sqrt{2}}$.
 \end{enumerate}
 \end{solution}
 
+\chapter{אופרטורים על מרחבי מכפלה פנימית}
+
+\section{המרחב הדואלי, ומשפט ההצגה של ריס}
+
+\begin{definition}[המרחב הדואלי]
+יהי
+$V$
+מרחב מכפלה פנימית מעל שדה
+$\mbb{F}$.
+\emph{המרחב הדואלי}
+של
+$V$
+הוא
+\[\text{.} V^* \coloneqq \hom_{\mbb{F}}\prs{V,\mbb{F}}\]
+איבריו נקראים
+\emph{פונקציונלים לינאריים}.
+\end{definition}
+
+\begin{theorem}[משפט ההצגה של ריס]
+יהי
+$V$
+מרחב מכפלה פנימית סוף־מימדי מעל שדה
+$\mbb{F}$,
+ויהי
+$\phi \in V^*$
+פונקציונל לינארי על
+$V$.
+קיים וקטור
+$w \in V$
+יחיד עבורו
+$\phi\prs{v} = \trs{v,w}$
+לכל
+$v \in V$.
+
+בנוסף, אם
+$B = \prs{v_1, \ldots, v_n}$
+בסיס אורתונורמלי של
+$V$,
+מתקיים
+\[\text{.} w = \sum_{i \in \brs{n}} \trs{w, v_i} v_i = \sum_{i \in \brs{n}} \overline{\phi\prs{v_i}} v_i\]
+\end{theorem}
+
+\begin{exercisechap}
+יהי
+$V = \Mat_n\prs{\mbb{C}}$
+ותהי
+$\tr \colon V \to \mbb{C}$
+העתקת העקבה.
+מיצאו מטריצה
+$B$
+עבורה
+$\tr\prs{A} = \trs{A,B}$
+לכל
+$A \in V$.
+\end{exercisechap}
+
+\begin{solution}
+נסתכל על הבסיס האורתונורמלי
+$\prs{E_{i,j}}_{i,j \in \brs{n}}$
+של
+$V$
+וניעזר בנוסחא. נקבל
+\[\text{.} B = \sum_{i,j \in \brs{n}} \overline{\tr\prs{E_{i,j}}} E_{i,j} = \sum_{i \in \brs{n}} E_{i,i} = I_n\]
+\end{solution}
+
+\begin{exercisechap}
+\begin{enumerate}
+\item הוכיחו כי לכל
+$n \in \mbb{N}$
+קיים
+$C > 0$
+כך שלכל
+$p \in \mbb{R}_n\brs{x}$
+מתקיים
+\[\text{.} \abs{p\prs{0}} \leq C \prs{\int_{-1}^1 p\prs{x}^2 \diff x}^{\frac{1}{2}}\]
+
+\item חשבו את
+$C$
+המינימלי עבור
+$n=2$.
+\end{enumerate}
+\end{exercisechap}
+
+\begin{solution}
+\begin{enumerate}
+\item נשים לב כי
+\[\trs{f,g} = \int_{-1}^1 f\prs{x} g\prs{x} \diff x\]
+מכפלה פנימית.
+אז
+\begin{align*}
+\text{.} \prs{\int_{-1}^1 p\prs{x}^2 \diff x}^{\frac{1}{2}} = \pmat{\trs{p,p}}^{\frac{1}{2}} = \norm{p}
+\end{align*}
+כלומר, עלינו להוכיח
+\[\text{.} \abs{p\prs{0}} \leq C\norm{p}\]
+
+ההצבה
+\begin{align*}
+\ev_0 \colon \mbb{R}_n\brs{x} &\to \mbb{R} \\
+f &\mapsto f\prs{0}
+\end{align*}
+היא פונקציונל לינארי, ולכן ממשפט ריס יש
+$g \in \mbb{R}_n\brs{x}$
+עבורו
+\[\text{.} p\prs{0} = \ev_0\prs{p} = \trs{p,g}\]
+עכשיו, מקושי־שוורץ
+\[\text{.} \abs{p\prs{0}} = \abs{\trs{p,g}} \leq \norm{p} \norm{g}\]
+לכן ניקח
+$C = \norm{g}$.
+
+\item
+נסמן
+$g\prs{x} = ax^2 + bx + c$.
+נשים לב כי
+כאשר
+$p = g$
+יש שוויון בקושי־שוורץ ואז
+\[\text{.} \abs{p\prs{0}} = \norm{p}\norm{g} \leq C\norm{p}\]
+גורר
+$C \geq \norm{g}$.
+ראינו כי
+$C = \norm{g}$
+מקיים את הנדרש, ולכן נותר למצוא את
+$\norm{g}$.
+
+כדי לא להצטרך בסיס אורתונורמלי, שיהיה פחות יפה במקרה הזה, נשים לב שמספיק לחשב את המכפלות הפנימיות בין
+$g$
+לאיברי בסיס כלשהו.
+לפי בסיס אורתונורמלי
+$B = \prs{v_1, \ldots, v_n}$
+מתקיים
+\[\text{.} g = \sum_{i \in \brs{n}} \trs{g, v_i} v_i\]
+אם
+$C = \prs{u_1, \ldots, u_n}$
+בסיס נוסף, נוכל לכתוב
+\[v_i = \sum_{j \in \brs{n}} \alpha_{i,j} u_j\]
+ואז
+\[\text{,} g = \sum_{i \in \brs{n}} \trs{g, v_i} v_i = \sum_{i,j \in \brs{n}} \bar{\alpha}_{i,j} \trs{g, u_j}\]
+ונקבל שמהכפלות הפנימיות
+$\trs{g, u_i}$
+נותנות מספיק אינפורמציה כדי למצוא את
+$g$.
+
+כעת, נחשב את המכפלות הפנימיות של
+$g$
+עם איברי הבסיס הסטנדרטי ונפתור מערכת משוואות שיהיה לה פתרון יחיד שהוא מקדמי
+$g$.
+\begin{align*}
+1 &= 1\prs{0} = \trs{g\prs{x},1} = \int_{-1}^1 g\prs{x} \diff x = \left. \frac{ax^3}{3} + \frac{bx^2}{2} + cx \right|_{x=-1}^1 = \frac{2a}{3} + 2c \\
+0 &= x\prs{0} = \trs{g\prs{x}, x} = \int_{-1}^1 g\prs{x} x \diff x = \left. \frac{ax^4}{4} + \frac{bx^3}{3} + \frac{cx^2}{2} \right|_{x=-1}^1 = \frac{2b}{3} \\
+\text{.} 0 &= x^2\prs{0} = \trs{g\prs{x}, x^2} = \int_{-1}^1 g\prs{x} x^2 \diff x = \left. \frac{ax^5}{5} + \frac{bx^4}{4} + \frac{cx^3}{3} \right|_{x=-1}^1 = \frac{2a}{5} + \frac{2c}{3}
+\end{align*}
+מהמשוואה השנייה נקבל
+$b = 0$.
+מהמשוואה הראשונה פחות
+$3$
+פעמים השנייה נקבל
+\[1 = \frac{2a}{3} - 3 \cdot \frac{2a}{5} + 0 = \frac{10a - 18a}{15}\]
+ולכן
+$a = -\frac{15}{8}$.
+אז מהמשוואה השלישית נקבל
+\[c = -\frac{3a}{5} = -\frac{9}{8}\]
+ולכן
+\[\text{.} g\prs{x} = -\frac{15}{8} x^2 - \frac{9}{8}\]
+
+אז
+\[\text{.} C = \norm{g} = \sqrt{\int_{-1}^1 \prs{-\frac{15}{8} x^2 - \frac{9}{8}}^2} \diff x = \frac{27}{4}\]
+\end{enumerate}
+\end{solution}
+
+\section{ההעתקה הצמודה}
+
+\begin{theorem}[ההעתקה הצמודה]
+יהיו
+$V,W$
+מרחבי מכפלה פנימית סוף־מימדיים ותהי
+$T \in \Hom_{\mbb{F}}\prs{V,W}$.
+קיימת העתקה יחידה
+$T^* \in \Hom_{\mbb{F}}\prs{W,V}$
+עבורה
+\begin{align*}
+\trs{T\prs{v}, w}_W = \trs{v, T^*\prs{w}}_V
+\end{align*}
+לכל
+$v \in V$
+ולכל
+$w \in W$.
+
+היא נקראת
+\emph{ההעתקה הצמודה}
+של
+$T$.
+\end{theorem}
+
+\begin{theorem}
+יהיו
+$\prs{V, \trs{\cdot, \cdot}_V}, \prs{W, \trs{\cdot, \cdot}_W}$
+מרחבי מכפלה פנימית סוף מימדיים עם בסיסים אורתונורמליים
+$B,C$
+בהתאמה, ותהי
+$T \in \Hom_{\mbb{F}}\prs{V,W}$.
+אז
+$\brs{T^*}^C_B = \prs{\brs{T}^B_C}^*$.
+\end{theorem}
+
+כעת, אם
+$T \in \End_{\mbb{F}}\prs{V}$,
+יש לנו דרכים שונות לחשב את
+$T^*$.
+נוכל לנחש איזה אופרטור יקיים
+$\trs{Tv, w} = \trs{v, T^* w}$
+לכל
+$v,w \in V$,
+על ידי מניפולציות של הצגת המכפלה הפנימית.
+נוכל גם לכתוב את
+$T^*$
+בצורה כללית ולפתור מערכת משוואות.
+לבסוף, נוכל לקחת בסיס אורתונורמלי
+$B$,
+כדי שיתקיים
+$\brs{T^*}_B = \overline{\brs{T}_B}^t$,
+ואז לשחזר את
+$T^*$
+מהמטריצה המייצגת.
+נראה דוגמאות לחישוב בכל אחת מהדרכים.
+
+\begin{exercisechap}
+יהי
+$V = \mbb{R}_2\brs{x}$
+עם המכפלה הפנימית
+\[\text{.} \trs{f,g} = \int_{-1}^1 f\prs{x} \bar{g}\prs{x} \diff x\]
+יהי
+$D \in \End_{\mbb{R}}\prs{V}$
+אופרטור הגזירה.
+מיצאו את
+$D^*$.
+\end{exercisechap}
+
+\begin{solution}
+כדי להראות
+$D^* = S$
+די להראות כי
+$\trs{Df,g} = \trs{f,Dg}$
+עבור
+$f,g$
+בבסיס נתון, מלינאריות.
+נחשב מה צריך להיות
+$D^*$
+לפי הבסיס
+$\prs{1,x,x^2}$.
+יהי
+$g\prs{x} = ax^2 + bx + c$.
+נחשב את מכפלת
+$D\prs{g}$
+עם
+$1$
+\begin{align*}
+    0 &= \trs{0,g} \\&= \trs{D\prs{1}, g} \\&= \trs{1, D^*\prs{g}} \\&= \int_{-1}^1 D^*\prs{g}\prs{x} \diff x
+\end{align*}
+עם
+$x$
+\begin{align*}
+        \frac{2a}{3} + 2c &= \left. \frac{ax^3}{3} + \frac{bx^2}{2} + cx \right|_{-1}^1 \\&= \int_{-1}^1 ax^2 + bx + c \diff x \\&= \trs{1,g} \\&= \trs{D\prs{x}, g} \\&= \trs{x, D^*\prs{g}} \\&= \int_{-1}^1 x D^*\prs{g}\prs{x} \diff x
+\end{align*}
+ועם
+$x^2$
+\begin{align*}
+        \frac{4b}{3} &= \left. \frac{2ax^4}{4} + \frac{2bx^3}{3} + \frac{2cx^2}{2} \right|_{-1}^1 \\&= 2 \int_{-1}^1 ax^3 + bx^2 + cx \diff x \\&= \trs{2x,g} \\&= \trs{D\prs{x^2}, g} \\&= \trs{x^2, D^*\prs{g}} \\&= \int_{-1}^1 x^2 D^*\prs{g}\prs{x} \diff x
+\end{align*}
+
+נכתוב
+$D^*\prs{g} = \alpha x^2 + \beta x + \gamma$
+ונקבל
+\begin{align*}
+    0 &= \int_{-1}^1 \alpha x^2 + \beta x + \gamma \diff x = \frac{2 \alpha}{3} + 2 \gamma \\
+    \frac{2a}{3} + c &= \int_{-1}^1 \alpha x^3 + \beta x^2 + \gamma x \diff x = \frac{2\beta}{3} \\
+    \frac{4b}{3} &= \int_{-1}^1 \alpha x^4 + \beta x^3 + \gamma x^2 \diff x = \left. \frac{\alpha x^5}{5} + \frac{\beta x^4}{4} + \frac{\gamma x^3}{3} \right|_{-1}^1 = \frac{2 \alpha}{5} + \frac{2 \gamma}{3}
+\end{align*}
+מהמשוואה הראשונה,
+$\gamma = -\frac{\alpha}{3}$.
+אז מהמשוואה השלישית,
+$\frac{4b}{3} = \frac{2 \alpha}{5} - \frac{2 \alpha}{9}$
+כלומר
+\[4b = \prs{\frac{6}{5} - \frac{2}{3}}\alpha = \prs{\frac{18}{15} - \frac{10}{15}}\alpha = \frac{8 \alpha}{15}\]
+כלומר
+$b = \frac{2 \alpha}{15}$
+כלומר
+$\alpha = \frac{15}{2} b$.
+נקבל כי
+$\gamma = -\frac{5}{2}$
+ומהמשוואה השנייה כי
+$\beta = a + \frac{3c}{2}$.
+לכן
+\[\text{.} D^*\prs{ax^2 + bx + c} = \frac{15}{2} b x^2 + \prs{a + \frac{3c}{2}}x - \frac{5}{2}\]
+\end{solution}
+
+\begin{exercisechap}
+יהי
+$V = \Mat_n\prs{\mbb{C}}$
+עם המכפלה הפנימית
+$\trs{A,B} = \tr\prs{B^*, A}$,
+ויהי
+\begin{align*}
+    \Phi \colon V &\to V \\
+    \text{.} \hphantom{lala} A &\mapsto A^t
+\end{align*}
+חשבו את
+$\Phi^*$.
+\end{exercisechap}
+
+\begin{solution}
+נוכל לחשב ישירות,
+\begin{align*}
+    \trs{\Phi\prs{A},B} &= \trs{A^t, B} \\&= \tr\prs{B^* A^t} \\&= \overline{\tr\prs{\overline{B^* A^t}}} \\&= \overline{\tr\prs{B^t A^*}} \\&= \overline{\tr\prs{A^* B^t}} \\&= \overline{\trs{B^t, A}} \\&= \trs{A, B^t} \\&= \trs{A, \Phi\prs{B}}
+\end{align*}
+ולכן
+$\Phi^* = \Phi$.
+
+נוכל לחשב זאת גם בעזרת מטריצה מייצגת בבסיס אורתונורמלי.
+נסמן ב־%
+$E_{i,j}$
+מטריצה עבורה
+$\prs{E_{i,j}}_{k,\ell} = \delta_{i,k} \delta_{j,\ell}$.
+כלומר, זאת מטריצה עם
+$0$
+בכל המקדמים חוץ מזה בשורה ה־%
+$i$
+והעמודה ה־%
+$j$.
+אז בבסיס
+\[B \coloneqq \prs{E_{1,1}, \ldots, E_{n,n}, E_{1,2}, E_{2,1}, E_{1,3}, E_{3,1} \ldots, E_{n-1, n} E_{n,n-1}}\]
+נקבל כי
+\begin{align*}
+    \text{.} \brs{\Phi}_B &= I_n \oplus \pmat{0 & 1 \\ 1 & 0} \oplus \ldots \oplus \pmat{0 & 1 \\ 1 & 0}
+\end{align*}
+כיוון ש־%
+$B$
+בסיס אורתונורמלי
+נקבל כי
+$\brs{\Phi^*}_B = \overline{\brs{\Phi}_B}^t$.
+אך
+$\brs{\Phi}_B$
+מטריצה ממשית סימטרית, ולכן
+$\brs{\Phi^*}_B = \brs{\Phi}_B$
+ואז
+$\Phi^* = \Phi$.
+\end{solution}
+
+\section{אופרטורים אוניטריים ואורתוגונליים}
+
+תכונה אינטואיטיבית גיאומטרית של אופרטורים על מרחבי מכפלה פנימית היא שמירה של המכפלה הפנימית.
+אופרטור
+$T \in \End_{\mbb{F}}\prs{V}$
+עבורו
+$\trs{Tv, Tw} = \trs{v,w}$
+לכל
+$v,w \in V$
+מקיים
+$\trs{T^* T v, w} = \trs{v,w}$
+ולכן
+$T^* T = \id$
+כלומר
+$T^* = T^{-1}$.
+נקרא לאופרטור כזה
+\emph{אורתוגונלי}
+אם
+$\mbb{F} = \mbb{R}$,
+או
+\emph{אוניטרי},
+אם
+$\mbb{F} = \mbb{C}$.
+
+\begin{definition}[אופרטור אורתוגונלי (אוניטרי)]
+אופרטור
+$T \in \End_{\mbb{F}}\prs{V}$
+מעל
+$\mbb{R}$
+(מעל
+$\mbb{C}$
+נקרא
+\emph{אורתוגונלי (אוניטרי)}
+אם
+$T^* = T^{-1}$.
+\end{definition}
+
+\begin{definition}[מטריצה אורתונוגלית (אוניטרית)]
+מטריצה
+$A \in \Mat_n\prs{\mbb{F}}$
+עבור
+$\mbb{F} = \mbb{R}$
+(עבור
+$\mbb{F} = \mbb{C}$)
+נקראת
+\emph{אורתוגונלית (אוניטרית)}
+אם
+$A^t = A^{-1}$.
+\end{definition}
+
+\begin{exercisechap}
+הראו כי
+$T \in \End_{\mbb{F}}\brs{V}$
+אורתוגונלי (אוניטרי) אם ורק אם
+$\norm{Tv} = \norm{v}$
+לכל
+$v \in V$.
+\end{exercisechap}
+
+\begin{solution}
+אם
+$T \in \End_{\mbb{F}}\prs{V}$
+אופרטור אורתוגונלי (אוניטרי), מתקיים
+\[\norm{Tv} = \sqrt{\trs{Tv, Tv}} = \sqrt{\trs{v,v}} = \norm{v}\]
+לכל
+$v \in V$.
+
+להיפך, אם
+$\norm{Tv} = \norm{v}$
+לכל
+$v \in V$,
+נקבל מזהות הפולריזציה כי
+$\trs{Tv, Tw} = \trs{v,w}$
+לכל
+$v,w \in W$.
+\end{solution}
+
+\begin{remark}
+קיבלנו כי אופרטורים אורתוגונליים (או אוניטריים) הם בדיוק אלו השומרים על הנורמה, ולכן הם גם אלו השומרים על מרחקים.
+
+העתקות השומרות על מרחקים נקראות
+\emph{איזומטריות}
+ולכן אופרטור אורתוגונלי נקרא גם
+\emph{איזומטריה לינארית}.
+כיוון שבקורס נדבר רק על העתקות לינאריות, נתייחס לפעמים לאופרטור לינארי בתור
+\emph{איזומטריה}.
+\end{remark}
+
+\begin{proposition}
+יהי
+$V$
+מרחב מכפלה פנימית ממשי ממימד
+$n$,
+ויהי
+$T \in \End_{\mbb{R}}\prs{V}$.
+התנאים הבאים שקולים.
+
+\begin{enumerate}
+    \item $T$ אורתוגונלי.
+
+    \item קיים בסיס אורתונורמלי
+    $B = \prs{v_1, \ldots, v_n}$,
+    כך שהבסיס
+    $\prs{T v_1, \ldots, Tv_n}$
+    אורתונורמלי.
+    
+    \item לכל בסיס אורתונורמלי
+    $B = \prs{v_1, \ldots, v_n}$,
+    הבסיס
+    $\prs{T v_1, \ldots, Tv_n}$
+    אורתונורמלי.
+\end{enumerate}
+\end{proposition}
+
+\begin{exercisechap}
+יהי
+$V = \mbb{R}^2$
+ויהי
+\begin{align*}
+    R \colon V &\to V \\
+    \pmat{x \\ y} &\mapsto \pmat{x \\ -y}
+\end{align*}
+שיקוף דרך ציר ה־%
+$x$.
+
+הראו כי
+$R$
+איזומטריה.
+\end{exercisechap}
+
+\begin{solution}
+מתקיים
+$\brs{R}_E = \pmat{1 & 0 \\ 0 & -1}$
+וזאת מטריצה שעמודותיה מהוות בסיס אורתונורמלי של
+$V$.
+לכן
+$R$
+שולח בסיס אורתונורמלי (הסטנדרטי) לבסיס אורתונורמלי, ולכן הינו איזומטריה.
+\end{solution}
+
+\begin{exercisechap}
+הראו כי
+$\rho_\theta \coloneqq A_\theta$
+עבור
+\[A_\theta = \pmat{\cos \theta & - \sin \theta \\ \sin \theta & \cos\theta}\]
+הינו איזומטריה.
+\end{exercisechap}
+
+\begin{solution}
+מתקיים כי
+$\rho_{\theta}\prs{e_i} = A_{\theta} e_i$
+העמודה ה־%
+$i$
+של
+$A_{\theta}$.
+נראה שעמודות
+$A_\theta$
+מהוות בסיס אורתונורמלי ונקבל כי
+$\rho_{\theta}$
+שולחת בסיס אורתונורמלי (הסטנדרטי) לבסיס אורתונורמלי. ראינו שזה תנאי שקול לאורתוגונליות ולכן נקבל את הנדרש.
+
+אכן, מתקיים
+\begin{align*}
+    \trs{\pmat{\cos \theta \\ \sin \theta}, \pmat{-\sin \theta \\ \cos \theta}} &= -\sin \theta \cos \theta + \sin \theta \cos \theta = 0 \\
+    \trs{\pmat{\cos \theta \\ \sin \theta}, \pmat{\cos \theta \sin \theta}} &= \cos^2 \theta + \sin^2 \theta = 1 \\
+    \trs{\pmat{-\sin \theta \\ \cos \theta}, \pmat{-\sin \theta \\ \cos \theta}} &= \prs{-\sin \theta}^2 + \cos^2 \theta = \sin^2 \theta + \cos^2 \theta = 1
+\end{align*}
+כנדרש.
+\end{solution}
+
+\begin{exercisechap}
+הראו כי כל איזומטריה של
+$\mbb{R}^2$
+היא מהצורה
+$\rho_\theta$
+או
+$\rho_\theta R$
+עבור
+$\theta \in \mbb{R}$.
+\end{exercisechap}
+
+\begin{solution}
+תהי
+$T \in \End_{\mbb{R}}\prs{\mbb{R}^2}$
+איזומטריה.
+מהתנאים השקולים, הבסיס
+$\prs{T\prs{e_1}, T\prs{e_2}}$
+הינו אורתונורמלי.
+בפרט,
+$v \coloneqq T\prs{e_1}$
+הינו מנורמה
+$1$.
+
+נראה שניתן לכתוב
+$v = \pmat{\cos\theta \\ \sin\theta}$.
+נכתוב
+$v = \pmat{v_1, v_2}$
+ונקבל כי
+$v_1^2 + v_2^2 = 1$.
+בפרט,
+$v_1 \in \brs{-1,1}$
+ולכן יש
+$\theta \in \mbb{R}$
+עבורה
+$v_1 = \cos\theta$.
+נקבל כי
+$v_2^2 = 1 - \prs{\cos \theta}^2 = \prs{\sin \theta}^2$
+ולכן
+$v_2 \in \set{\pm \sin \theta}$.
+אם
+$v_2 = \sin\theta$,
+סיימנו.
+אחרת, ניתן לכתוב
+\begin{align*}
+    v_1 &= \cos\prs{-\theta} \\
+    v_2 &= \sin\prs{-\theta}
+\end{align*}
+ואז הזווית המתאימה היא
+$-\theta$.
+
+נקבל כי
+$v = \rho_\theta\prs{e_1}$
+ולכן
+\[\text{.} \rho_{-\theta}\prs{v} = \rho_{-\theta} \circ T \prs{e_1} = e_1\]
+הרכבת איזומטריות הינה איזומטריה, ולכן נקבל כי
+$\rho_{-\theta} \circ T$
+היא איזומטריה שמקבעת את
+$e_1$.
+מהתנאים השקולים, היא מעבירה בסיס אורתונורמלי לבסיס אורתונורמלי, לכן
+$\prs{e_1, u} \coloneqq \prs{e_1, \rho_{-\theta} \circ T\prs{e_2}}$
+אורתונורמלי.
+אבל אז
+$u \in \set{\pm e_2}$
+כי
+$u \in \set{e_1}^\perp = \Span\prs{e_2}$
+מנורמה
+$1$.
+אם
+$u = e_2$
+נקבל כי
+$\rho_{-\theta} \circ T = \id_{\mbb{R}^2}$
+כלומר
+$T = \rho_{\theta}$.
+אחרת,
+$\rho_{-\theta} \circ T = R$
+ואז
+$T = \rho_{\theta} \circ R$.
+\end{solution}
+
+\section{אופרטורים נורמליים וצמודים לעצמם, ומשפט הפירוק הספקטרלי}
+
+ראינו בתרגיל קודם דוגמא לאופרטור
+$T$
+עבורו
+$T^* = T$.
+אופרטור כזה נקרא
+\emph{צמוד לעצמו}
+מעל
+$\mbb{R}$
+או
+\emph{הרמיטי}
+מעל
+$\mbb{C}$.
+אופרטורים צמודים לעצמם מאופיינים על ידי המשפט הבא.
+
+\begin{theorem}[משפט הפירוק הספקטרלי לאופרטורים צמודים לעצמם]
+יהי
+$V$
+מרחב מכפלה פנימית ממשי סוף־מימדי, ויהי
+$T \in \End_{\mbb{R}}\prs{V}$.
+אז
+$T$
+צמוד לעצמו אם ורק אם יש בסיס אורתונורמלי
+$B$
+של
+$V$
+עבורו
+$\brs{T}_B$
+מטריצה אלכסונית.
+\end{theorem}
+
+מעל
+$\mbb{C}$,
+אופרטורים בעלי אפיון דומה אינם אופרטורים הרמיטיים, אלא אופרטורים
+\emph{נורמליים}.
+
+\begin{definition}[אופרטור נורמלי]
+יהי
+$V$
+מרחב מכפלה פנימית ויהי
+$T \in \End_{\mbb{F}}\prs{V}$.
+נגיד כי
+$T$
+\emph{נורמלי}
+אם
+$T^* T = T T^*$.
+\end{definition}
+
+\begin{theorem}[משפט הפירוק הספקטרלי לאופרטורים נורמליים]
+יהי
+$V$
+מרחב מכפלה פנימית מרוכב סוף־מימדי, ויהי
+$T \in \End_{\mbb{C}}\prs{V}$.
+אז
+$T$
+נורמלי אם ורק אם יש בסיס אורתונורמלי
+$B$
+של
+$V$
+עבורו
+$\brs{T}_B$
+מטריצה אלכסונית.
+\end{theorem}
+
+\begin{definition}
+מטריצה
+$A \in \Mat_n\prs{\mbb{F}}$
+עבור
+$\mbb{F} \in \set{\mbb{R}, \mbb{C}}$
+נקראת
+\emph{נורמלית}
+אם
+$A^* A = A A^*$
+כאשר
+$A^* \coloneqq \bar{A}^t$.
+\end{definition}
+
+\begin{remark}
+תהי
+$A$
+מטריצה סימטרית (נורמלית) מעל
+$\mbb{R}$
+(מעל
+$\mbb{C}$).
+אז
+$T_A$
+אופרטור צמוד לעצמו (נורמלי) ולכן ממשפט הפירוק הספקטרלי קיים בסיס אורתונורמלי
+$B$
+עבורו
+$\brs{T_A}_B$
+מטריצה אלכסונית.
+
+אז
+\[\text{.} A = \brs{T_A}_E = \prs{M^E_B}^{-1} \brs{T_A}_B M^E_B\]
+המטריצה
+$P \coloneqq \prs{M^E_B}^{-1} = M^B_E$
+היא מטריצה שעמודותיה מהוות בסיס אורתונורמלי, ולכן הינה אורתוגונלית (אוניטרית). אז מתקיים כי
+$P^{-1} A P = D$
+עבור מטריצה אורתוגונלית (אוניטרית)
+$P$
+ומטריצה אלכסונית
+$D$.
+\end{remark}
+
+\begin{theorem}[משפט הפירוק הספקטרלי למטריצות]
+תהי
+$A \in \Mat_n\prs{\mbb{F}}$
+עבור
+$\mbb{F} = \mbb{R}$
+($\mbb{F} = \mbb{C}$).
+אז
+$A$
+סימטרית (נורמלית) אם ורק אם קיימת מטריצה אורתוגונלית (אוניטרית)
+$P \in \Mat_n\prs{\mbb{F}}$
+עבורה
+$P^{-1} A P$
+אלכסונית.
+\end{theorem}
+
+\begin{exercisechap}
+תהי
+\[\text{.} A = \pmat{3 & 0 & 0 \\ 0 & 2 & 1 \\ 0 & 1 & 2} \in \Mat_3\prs{\mbb{R}}\]
+מצאו מטריצה אורתוגונלית
+$P \in \Mat_3\prs{\mbb{R}}$
+עבורה
+$P^{-1} A P$
+מטריצה אלכסונית.
+\end{exercisechap}
+
+\begin{solution}
+ראשית נמצא ערכים עצמיים. מתקיים
+\begin{align*}
+\det\pmat{2 & 1 \\ 1 & 2} &= 3 \\
+\text{.} \tr\pmat{2 & 1 \\ 1 & 2} &= 4 
+\end{align*}
+לכן אם
+$\lambda_1, \lambda_2$
+הערכים העצמיים נקבל
+$\lambda_1 \lambda_2 = 3$
+וגם
+$\lambda_1 + \lambda_2 = 4$,
+לכן הערכים העצמיים של
+$A$
+הם
+$3$
+מריבוי אלגברי
+$2$
+ו־%
+$1$
+מריבוי אלגברי
+$1$.
+
+המרחב העצמי של
+$3$
+הוא
+$\Span\prs{e_1, e_2 + e_3}$.
+נחפש את המרחב העצמי של
+$1$.
+נדרג
+\begin{align*}
+A - I &= \pmat{2 & 0 & 0 \\ 0 & 1 & 1 \\ 0 & 1 & 1}
+\to \pmat{1 & 0 & 0 \\ 0 & 1 & 1 \\ 0 & 0 & 0}
+\end{align*}
+ואז המרחב העצמי הוא
+$\Span\prs{e_2 - e_3}$.
+
+כדי לקבל בסיס אורתונורמלי נוכל לבצע את תהליך גרם־שמידט על בסיס של כל מרחב עצמי בנפרד, או על הבסיס כולו. אם אנו יודעים שהמטריצה נורמלית, המרחבים העצמיים השונים שלה ניצבים, ולכן שתי הדרכים שקולות. באופן כללי, יש להראות שקיבלנו בסיס מלכסן, או אורתונורמלי, תלוי בשיטה שבחרנו.
+
+נבצע את תהליך גרם־שמידט על
+$\prs{e_1, e_2+e_3}$.
+נקבל בסיס
+$\prs{e_1, \frac{e_2 + e_3}{\sqrt{2}}}$.
+על
+$\prs{e_2 - e_3}$
+נקבל בסיס
+$\prs{\frac{e_2 - e_3}{\sqrt{2}}}$.
+נרצה להראות כי
+\[B = \pmat{\frac{e_2 - e_3}{\sqrt{2}}, e_1, \frac{e_2 + e_3}{\sqrt{2}}}\]
+בסיס מלכסן של
+$A$.
+
+אכן, כל הוקטורים ב־%
+$B$
+הם וקטורים עצמיים של
+$A$.
+לכן אם ניקח
+$P \ceq \brs{\id_{\mbb{C}^3}}^B_E$
+נקבל כי
+$P^{-1} A P$
+מטריצה אלכסונית, וכי
+$P$
+אורתוגונלית, שכן עמודותיה הן בסיס אורתונורמלי.
+\end{solution}
+
+\begin{exercisechap}
+יהי
+$T \in \End_{\mbb{C}}\prs{V}$.
+הראו כי
+$T$
+נורמלי אם ורק אם קיים פולינום
+$p \in \mbb{C}\brs{x}$
+עבורו
+$T^* = p\prs{T}$.
+
+היעזרו במשפט הבא.
+
+\begin{theorem}[אינטרפולציית לגרנג']
+תהיינה
+$x_1, \ldots, x_n, y_1, \ldots, y_n \in \mbb{C}$.
+קיים
+$p \in \mbb{C}_{n+1}\brs{x}$
+עבורו
+$p\prs{x_i} = y_i$
+לכל
+$i \in [n]$.
+\end{theorem}
+\end{exercisechap}
+
+\begin{solution}
+נניח כי קיים פולינום
+$p \in \mbb{C}\brs{x}$
+עבורו
+$T^* = p\prs{T}$.
+כיוון ש־%
+$T$
+מתחלף עם כל פולינום ב־%
+$T$,
+נקבל
+\[T^* T = p\prs{T} T = T p\prs{T} = T T^*\]
+ולכן
+$T$
+נורמלי.
+
+בכיוון השני, נניח כי
+$T$
+נורמלי.
+ממשפט הפירוק הספקטלי קיים בסיס אורתונורמלי
+$B$
+של
+$V$
+עבורו
+$\brs{T}_B = \diag\prs{\lambda_1, \ldots, \lambda_n}$
+אלכסונית.
+אז
+\[\text{.} \brs{T^*}_B = \brs{T}_B^* = \diag\prs{\bar{\lambda}_1, \ldots, \bar{\lambda}_n}\]
+מאינטרפולציית לגרנג', קיים פולינום
+$p \in \mbb{C}\brs{x}$
+עבורו
+$p\prs{\lambda_i} = \bar{\lambda}_i$
+לכל
+$i \in [n]$.
+אז
+\[\brs{T^*}_B = \diag\prs{p\prs{\lambda}_1, \ldots, p\prs{\lambda_n}} = p\prs{\diag\prs{\lambda_1, \ldots, \lambda_n}} = p\prs{\brs{T}_B} = \brs{p\prs{T}}_B\]
+ונקבל כי
+$T^* = p\prs{T}$,
+כנדרש.
+\end{solution}
+
+\begin{exercisechap}
+יהי
+$T \in \End_{\mbb{C}}\prs{V}$
+נורמלי. הראו כי
+$T$
+הרמיטי אם ורק אם כל הערכים העצמיים של
+$T$
+ממשיים.
+\end{exercisechap}
+
+\begin{solution}
+ממשפט הפירוק הספקטרלי קיים בסיס אורתונורמלי
+$B$
+של
+$V$
+עבורו
+$\brs{T}_B = \diag\prs{\lambda_1, \ldots, \lambda_n}$
+אלכסונית.
+כעת
+$T$
+הרמיטי אם ורק אם
+$T^* = T$
+אם ורק אם
+$\brs{T^*}_B = \brs{T}_B$.
+כיוון ש־%
+$B$
+אורתונורמלי, מתקיים
+$\brs{T^*}_B = \overline{\brs{T}_B}^t = \diag\prs{\bar{\lambda}_1, \ldots, \bar{\lambda}_n}$.
+לכן השוויון הנ"ל מתקיים אם ורק אם
+$\bar{\lambda}_i = \lambda_i$
+לכל
+$i \in \brs{n}$,
+כלומר אם ורק אם כל הערכים העצמיים ממשיים.
+\end{solution}
+
+\begin{exercisechap}
+יהי
+$T \in \End_{\mbb{C}}\prs{V}$
+נורמלי. הראו כי
+$T$
+אוניטרי אם ורק אם
+הערכים העצמיים של
+$T$
+הינם על מעגל היחידה.
+\end{exercisechap}
+
+\begin{solution}
+ממשפט הפירוק הספקטרלי קיים בסיס אורתונורמלי
+$B$
+של
+$V$
+עבורו
+$\brs{T}_B = \diag\prs{\lambda_1, \ldots, \lambda_n}$
+אלכסונית.
+אז
+\[\text{.} \brs{T}_B^* = \overline{\brs{T}_B}^t = \diag\prs{\bar{\lambda}_1, \ldots, \bar{\lambda}_n}\]
+כעת,
+\[\text{.} \brs{T^* T}_B = \brs{T^*}_B \brs{T}_B = \diag\prs{\bar{\lambda}_1 \lambda_1 \ldots, \bar{\lambda}_n \lambda_n} = \diag\prs{\abs{\lambda_1}, \ldots, \abs{\lambda_n}}\]
+$T$
+אוניטרי אם ורק אם
+$T^* T = \id$
+אם ורק אם
+$\brs{T^* T} = I_n$,
+אבל מהחישוב הנ"ל זה מתקיים בדיוק כאשר הערכים העצמיים של
+$T$
+על מעגל היחידה (כלומר, עם ערך מוחלט
+$1$).
+\end{solution}
+
+\begin{exercisechap}
+יהי
+$V$
+מרחב מכפלה פנימית ממימד סופי מעל
+$\mbb{C}$.
+
+\begin{enumerate}
+\item
+יהי
+$T \in \End_{\mbb{C}}\prs{V}$
+הפיך. הוכיחו כי
+$\prs{T^*}^{-1} = \prs{T^{-1}}^*$.
+
+\item
+נסמן ב־%
+$\mcal{M}$
+את קבוצת כל ההעתקות
+$T \in \End_{\mbb{C}}\prs{V}$
+ההרמיטיות, ונסמן ב־%
+$\mcal{N}$
+את קבוצת כל ההעתקות
+$U \in \End_{\mbb{C}}\prs{V}$
+האוניטריות ש־%
+$1$
+אינו ערך עצמי שלהן.
+יהי
+\begin{align*}
+\Phi \colon \mcal{M} &\to V \\
+\text{.} \hphantom{lala} T &\mapsto \prs{T + i \id_V} \prs{T - i \id_V}^{-1}
+\end{align*}
+הראו כי
+$\Phi$
+מוגדר היטב וכי
+$\im\prs{\Phi} \subseteq \mcal{N}$.
+
+\item
+הוכיחו כי
+$\Phi$
+חד־חד ערכית וכי
+$\im\prs{\Phi} = \mcal{N}$.
+\end{enumerate}
+\end{exercisechap}
+
+\begin{solution}
+\begin{enumerate}
+\item נראה כי
+$\prs{T^{-1}}^* \circ T^* = \id_V$.
+אכן, ידוע
+$\prs{S_1 \circ S_2}^* = S_2^* \circ S_1^*$
+ולכן
+\[\text{,} \prs{T^{-1}}^* \circ T^* = \prs{T \circ T^{-1}}^* = \id_V^* = \id_V\]
+כנדרש.
+
+\item
+ראשית, יש להראות כי
+$T - i \id_V$
+אכן הפיך לכל
+$T \in \mcal{M}$.
+ראינו כי אופרטורים אוניטריים הינם עם ערכים עצמיים ממשיים, לכן
+$i$
+אינו ערך עצמי של
+$T$
+ולכן זה אכן המקרה.
+
+כעת נראה כי
+$\Phi\prs{T} \in \mcal{N}$
+לכל
+$T \in \mcal{M}$.
+ראינו כי אופרטור נורמלי הינו אוניטרי אם ורק אם הערכים העצמיים שלו על מעגל היחידה, לכן יש להראות כי
+$\Phi\prs{T}$
+נורמלי, כי הערכים העצמיים שלו על מעגל היחיד, וכי הם שונים מאחת.
+
+$T$
+הרמטיטי ולכן נורמלי, וממשפט פירוק הספקטרלי קיים בסיס אורתונורמלי
+$B$
+עבורו
+$T$
+לכסין.
+אז
+\[\brs{\Phi\prs{T}}_B = \prs{\brs{T}_B + i I_n} \prs{\brs{T}_B - i I_n}^{-1}\]
+גם מטריצה אלכסונית. כיוון שהבסיס
+$B$
+אורתונורמלי, נקבל שוב ממשפט הפירוק הספקטרלי כי
+$\Phi\prs{T}$
+נורמלי.
+
+כעת, ערך עצמי של
+$\Phi\prs{T}$
+יהיה מהצורה
+$\mu = \frac{\lambda + i}{\lambda - i}$
+עבור
+$\lambda$
+ערך עצמי של
+$T$.
+כיוון ש־%
+$T$
+הרמיטי,
+$\lambda$
+כזה הינו ממשי.
+נשים לב כי
+$\mu \neq 1$
+כי המונה והמכנה שונים, ונותר לנו להראות כי
+$\abs{\mu} = 1$.
+אכן,
+\begin{align*}
+\mu &= \frac{\prs{\lambda + i}^2}{\prs{\lambda + i}\prs{\lambda - i}}
+\end{align*}
+ואז
+\begin{align*}
+\abs{\mu} &= \mu \bar{\mu}
+\\&= \frac{\prs{\lambda + i}^2 \overline{\prs{\lambda + i}}^2}{\prs{\lambda + i}^2\prs{\lambda - i}^2}
+\\&= \frac{\prs{\lambda + i}^2\prs{\lambda - i}^2}{\prs{\lambda + i}^2\prs{\lambda - i}^2}
+\\ \text{,} \hphantom{\abs{\mu}} &= 1
+\end{align*}
+כנדרש.
+
+\item
+ננסה למצוא את
+$\lambda$
+בחזרה מתוך
+$\mu$.
+נבודד אותו במשוואה
+$\mu = \frac{\lambda + i}{\lambda - i}$.
+נתחיל בכפל במכנה.
+\begin{align*}
+\mu \lambda - i \mu = \lambda + i
+\end{align*}
+נעביר אגפים ונקבל
+\begin{align*}
+\prs{\mu - 1}\lambda = \prs{\mu + 1}i
+\end{align*}
+ולכן
+\begin{align*}
+\text{.} \lambda = i \cdot \frac{\mu + 1}{\mu - 1}
+\end{align*}
+בהשראת זאת, נגדיר
+\begin{align*}
+\Psi \colon \mcal{N} &\to V \\
+U &\mapsto i \prs{U + \id_V}\prs{U - \id_V}^{-1}
+\end{align*}
+ונראה שמתקיים
+$\im\prs{\Psi} = \mcal{M}$
+וגם
+$\Psi = \Phi^{-1}$.
+
+ראשית, יהי
+$U \in \mcal{N}$
+ונראה כי
+$\Phi\prs{U} \in \mcal{M}$.
+כיוון ש־%
+$U$
+אוניטרי, הוא נורמלי וממשפט הפירוק הספקטרלי קיים בסיס אורתונורמלי
+$B$
+עבורו
+$\brs{U}_B = \diag\prs{\mu_1, \ldots, \mu_n}$
+מטריצה אלכסונית. ראינו גם שבמקרה זה הערכים העצמיים הינם על מעגל היחידה, ומהגדרת
+$\mcal{N}$
+הם אינם כוללים את
+$1$.
+כעת
+\[\text{,} \brs{\Psi\prs{U}}_B = \diag\prs{i \cdot \frac{\mu_1 + 1}{\mu_1 - 1}, \ldots, i \cdot \frac{\mu_n + 1}{\mu_n - 1}}\]
+ומהחישוב למעלה נקבל כי איברי האלכסון ממשיים. ראינו שאופרטור הינו הרמיטי אם ורק אם הוא לכסין בבסיס אורתונורמלי וגם איברי האלכסון שלו ממשיים, ולכן
+$\Phi\prs{U} \in \mcal{M}$.
+
+מהחישוב למעלה נקבל גם כי
+\begin{align*}
+\brs{\Phi\prs{\Psi\prs{U}}}_B &= \diag\prs{\mu_1, \ldots, \mu_n} = \brs{U}_B \\
+\text{,} \brs{\Psi \prs{\Phi\prs{T}}}_C &= \diag\prs{\lambda_1, \ldots, \lambda_n} = \brs{T}_C 
+\end{align*}
+עבור
+$U$
+כזה ועבור
+$T \in \mcal{M}$
+לכסין בבסיס אורתונורמלי
+$C$.
+לכן אם נסתכל על
+$\Phi, \Psi$
+בתור העתקות
+\begin{align*}
+\Phi \colon \mcal{M} &\to \mcal{N} \\
+\Psi \colon \mcal{N} &\to \mcal{M}
+\end{align*}
+על ידי צמצום הטווח, נקבל כי
+$\Phi, \Psi$
+העתקות הופכיות, ובפרט חד־חד ערכיות ועל.
+
+\end{enumerate}
+\end{solution}
+
+\begin{exercisechap}
+יהי
+$T \in \End_{\mbb{C}}\prs{V}$
+הרמיטי ונניח שלכל ערך עצמי
+$\lambda \in \mbb{C}$
+מתקיים
+$\lambda \geq 0$.
+הראו כי קיים אופרטור יחיד
+$S \in \End_{\mbb{C}}\prs{V}$
+שכל הערכים העצמיים שלו אי־שליליים וכך שמתקיים
+$S^2 = T$.
+\end{exercisechap}
+
+\begin{solution}
+$T$
+הרמיטי ולכן נורמלי. ממשפט הפירוק הספקטרלי, קיים בסיס אורתונורמלי
+$B$
+עבורו
+$\brs{T}_B = \diag\prs{\lambda_1, \ldots, \lambda_n}$.
+מההנחה,
+$\lambda_i \geq 0$
+לכל
+$i \in \brs{n}$.
+אז קיים שורש חיובי
+$\sqrt{\lambda_i}$
+וניקח
+$S = \prs{\eta^B_B}^{-1} \prs{\diag\prs{\sqrt{\lambda_1}, \ldots, \sqrt{\lambda_n}}}$
+להיות האופרטור עבורו
+$\brs{S}_B = \prs{\diag\prs{\sqrt{\lambda_1}, \ldots, \sqrt{\lambda_n}}}$.
+אז
+$\brs{S^2}_B = \diag\prs{\lambda_1, \ldots, \lambda_n} = \brs{T}_B$
+ולכן
+$S^2 = T$.
+\end{solution}
+
+\begin{exercisechap}
+נראה בתרגיל זה כי כל אופרטור
+$T \in \End_{\mbb{C}}\prs{V}$
+ניתן לכתיבה כצירוף לינארי של ארבעה אופרטורים אוניטריים.
+
+\begin{enumerate}
+    \item יהי
+    $T \in \End_{\mbb{C}}\prs{V}$.
+    הראו שניתן לכתוב את
+    $T$
+    כצירוף לינארי של שני אופרטורים הרמיטיים.
+    \item יהי
+    $T \in \End_{\mbb{C}}\prs{V}$
+    הרמיטי. הראו שניתן לכתוב את
+    $T$
+    כצירוף לינארי של שני אופרטורים אוניטריים.
+\end{enumerate}
+\end{exercisechap}
+
+\begin{solution}
+\begin{enumerate}
+    \item נכתוב
+    \begin{align*}
+        T &= \frac{T + T^*}{2} + \frac{T - T^*}{2} = \frac{T + T^*}{2} + i \prs{\frac{T - T^*}{2i}}
+    \end{align*}
+    ואכן
+    \begin{align*}
+        \prs{\frac{T+T^*}{2}}^* &= \frac{1}{2} \prs{T^* + T^{**}} = \frac{1}{2} \prs{T + T^*} \\
+        \prs{\frac{T - T^*}{2i}}^* &= \overline{\frac{1}{2i}} \prs{T^* - T^{**}} = -\frac{1}{2i} \prs{T^* - T} = \frac{1}{2} \prs{T - T^*}
+    \end{align*}
+    לכן שני האופרטורים הרמיטיים.
+
+    \item
+    \textbf{רעיון:}
+    נרצה, באנלוגיה למקרה הקודם, לכתוב
+    \[\text{.} T = \frac{T + i S}{2} + \frac{T - i S}{2}\]
+    כיוון ש־%
+    $T$
+    הרמיטי ונרצה לכתוב את
+    $S$
+    בתור ביטוי ב־%
+    $T$,
+    נרצה לחפש
+    $S$
+    הרמיטי שמתחלף עם
+    $T$.
+    אז, כדי ש־%
+    $T + i S$
+    יהיה אוניטרי צריך להתקיים
+\[\id_V = \prs{T+iS}\prs{T+iS}^* = \prs{T+iS}\prs{T^* - i S^*} = \prs{T+iS}\prs{T-iS} = T^2 - S^2\]
+    ולכן
+    $S^2 = \id_V - T^2$.
+    
+    יהי
+    $T \in \End_{\mbb{C}}\prs{V}$
+    הרמיטי.
+    עבור אופרטורים אוניטריים, הערכים העצמיים על מעגל היחידה. אז, הערכים העצמיים של סכום של אופרטורים אוניטריים לא יוכלו להיות גדולים מדי. לשם כך, נתחיל בנרמול של
+    $T$.
+    
+    נסמן ב־%
+    $\sigma\prs{T}$
+    את אוסף הערכים העצמיים של
+    $T$,
+    ונגדיר
+    \begin{align*}
+        c\prs{T} &\coloneqq \max\set{\abs{\lambda}}{\lambda \in \sigma\prs{T}}
+    \end{align*}
+    וגם
+    $\tilde{T} = \frac{1}{c\prs{T}} T$.
+    נראה כי
+    $\tilde{T} = \frac{F + G}{2}$
+    צירוף של שני אופרטורים אוניטריים ונקבל כי
+    $T = c\prs{T} \tilde{T} = \frac{c\prs{T}}{2} F + \frac{c\prs{T}}{2} G$
+    צירוף לינארי של שני אופרטורים אוניטריים.
+    
+    נשים לב כי הערכים העצמיים של
+    $\tilde{T}$
+    מערך מוחלט לכל היותר
+    $1$.
+    אכן, אם
+    $\lambda \in \mbb{C}$
+    ערך עצמי עם וקטור עצמי
+    $v$,
+    נקבל
+    \[T\prs{v} = c\prs{T} \tilde{T}\prs{v} = c\prs{T} \lambda v\]
+    ולכן
+    $v$
+    וקטור עצמי של
+    $T$
+    עם ערך עצמי
+    $c\prs{T} \lambda$.
+    אבל, מהגדרת
+    $c\prs{T}$
+    נקבל
+    \[c\prs{T} \geq \abs{c\prs{T} \lambda} = c\prs{T} \abs{\lambda}\]
+    ולכן
+    $\abs{\lambda} \leq 1$.
+    
+    כעת,
+    $\tilde{T}$
+    הרמיטי כי
+    $T$
+    הרמיטי. לכן הוא נורמלי, ולכן קיים בסיס אורתונורמלי
+    $B$
+    של
+    $V$
+    עבורו
+    $\brs{T}_B = \diag\prs{\lambda_1, \ldots, \lambda_n}$.
+    נקבל כי הערכים העצמיים של
+    $\id_V - T^2$,
+    שהינם מהצורה
+    $1 - \lambda^2$
+    עבור
+    $\lambda$
+    ערך עצמי של
+    $\tilde{T}$,
+    הינם אי־שליליים.
+    לכן, קיים שורש
+    $\sqrt{\id_V - \tilde{T}^2}$.
+    
+    יהיו
+    \begin{align*}
+        F &= \tilde{T} + i\sqrt{\id_V - \tilde{T}^2} \\
+        G &= \tilde{T} - i\sqrt{\id_V - \tilde{T}^2}
+    \end{align*}
+    ואז
+    \begin{align*}
+        \tilde{T} &= \frac{F+G}{2} \\
+        F^* F &= \prs{\tilde{T} + i\sqrt{\id_V - \tilde{T}^2}}* \prs{\tilde{T} + i\sqrt{\id_V - \tilde{T}^2}}
+        \\&=
+        \prs{\tilde{T} - i \sqrt{\id_V - \tilde{T}^2}}\prs{\tilde{T} + i\sqrt{\id_V - \tilde{T}^2}}
+        \\&= \tilde{T}^2 - \prs{\id_V \tilde{T}^2}
+        \\&= \id_V
+    \end{align*}
+    ובאותו אופן
+    $G^* G = \id_V$
+    (אפשר גם לשים לב כי
+    $F^* = G$
+    ולכן
+    $G^* G = F F^* = \id_V$).
+\end{enumerate}
+\end{solution}
+
+\section{פירוק לערכים סינגולריים ופירוק פולארי}
+
+יהיו
+$V,W$
+מרחבי מכפלה פנימית סוף־מימדיים, ותהי
+$T \in \Hom_{\mbb{F}}\prs{V,W}$.
+אם
+$V = W$
+ראינו כי
+$T$
+צמוד לעצמו (נורמלי) אם ורק אם קיים בסיס
+$B$
+עבורו
+$\brs{T}_B$
+אלכסונית.
+ראינו שלהעתקות לינאריות כלליות יש איפיון דומה.
+
+\begin{definition}[מטריצה מלבנית אלכסונית]
+מטריצה
+$A \in \Mat_{m \times n}\prs{\mbb{F}}$
+נקראת
+\emph{מלבנית אלכסונית}
+אם
+$a_{i,j} = 0$
+לכל
+$i \neq j$.
+\end{definition}
+
+\begin{theorem}[פירוק לערכים סינגולריים]
+יהיו
+$V,W$
+מרחבי מכפלה פנימית סוף־מימדיים, ותהי
+$T \in \Hom_{\mbb{F}}\prs{V,W}$.
+קיימים בסיסים אורתונורמליים
+$B,C$
+של
+$V,W$
+בהתאמה עבורם
+$\brs{T}^B_C$
+מלבנית אלכסונית.
+
+בנוסף, הערכים
+$\sigma_i = \prs{\brs{T}^B_C}_{i,i}$
+שנקראים
+\emph{הערכים הסינגולריים}
+של
+$T$
+הינם ממשיים אי־שליליים ונקבעים ביחידות תחת הדרישה
+\[\text{.} \sigma_1 \geq \sigma_2 \geq \ldots \geq \sigma_{\min\prs{m,n}}\]
+\end{theorem}
+
+\begin{corollary}[פירוק לערכים סינגולריים של מטריצה] \label{corollary:matrix-svd}
+תהי
+$A \in \Mat_{m,n}\prs{\mbb{F}}$
+עבור
+$\mbb{F} \in \set{\mbb{R}, \mbb{C}}$.
+מהמשפט, קיימים בסיסים אורתונורמליים
+$B,C$
+עבורם
+$\Sigma \coloneqq \brs{T_A}^B_C$
+אלכסונית מלבנית.
+אז
+\[\text{.} A = \brs{T_A}_E = M^C_E \brs{T_A}^B_C M^E_B = \brs{T_A}_E = M^C_E \Sigma M^E_B\]
+המטריצות
+$U \coloneqq M^C_E, V \coloneqq M^B_E$
+הינן אורתוגונליות (אוניטריות) כיוון שהן שולחות בסיס אורתונורמלי לבסיס אורתונורמלי. אכן, אם
+$B = \prs{b_1, \ldots, b_n}$
+נקבל
+\[\text{.} M^B_E e_i = M^B_E \brs{b_i}_B = b_i\]
+בפרט,
+$M^E_B = V^{-1} = V^*$
+ונקבל כי
+$A = U \Sigma V^*$.
+\end{corollary}
+
+\begin{definition}[אופרטור מוגדר אי־שלילית]
+אופרטור
+$T \in \End\prs{V}$
+על מרחב מכפלה פנימית סוף־מימדי נקרא
+\emph{מוגדר אי־שלילית}
+אם הוא צמוד לעצמו (הרמיטי) וגם
+$\trs{Tv, v} \geq 0$
+לכל
+$v \in V$.
+\end{definition}
+
+\begin{remark}
+באופן דומה נגדיר אופרטור מוגדר חיובית%
+\slash%
+אי־חיובית%
+\slash
+שלילית.
+\end{remark}
+
+\begin{proposition}
+אופרטור צמוד לעצמו (נורמלי) הינו מוגדר אי־שלילית אם ורק אם כל הערכים העצמיים שלו (ממשיים) אי־שליליים.
+\end{proposition}
+
+\begin{proposition}
+האופרטור
+$T^* T$
+הינו מוגדר חיובית, והערכים הסינגולריים
+$\sigma_1, \ldots, \sigma_n$
+של העתקה לינארית
+$T \in \Hom_{\mbb{F}}\prs{V,W}$
+הם הערכים העצמיים של האופרטור
+$\sqrt{T^* T} \in \End_{\mbb{F}}\prs{V}$.
+\end{proposition}
+
+נתאר כעת איך למצוא בסיסים
+$B,C$
+כנ"ל.
+נסמן
+$n \coloneqq \dim \prs{V}$
+ו־%
+$m \coloneqq \dim\prs{W}$.
+
+\begin{enumerate}
+\item
+כעת נמצא את הערכים העצמיים $\lambda_i$ של $T^* T$. נסמן
+$\sigma_i = \sqrt{\lambda_i}$
+ונסדר אותם מהגדול לקטן
+$\sigma_1 \geq \sigma_2 \geq \ldots \geq \sigma_n$.
+
+\item
+ניקח
+$B = \prs{v_1, \ldots, v_n}$
+בסיס אורתונורמלי של וקטורים עצמיים מתאימים של
+$T^* T$
+(שקיים לפי פירוק ספקטרלי).
+
+יהי
+$k \in \brs{n}$
+המקסימלי עבורו
+$\lambda_k > 0$.
+נגדיר
+$C' = \prs{\frac{1}{\sigma_1} T\prs{v_1}, \ldots, \frac{1}{\sigma_k} T\prs{v_k}}$.
+
+אז אכן מתקיים
+$T\prs{v_i} = \sigma_i u_i$
+וגם
+\begin{align*}
+\trs{\frac{1}{\sigma_i} T\prs{v_i}, \frac{1}{\sigma_j} T\prs{v_j}}
+&=
+\frac{1}{\sigma_i \sigma_j} \trs{T\prs{v_i}, T\prs{v_j}}
+\\&=
+\frac{1}{\sigma_i \sigma_j} \trs{T^* T\prs{v_i}, v_j}
+\\&=
+\frac{\lambda_i}{\sigma_i \sigma_j} \trs{v_i, v_j}
+\\&=
+\frac{\lambda_i}{\sigma_i \sigma_j} \delta_{i,j}
+\\&=
+\frac{\lambda_i}{\sigma_i^2} \delta_{i,j}
+\\ \text{.} \hphantom{\trs{\frac{1}{\sigma_i} T\prs{v_i}, \frac{1}{\sigma_j} T\prs{v_j}}} &=
+\delta_{i,j}
+\end{align*}
+
+\item
+נשלים את
+$C'$
+לבסיס אורתונורמלי
+$C$
+של
+$W$.
+
+לכל
+$i > k$
+מתקיים
+\[\text{.} \norm{T\prs{v_i}}^2 = \trs{Tv_i, Tv_i} = \trs{T^* T v_i, v_i} = 0\]
+לכן
+$T\prs{v_i} = 0$
+ולא משנה באיזו דרך נשלים לבסיס אורתונורמלי.
+\end{enumerate}
+
+\begin{remark}
+כדי למצוא את הפירוק
+$A = U \Sigma V^*$
+של מטריצה
+$A \in \Mat_{m,n}\prs{\mbb{F}}$,
+נמצא את הפירוק לערכים סינגולריים של
+$T_A \in \Hom_{\mbb{F}}\prs{\mbb{F}^n, \mbb{F}^m}$
+ונעבוד לפי התיאור במסקנה
+\ref{corollary:matrix-svd}.
+\end{remark}
+
+\begin{exercisechap}
+תהי
+\[\text{.} A = \pmat{1 & -1 \\ 0 & 1 \\ 1 & 0} \in \Mat_{3 \times 2}\prs{\mbb{C}}\]
+מיצאו את הפירוק של
+$A$
+לערכים סינגולריים.
+\end{exercisechap}
+
+\begin{solution}
+הערכים הסינגולריים הם הערכים העצמיים של
+$\sqrt{A^* A}$.
+מתקיים
+$A^* A = A^t A = \pmat{2 & -1 \\ -1 & 2}$.
+אם
+$\lambda, \mu$
+הערכים העצמיים, נקבל
+\begin{align*}
+\lambda + \mu = \tr\prs{A^* A} = 4 \\
+\text{,} \lambda \mu = \det\prs{A^* A} = 3
+\end{align*}
+לכן הערכים העצמיים הם
+$3,1$,
+ולכן הערכים הסינגולריים הם
+$\sqrt{3}, 1$.
+
+כעת, כדי למצוא את הבסיס
+$B$
+נחפש בסיס אורתונורמלי של וקטורים עצמיים של
+$A^* A$.
+נשים לב מיד כי
+$e_1 - e_2$
+וקטור עצמי של
+$3$
+וכי
+$e_1 + e_2$
+וקטור עצמי של
+$1$.
+ננרמל את הוקטורים, שהינם ניצבים בתור וקטורים עצמיים עם ערכים עצמיים שונים עבור אופרטור צמוד לעצמו (הרמיטי), ונקבל בסיס אורתונורמלי
+\[B = \pmat{\frac{e_1 - e_2}{\sqrt{2}}, \frac{e_1 + e_2}{\sqrt{2}}}\]
+של
+$\mbb{C}^2$.
+
+נגדיר
+\begin{align*}
+\tilde{C} &= \prs{\frac{1}{\sqrt{3}} A \prs{\frac{e_1 - e_2}{\sqrt{2}}}, A\prs{\frac{e_1 + e_2}{\sqrt{2}}}}
+\\&= \prs{\frac{1}{\sqrt{6}} \pmat{2\\-1\\1}, \frac{1}{\sqrt{2}} \pmat{0\\1\\1}}
+\end{align*}
+ונשלים קבוצה סדורה זאת לבסיס אורתונורמלי של
+$\mbb{C}^3$.
+
+נסמן
+$w = \pmat{a\\b\\c}$
+ונפתור את המשוואות
+\begin{align*}
+2a - b + c &= 0\\
+b + c &= 0
+\end{align*}
+כדי לקבל
+$w = \pmat{1\\1\\-1}$.
+כעת,
+$\norm{w} = 3$
+לכן לאחר נרמול נקבל
+$w_3 = \frac{1}{\sqrt{3}} \pmat{1\\1\\-1}$.
+נגדיר
+\begin{align*}
+\text{.} C \ceq \tilde{C} * \prs{w_3}
+\end{align*}
+
+נקבל את הפירוק
+$A = U \Sigma V^*$
+עבור
+\begin{align*}
+U &= M^C_E = \pmat{\frac{2}{\sqrt{6}} & 0 & \frac{1}{\sqrt{3}} \\ -\frac{1}{\sqrt{6}} & \frac{1}{\sqrt{2}} & \frac{1}{\sqrt{3}} \\ \frac{1}{\sqrt{6}} & \frac{1}{\sqrt{2}} & -\frac{1}{\sqrt{3}}} \\
+\Sigma &= \pmat{\sqrt{3} & 0 \\ 0 & 1 \\ 0 & 0} \\
+\text{.} V &= M^B_E = \frac{1}{\sqrt{2}} \pmat{1 & 1 \\ -1 & 1}
+\end{align*}
+כלומר,
+\begin{align*}
+\text{.} A = \pmat{\frac{2}{\sqrt{6}} & 0 & \frac{1}{\sqrt{3}} \\ -\frac{1}{\sqrt{6}} & \frac{1}{\sqrt{2}} & \frac{1}{\sqrt{3}} \\ \frac{1}{\sqrt{6}} & \frac{1}{\sqrt{2}} & -\frac{1}{\sqrt{3}}} \pmat{\sqrt{3} & 0 \\ 0 & 1 \\ 0 & 0} \pmat{\frac{1}{\sqrt{2}} & -\frac{1}{\sqrt{2}} \\ \frac{1}{\sqrt{2}} & \frac{1}{\sqrt{2}}}
+\end{align*}
+\end{solution}
+
+\begin{exercisechap}
+מה יקרה אם נחשב בעזרת האלגוריתם פירוק לערכים סינגולריים עבור אופרטור נורמלי?
+באילו מקרים האלגוריתם יתן
+$B = C$?
+\end{exercisechap}
+
+\begin{solution}
+ניקח בסיס
+$B = \prs{v_1, \ldots, v_n}$
+עבורו
+$\brs{T}_B = \diag\prs{\lambda_1, \ldots, \lambda_n}$,
+ואז
+\[\text{,} \brs{T^* T}_B = \diag\prs{\bar{\lambda}_1, \ldots, \bar{\lambda}_n} \diag\prs{\lambda_1, \ldots, \lambda_n} = \diag\prs{\abs{\lambda_1}^2, \ldots, \abs{\lambda_n}^2}\]
+\end{solution}
+וכן
+$\sqrt{\brs{T^* T}_B} = \diag\prs{\abs{\lambda_1}, \ldots, \abs{\lambda_n}}$.
+אז החישוב שלנו מראה
+\begin{align*}
+\text{.} C \coloneqq \prs{u_1, \ldots, u_n} = \prs{\frac{1}{\abs{\lambda_1}} T\prs{v_1}, \ldots, \frac{1}{\abs{\lambda_n}} T\prs{v_n}}
+\end{align*}
+כעת,
+$T\prs{v_i} = \lambda_i v_i$
+ונקבל כי
+$u_i = \frac{\lambda_i}{\abs{\lambda_i}} v_i$.
+אז
+$u_i = v_i$
+אם ורק אם
+$\lambda_i$
+ממשי אי־שלילי.
+
+לכן האלגוריתם יתן
+$B = C$
+אם ורק אם כל הערכים העצמיים של
+$T$
+הינם ממשיים אי־שליליים. כלומר, אם ורק אם
+$T$
+מוגדר אי־שלילית.
+
+\begin{exercisechap}
+הוכיחו או הפריכו: הערכים הסינגולריים של
+$T^2$
+הם ריבועי הערכים הסינגולריים של
+$T$.
+\end{exercisechap}
+
+\begin{solution}
+הטענה איננה נכונה, למשל עבור
+$A = \pmat{0 & 1 \\ 0 & 0}$.
+אכן, הערכים הסינגוליים של
+$A^2$
+הם
+$\prs{0,0}$
+כי
+$A^2 = 0$,
+אבל הערכים הסינגולריים של
+$A$
+הם
+$\prs{0,1}$
+כי
+$A^t A = \pmat{0 & 0 \\ 0 & 1}$.
+\end{solution}
+
+\begin{exercisechap}
+יהי
+$T \in \End_{\mbb{R}}\prs{V}$
+עם ערכים סינגולריים
+$\sigma_1, \ldots, \sigma_n$.
+הראו כי
+$\norm{T\prs{v}} \leq \norm{v} \cdot \max_{i \in [n]} \set{\sigma_i}$
+לכל
+$v \in V$.
+\end{exercisechap}
+
+\begin{exercisechap}
+תהיינה
+$A,B,U \in \Mat_n\prs{\mbb{F}}$
+עבור
+$U$
+אורתוגונלית (אוניטרית) המקיימת
+$B = U^* A U$,
+ונניח כי
+$A$
+מוגדרת אי־שלילית.
+הראו כי
+$B$
+מוגדרת אי־שלילית.
+\end{exercisechap}
+
+\begin{solution}
+ראשית,
+$B$
+אורתוגונלית (אוניטרית) כמפכלה של כאלה.
+כעת, לכל
+$v \in V$
+מתקיים
+$\trs{Bv, v} = \trs{U^* A U v, v} = \trs{A \prs{U v}, U v}$
+כאשר ביטוי זה הינו אי־שלילי כי
+$A$
+מוגדרת אי־שלילית.
+\end{solution}
+
+\begin{remark}
+באותו אופן, מטריצה הדומה אורתוגונלית (אוניטרית) למטריצה מוגדרת
+חיובית%
+\slash%
+אי־חיובית%
+\slash%
+שלילית הינה
+חיובית%
+\slash%
+אי־חיובית%
+\slash%
+שלילית.
+\end{remark}
+
+נעבור כעת למשפט פירוק נוסף שנובע מהפירוק לערכים סינגולריים.
+
+\begin{theorem}[פירוק פולארי לאופרטורים]
+יהי
+$T \in \End_{\mbb{F}}\prs{V}$
+אופרטור על מרחב מכפלה פנימית סוף־מימדי. יש אופרטור אורתוגונלי (אוניטרי)
+$U \in \End_{\mbb{F}}\prs{V}$
+ואופרטור מוגדר אי־שלילית
+$R \in \End_{\mbb{F}}\prs{V}$
+עבורם
+$T = UR$.
+
+בנוסף, אם
+$T$
+הפיך, האופרטור
+$R$
+מוגדר חיובית.
+\end{theorem}
+
+\begin{theorem}[פירוק פולארי למטריצות]
+תהי
+$A \in \Mat_n\prs{\mbb{F}}$.
+יש מטריצה
+$U \in \Mat_n\prs{\mbb{F}}$
+אורתוגונלית (אוניטרית) ומטריצה
+$R \in \Mat_n\prs{\mbb{F}}$
+מוגדרת אי־‏שלילית עבורן
+$A = UR$.
+
+בנוסף,
+אם
+$A$
+הפיכה, המטריצה
+$R$
+מוגדרת חיובית.
+\end{theorem}
+
+\subsubsection{מציאת פירוק פולארי}
+
+\begin{enumerate}
+\item
+כדי למצוא פירוק פולארי עבור מטריצות, ניעזר בפירוק הפולארי
+$A = U \Sigma V^*$.
+נשים לב כי
+$\Sigma$
+הינה מוגדרת אי־שלילית, וכדי להיעזר בכך נכתוב
+\[\text{.} A = U V^* V \Sigma V^* = \prs{U V^*} \prs{V \Sigma V^*}\]
+אז
+$U V^*$
+אורתוגונלית (אוניטרית) כמכפלת מטריצות אורתוגונליות (אוניטריות), ו־%
+$V \Sigma V^*$
+מוגדרת אי־שלילית כי היא דומה אוניטרית למטריצה אלכסונית אי־שלילית.
+אם
+$A$
+הפיכה, גם
+$A^* A$
+הפיכה ולכן גם
+$\Sigma = \sqrt{A^* A}$.
+אז היא מוגדרת חיובית ולכן גם
+$V \Sigma V^*$
+מוגדרת חיובית.
+
+\item
+עבור אופרטור
+$T \in \End_{\mbb{F}}\prs{V}$,
+ניקח מייצגת לפי בסיס אורתונורמלי
+$B$
+ונכתוב
+$\brs{T}_B = \tilde{U} \tilde{R}$
+עבור
+$\tilde{U}$
+אורתוגונלי (אוניטרי) ועבור
+$\tilde{R}$
+מוגדר אי־שלילית. נסמן ב־%
+$U \coloneqq \prs{\eta^B_B}^{-1}\prs{\tilde{U}}$
+ו־%
+$R \coloneqq \prs{\eta^B_B}^{-1}\prs{\tilde{R}}$
+את האופרטורים המיוצגים על ידי
+$\tilde{U}, \tilde{R}$
+לפי הבסיס
+$B$.
+
+אז
+$U$
+אורתוגונלי (אוניטרי) כי
+$\brs{U}_B = \tilde{U}$
+כזה ו־%
+$R$
+מוגדר אי־שלילית (או מוגדר חיובית, אם
+$T$
+הפיך) כי
+$\brs{R}_B = \tilde{R}$
+כזה.
+\end{enumerate}
+
+\begin{exercisechap}
+מיצאו את הפירוק הפולארי עבור האופרטור הבא.
+\begin{align*}
+T \colon \mbb{R}^3 &\to \mbb{R}^3 \\
+\pmat{x \\ y \\ z} &\mapsto \pmat{z \\ 2x \\ 3y}
+\end{align*}
+\end{exercisechap}
+
+\begin{solution}
+מתקיים
+\begin{align*}
+\brs{T}_E &= \pmat{0 & 0 & 1 \\ 2 & 0 & 0 \\ 0 & 3 & 0} \\
+\brs{T^*}_E &= \pmat{0 & 2 & 0 \\ 0 & 0 & 3 \\ 1 & 0 & 0} \\
+\brs{T^* T}_E &= \pmat{4 & 0 & 0 \\ 0 & 9 & 0 \\ 0 & 0 & 1}
+\end{align*}
+ולכן הערכים הסינגולריים של
+$T$
+הם
+$3,2,1$.
+
+יש לנו בסיס אורתונורמלי
+$B = \prs{e_2, e_1, e_3}$
+של וקטורים עצמיים.
+כדי לקבל את הבסיס השני, נפעיל את
+$T$
+על וקטורי
+$B$
+ונחלק בערכים הסינגולריים.
+נקבל בסיס אורתונורמלי
+\begin{align*}
+\text{.} C &= \pmat{\frac{1}{3} T\prs{e_2}, \frac{1}{2} T\prs{e_1}, T\prs{e_3}}
+= \prs{e_3, e_2, e_1}
+\end{align*}
+אז
+\begin{align*}
+\text{.} \brs{T}_E = W \Sigma V^*
+\end{align*}
+עבור
+\begin{align*}
+\Sigma &= \pmat{3&0&0\\0&2&0\\0&0&1} \\
+V &= M^B_E = \pmat{0&1&0\\1&0&0\\0&0&1}\\
+\text{.} W &= M^C_E = \pmat{0&0&1\\0&1&0\\1&0&0}
+\end{align*}
+\end{solution}
+
+\begin{exercisechap}
+תהי
+$A \in \Mat_n\prs{\mbb{F}}$.
+הראו כי יש
+$U \in \Mat_n\prs{\mbb{F}}$
+אורתוגונלית (אוניטרית) עבורה
+$A = U \sqrt{A^* A}$.
+\end{exercisechap}
+
+\begin{solution}
+ראינו כי
+$A = U R$
+עבור
+$U = W V^*$
+ועבור
+$R = V \Sigma V^*$
+כאשר
+\begin{align*}
+W &= M^C_E \\
+V &= M^B_E \\
+\Sigma &= \brs{T_A}^B_C
+\end{align*}
+מטריצות בפירוק לערכים סינגולריים
+$A = W \Sigma V^*$.
+
+כעת,
+$V \Sigma V^*$
+צמודה לעצמה (הרמיטית) כי
+$\prs{V \Sigma V^*}^* = V \Sigma V^* = V \Sigma V^*$,
+והערכים העצמיים שלה אי־שליליים כי היא דומה ל־%
+$\Sigma$.
+לכן היא מוגדרת אי־שלילית, ונותר להראות כי
+$\prs{V \Sigma V^*}^2 = A^* A$.
+כיוון ש־%
+$\Sigma$
+אלכסונית ממשית, מתקיים
+$\Sigma^* = \Sigma$.
+לכן
+\begin{align*}
+\prs{V \Sigma V^*}^2 &= V \Sigma^2 V^*
+\\&= V \Sigma^* \Sigma V^*
+\\&= M^B_E \brs{T_A^*}^C_B \brs{T_A}^B_C M^E_B
+\\&= \brs{T_A^*}^C_E \brs{T_A}^E_C
+\\&= \brs{T_A^* T_A}_E
+\\ \text{.} \hphantom{\prs{V \Sigma V^*}^2} &= A^* A
+\end{align*}
+
+\end{solution}
+
 \printbibliography
 \end{document}

@@ -174,3 +174,72 @@
 \contentsline {theoremx}{{משפט}{4.5.{9}}{מרחק של וקטור מתת־מרחב}}{43}{theoremx.4.5.9}%
 \contentsline {exercisechap}{{תרגיל}{4.{9}}{}}{43}{exercisechap.4.9}%
 \contentsline {solution}{{פתרון}{41}{}}{43}{solution.41}%
+\contentsline {definitionx}{{הגדרה}{5.1.{1}}{המרחב הדואלי}}{45}{theoremx.5.1.1}%
+\contentsline {theoremx}{{משפט}{5.1.{2}}{משפט ההצגה של ריס}}{45}{theoremx.5.1.2}%
+\contentsline {exercisechap}{{תרגיל}{5.{1}}{}}{45}{exercisechap.5.1}%
+\contentsline {solution}{{פתרון}{42}{}}{45}{solution.42}%
+\contentsline {exercisechap}{{תרגיל}{5.{2}}{}}{45}{exercisechap.5.2}%
+\contentsline {solution}{{פתרון}{43}{}}{45}{solution.43}%
+\contentsline {theoremx}{{משפט}{5.2.{1}}{ההעתקה הצמודה}}{47}{theoremx.5.2.1}%
+\contentsline {theoremx}{{משפט}{5.2.{2}}{}}{47}{theoremx.5.2.2}%
+\contentsline {exercisechap}{{תרגיל}{5.{3}}{}}{47}{exercisechap.5.3}%
+\contentsline {solution}{{פתרון}{44}{}}{47}{solution.44}%
+\contentsline {exercisechap}{{תרגיל}{5.{4}}{}}{48}{exercisechap.5.4}%
+\contentsline {solution}{{פתרון}{45}{}}{48}{solution.45}%
+\contentsline {definitionx}{{הגדרה}{5.3.{1}}{אופרטור אורתוגונלי (אוניטרי)}}{49}{theoremx.5.3.1}%
+\contentsline {definitionx}{{הגדרה}{5.3.{2}}{מטריצה אורתונוגלית (אוניטרית)}}{49}{theoremx.5.3.2}%
+\contentsline {exercisechap}{{תרגיל}{5.{5}}{}}{49}{exercisechap.5.5}%
+\contentsline {solution}{{פתרון}{46}{}}{49}{solution.46}%
+\contentsline {remark}{{הערה}{5.3.{3}}{}}{49}{theoremx.5.3.3}%
+\contentsline {proposition}{{טענה}{5.3.{4}}{}}{49}{theoremx.5.3.4}%
+\contentsline {exercisechap}{{תרגיל}{5.{6}}{}}{49}{exercisechap.5.6}%
+\contentsline {solution}{{פתרון}{47}{}}{49}{solution.47}%
+\contentsline {exercisechap}{{תרגיל}{5.{7}}{}}{49}{exercisechap.5.7}%
+\contentsline {solution}{{פתרון}{48}{}}{49}{solution.48}%
+\contentsline {exercisechap}{{תרגיל}{5.{8}}{}}{50}{exercisechap.5.8}%
+\contentsline {solution}{{פתרון}{49}{}}{50}{solution.49}%
+\contentsline {theoremx}{{משפט}{5.4.{1}}{משפט הפירוק הספקטרלי לאופרטורים צמודים לעצמם}}{50}{theoremx.5.4.1}%
+\contentsline {definitionx}{{הגדרה}{5.4.{2}}{אופרטור נורמלי}}{50}{theoremx.5.4.2}%
+\contentsline {theoremx}{{משפט}{5.4.{3}}{משפט הפירוק הספקטרלי לאופרטורים נורמליים}}{50}{theoremx.5.4.3}%
+\contentsline {definitionx}{{הגדרה}{5.4.{4}}{}}{50}{theoremx.5.4.4}%
+\contentsline {remark}{{הערה}{5.4.{5}}{}}{50}{theoremx.5.4.5}%
+\contentsline {theoremx}{{משפט}{5.4.{6}}{משפט הפירוק הספקטרלי למטריצות}}{50}{theoremx.5.4.6}%
+\contentsline {exercisechap}{{תרגיל}{5.{9}}{}}{50}{exercisechap.5.9}%
+\contentsline {solution}{{פתרון}{50}{}}{50}{solution.50}%
+\contentsline {exercisechap}{{תרגיל}{5.{10}}{}}{51}{exercisechap.5.10}%
+\contentsline {theoremx}{{משפט}{5.4.{7}}{אינטרפולציית לגרנג'}}{51}{theoremx.5.4.7}%
+\contentsline {solution}{{פתרון}{51}{}}{51}{solution.51}%
+\contentsline {exercisechap}{{תרגיל}{5.{11}}{}}{51}{exercisechap.5.11}%
+\contentsline {solution}{{פתרון}{52}{}}{51}{solution.52}%
+\contentsline {exercisechap}{{תרגיל}{5.{12}}{}}{51}{exercisechap.5.12}%
+\contentsline {solution}{{פתרון}{53}{}}{51}{solution.53}%
+\contentsline {exercisechap}{{תרגיל}{5.{13}}{}}{51}{exercisechap.5.13}%
+\contentsline {solution}{{פתרון}{54}{}}{52}{solution.54}%
+\contentsline {exercisechap}{{תרגיל}{5.{14}}{}}{53}{exercisechap.5.14}%
+\contentsline {solution}{{פתרון}{55}{}}{53}{solution.55}%
+\contentsline {exercisechap}{{תרגיל}{5.{15}}{}}{53}{exercisechap.5.15}%
+\contentsline {solution}{{פתרון}{56}{}}{53}{solution.56}%
+\contentsline {definitionx}{{הגדרה}{5.5.{1}}{מטריצה מלבנית אלכסונית}}{54}{theoremx.5.5.1}%
+\contentsline {theoremx}{{משפט}{5.5.{2}}{פירוק לערכים סינגולריים}}{54}{theoremx.5.5.2}%
+\contentsline {corollary}{{מסקנה}{5.5.{3}}{פירוק לערכים סינגולריים של מטריצה}}{54}{theoremx.5.5.3}%
+\contentsline {definitionx}{{הגדרה}{5.5.{4}}{אופרטור מוגדר אי־שלילית}}{54}{theoremx.5.5.4}%
+\contentsline {remark}{{הערה}{5.5.{5}}{}}{55}{theoremx.5.5.5}%
+\contentsline {proposition}{{טענה}{5.5.{6}}{}}{55}{theoremx.5.5.6}%
+\contentsline {proposition}{{טענה}{5.5.{7}}{}}{55}{theoremx.5.5.7}%
+\contentsline {remark}{{הערה}{5.5.{8}}{}}{55}{theoremx.5.5.8}%
+\contentsline {exercisechap}{{תרגיל}{5.{16}}{}}{55}{exercisechap.5.16}%
+\contentsline {solution}{{פתרון}{57}{}}{55}{solution.57}%
+\contentsline {exercisechap}{{תרגיל}{5.{17}}{}}{56}{exercisechap.5.17}%
+\contentsline {solution}{{פתרון}{58}{}}{56}{solution.58}%
+\contentsline {exercisechap}{{תרגיל}{5.{18}}{}}{57}{exercisechap.5.18}%
+\contentsline {solution}{{פתרון}{59}{}}{57}{solution.59}%
+\contentsline {exercisechap}{{תרגיל}{5.{19}}{}}{57}{exercisechap.5.19}%
+\contentsline {exercisechap}{{תרגיל}{5.{20}}{}}{57}{exercisechap.5.20}%
+\contentsline {solution}{{פתרון}{60}{}}{57}{solution.60}%
+\contentsline {remark}{{הערה}{5.5.{9}}{}}{57}{theoremx.5.5.9}%
+\contentsline {theoremx}{{משפט}{5.5.{10}}{פירוק פולארי לאופרטורים}}{57}{theoremx.5.5.10}%
+\contentsline {theoremx}{{משפט}{5.5.{11}}{פירוק פולארי למטריצות}}{57}{theoremx.5.5.11}%
+\contentsline {exercisechap}{{תרגיל}{5.{21}}{}}{57}{exercisechap.5.21}%
+\contentsline {solution}{{פתרון}{61}{}}{57}{solution.61}%
+\contentsline {exercisechap}{{תרגיל}{5.{22}}{}}{58}{exercisechap.5.22}%
+\contentsline {solution}{{פתרון}{62}{}}{58}{solution.62}%

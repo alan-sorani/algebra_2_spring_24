@@ -21,3 +21,10 @@
 \contentsline {section}{\numberline {4.3}תכונות של מכפלות פנימיות, ונורמות}{38}{section.4.3}%
 \contentsline {section}{\numberline {4.4}מטריקות וניצבות}{40}{section.4.4}%
 \contentsline {section}{\numberline {4.5}בסיסים אורתונורמליים והמרחב הניצב}{41}{section.4.5}%
+\contentsline {chapter}{\numberline {5}אופרטורים על מרחבי מכפלה פנימית}{45}{chapter.5}%
+\contentsline {section}{\numberline {5.1}המרחב הדואלי, ומשפט ההצגה של ריס}{45}{section.5.1}%
+\contentsline {section}{\numberline {5.2}ההעתקה הצמודה}{47}{section.5.2}%
+\contentsline {section}{\numberline {5.3}אופרטורים אוניטריים ואורתוגונליים}{48}{section.5.3}%
+\contentsline {section}{\numberline {5.4}אופרטורים נורמליים וצמודים לעצמם, ומשפט הפירוק הספקטרלי}{50}{section.5.4}%
+\contentsline {section}{\numberline {5.5}פירוק לערכים סינגולריים ופירוק פולארי}{54}{section.5.5}%
+\contentsline {subsubsection}{מציאת פירוק פולארי}{57}{section*.3}%

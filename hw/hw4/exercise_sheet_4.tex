@@ -1,0 +1,234 @@
+\documentclass[a4paper,10pt,twoside,openany]{article}
+
+\usepackage[lang=hebrew]{maths}
+\usepackage{hebrewdoc}
+\usepackage{stylish}
+\usepackage{lipsum}
+\let\bs\blacksquare
+
+\setlength{\parindent}{0pt}
+
+%%%%%%%%%%%%
+% Styling %
+%%%%%%%%%%%%
+
+\usepackage{enumitem}
+
+%%%%%%%%%%%%%
+% Counters  %
+%%%%%%%%%%%%%
+
+\setcounter{section}{1}     
+            
+%BIBLIOGRAPHY
+\usepackage[
+backend=biber,
+style=alphabetic,
+]{biblatex}
+\addbibresource{bibliography.bib} %Imports bibliography file
+
+%%%%%%%%%%
+% Title  %
+%%%%%%%%%%
+\title{
+אלגברה ב' - גיליון תרגילי בית 4 \\
+גרם־שמידט ואופרטורים צמודים
+\\
+\vspace{1cm}
+\large{תאריך הגשה: 9.8.2024}
+}
+\date{}
+
+\begin{document}
+\maketitle
+
+\begin{exercise}%1
+יהי
+$V = \mbb{R}_2\brs{x}$
+ותהיינה
+\begin{align*}
+\trs{f,g}_1 &= \int_0^1 f\prs{x} g\prs{x} \diff x \\
+\trs{f,g}_2 &= f\prs{-1} g\prs{-1} + f\prs{0} g\prs{0} + f\prs{1} g\prs{1}
+\end{align*}
+שתי מכפלות פנימיות על
+$V$.
+יהי
+\[\text{.} W = \set{f \in V}{f\prs{x} = f\prs{-x}} \leq V\]
+\begin{enumerate}
+\item 
+מיצאו בסיס
+$B = \prs{w_1, \ldots, w_m}$
+של
+$W$
+והשלימו אותו לבסיס
+$C$
+של
+$V$.
+בצעו את תהליך גרם־שמידט על
+$C$
+לפי כל אחת מהמכפלות הפנימיות כדי לקבל בסיסים אורתונורמליים לפיהן.
+
+\item
+היעזרו בבסיסים שמצאתן בסעיף הקודם כדי למצוא
+את
+$W^\perp$
+לפי כל אחת מהמכפלות הפנימיות.
+
+\item
+מיצאו את ההטלה האורתוגונלית
+$P_W$
+על
+$W$
+לפי כל אחת מהמכפלות הפנימיות.
+
+\item
+יהי
+$f\prs{x} = 1 + x$.
+מיצאו את המרחק של
+$f$
+מ־%
+$W$
+לפי כל אחת מהמכפלות הפנימיות.
+\end{enumerate}
+\end{exercise}
+
+\begin{exercise}%2
+יהי
+$V$
+מרחב מכפלה פנימית סוף־מימדי מעל
+$\mbb{C}$,
+ויהי
+$T \in \End_{\mbb{C}}\prs{V}$.
+הראו כי קיים בסיס אורתונורמלי
+$B$
+עבורו
+$\brs{T}_B$
+משולשת עליונה.
+
+\textbf{רמז:}
+היעזרו במשפטי ז'ורדן וגרם־שמידט.
+\end{exercise}
+
+\begin{exercise}%3
+יהי
+$V = M_2\prs{\mbb{R}}$
+עם הבסיס
+\[\text{.} B = \prs{\pmat{1 & 1 \\ 0 & 0}, \pmat{1 & 2 \\ 0 & 0}, \pmat{1 & 0 \\ 1 & 0}, \pmat{0 & 1 \\ 0 & 1}}\]
+מיצאו מכפלה פנימית על
+$V$
+לפיה
+$B$
+בסיס אורתונורמלי.
+
+\textbf{רמז:}
+כל המכפלות פנימיות על
+$V$
+הן מהצורה
+\[\text{,} \trs{u,v}_C \coloneqq \trs{\brs{u}_C, \brs{v}_C}_{\mrm{std}}\]
+עבור
+$C$
+בסיס של
+$V$.
+\end{exercise}
+
+\begin{exercise}
+יהי
+$V = \Mat_n\prs{\mbb{R}}$
+עם המכפלה הפנימית
+$\trs{X,Y} = \tr\prs{Y^t X}$,
+ותהי
+$B \in V$.
+נגדיר אופרטור
+\begin{align*}
+\Phi_B \colon V &\to V \\
+\text{.} \hphantom{lalala} A &\mapsto BA
+\end{align*}
+\begin{enumerate}
+\item
+חשבו את
+$\Phi_B^*$.
+\item
+עבור אילו מטריצות
+$B$
+האופרטור
+$\Phi_B$
+נורמלי?
+\item
+עבור אילו מטריצות
+$B$
+האופרטור
+$\Phi_B$
+צמוד לעצמו?
+\item
+עבור אילו מטריצות
+$B$
+האופרטור
+$\Phi_B$
+אורתוגונלי?
+\end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+יהי
+$V = \Mat_2\prs{\mbb{R}}$
+עם המכפלה הפנימית
+$\trs{X,Y} = \tr\prs{Y^t X}$,
+ויהי
+$T \in \End_{\mbb{R}}\prs{V}$
+המוגדר על ידי
+\[\text{.} T\pmat{a & b \\ c & d} = \pmat{16 a & 4b -6c \\ -6b + 13c & 16d}\]
+מיצאו בסיס אורתונורמלי
+$B$
+של
+$V$
+עבורו
+$\brs{T}_B$
+אלכסונית, ומיצאו אופרטור
+$S \in \End_{\mbb{R}}\prs{V}$
+צמוד לעצמו עבורו
+$S^2 = T$.
+\end{exercise}
+
+\begin{exercise}
+יהי
+$V$
+מרחב מכפלה פנימית מרוכב ממימד סופי, יהי
+$T \in \End_{\mbb{C}}\prs{V}$
+נורמלי, ונניח כי
+$3,4$
+ערכים עצמיים של
+$T$.
+הראו שיש
+$v \in V$
+עבורו
+$\norm{v} = \sqrt{2}$
+וגם
+$\norm{Tv} = 5$.
+\end{exercise}
+
+\begin{exercise}
+יהי
+$V$
+מרחב מכפלה פנימית מרוכב ממימד סופי, יהי
+$T \in \End_{\mbb{C}}\prs{V}$
+ויהי
+$a \in \mbb{C}$
+עבורו
+$\abs{a} \neq 1$.
+
+\begin{enumerate}
+\item הראו כי אם
+$T^* = aT$
+אז
+$T = 0$.
+
+\item נניח כי
+$T$
+נורמלי, ויהי
+$S = T - a T^*$.
+הוכיחו כי
+$\ker\prs{T} = \ker\prs{S}$.
+\end{enumerate}
+\end{exercise}
+
+\end{document}
