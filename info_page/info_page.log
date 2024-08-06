@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2022/dev/Debian) (preloaded format=xelatex 2024.3.16)  21 MAY 2024 19:28
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2022/dev/Debian) (preloaded format=xelatex 2024.3.16)  6 AUG 2024 18:55
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -710,18 +710,18 @@ LaTeX Info: Redefining \ttfamily on input line 58.
 [1
 
 ]
-LaTeX Info: Redefining \rmfamily on input line 96.
-LaTeX Info: Redefining \sffamily on input line 96.
-LaTeX Info: Redefining \ttfamily on input line 96.
-LaTeX Info: Redefining \rmfamily on input line 104.
-LaTeX Info: Redefining \sffamily on input line 104.
-LaTeX Info: Redefining \ttfamily on input line 104.
-LaTeX Info: Redefining \rmfamily on input line 105.
-LaTeX Info: Redefining \sffamily on input line 105.
-LaTeX Info: Redefining \ttfamily on input line 105.
+LaTeX Info: Redefining \rmfamily on input line 98.
+LaTeX Info: Redefining \sffamily on input line 98.
+LaTeX Info: Redefining \ttfamily on input line 98.
 LaTeX Info: Redefining \rmfamily on input line 106.
 LaTeX Info: Redefining \sffamily on input line 106.
 LaTeX Info: Redefining \ttfamily on input line 106.
+LaTeX Info: Redefining \rmfamily on input line 107.
+LaTeX Info: Redefining \sffamily on input line 107.
+LaTeX Info: Redefining \ttfamily on input line 107.
+LaTeX Info: Redefining \rmfamily on input line 108.
+LaTeX Info: Redefining \sffamily on input line 108.
+LaTeX Info: Redefining \ttfamily on input line 108.
 The property list \polyglossia@langsetup contains the pairs (without outer
 braces):
 >  {latex/script}  =>  {latin}
@@ -785,7 +785,7 @@ Package rerunfilecheck Info: File `info_page.out' has not changed.
 Here is how much of TeX's memory you used:
  13557 strings out of 476191
  278762 string characters out of 5812072
- 720346 words of memory out of 5000000
+ 721346 words of memory out of 5000000
  34085 multiletter control sequences out of 15000+600000
  472571 words of font info for 65 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
