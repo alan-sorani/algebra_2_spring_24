@@ -1,0 +1,141 @@
+\documentclass[a4paper,10pt,twoside,openany]{article}
+
+\usepackage[lang=hebrew]{maths}
+\usepackage{hebrewdoc}
+\usepackage{stylish}
+\usepackage{lipsum}
+\let\bs\blacksquare
+
+\setlength{\parindent}{0pt}
+
+%%%%%%%%%%%%
+% Styling %
+%%%%%%%%%%%%
+
+\usepackage{enumitem}
+
+%%%%%%%%%%%%%
+% Counters  %
+%%%%%%%%%%%%%
+
+\setcounter{section}{1}     
+            
+%BIBLIOGRAPHY
+\usepackage[
+backend=biber,
+style=alphabetic,
+]{biblatex}
+\addbibresource{bibliography.bib} %Imports bibliography file
+
+%%%%%%%%%%
+% Title  %
+%%%%%%%%%%
+\title{
+אלגברה ב' - גיליון תרגילי בית 5 \\
+\textenglish{SVD} ופירוק פולארי
+\\
+\vspace{1cm}
+\large{תאריך הגשה: 25.8.2024}
+}
+\date{}
+
+\begin{document}
+\maketitle
+
+\begin{exercise}
+תהי
+\begin{align*}
+\text{.} A = \pmat{1 & 1 & 1 \\ -1 & 0 & -2 \\ 1 & 2 & 0}
+\end{align*}
+
+\begin{enumerate}
+\item חשבו את הפירוק לערכים סינגורליים של
+$A$.
+
+\item
+מיצאו מטריצה
+$U \in \Mat_3\prs{\mbb{R}}$
+אורתוגונלית ומטריצה
+$R \in \Mat_3\prs{\mbb{R}}$
+מוגדרת אי־שלילית עבורן
+$A = UR$.
+\end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+יהי
+$V = \Mat_2\prs{\mbb{R}}$
+עם המכפלה הפנימית
+$\trs{A,B} = \tr\prs{B^t A}$,
+ותהי
+\begin{align*}
+T \colon V &\to V \\
+\text{.} \hphantom{lala} A &\mapsto \frac{A + A^t}{2}
+\end{align*}
+
+\begin{enumerate}
+\item מיצאו את
+$T^*$.
+שימו לב כי
+$T = \frac{T_1 + T_2}{2}$
+עבור העתקות
+$T_i \colon V \to V$
+עבורן אנו יודעות מי הן
+$T_i^*$.
+
+\item
+מיצאו בסיסים אורתונורמליים
+$B,C$
+של
+$V$
+עבורם
+$\brs{T}^B_C = \diag\prs{\sigma_1, \ldots, \sigma_n}$
+כאשר
+$\sigma_1 \geq \sigma_2 \geq \ldots \geq \sigma_n \geq 0$.
+\end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+יהי
+$V$
+מרחב מכפלה פנימית מרוכב ממימד סופי, ויהי
+$T \in \End_{\mbb{C}}\prs{V}$
+נורמלי.
+יהיו $\lambda \in \mbb{C}$
+ו־%
+$\eps > 0$
+ונניח שעבור
+$v \in V$
+מתקיים
+$\norm{v} = 1$
+וגם
+\[\text{.} \norm{Tv - \lambda v} < \eps\]
+הראו כי יש ל־%
+$T$
+ערך עצמי
+$\lambda' \in \mbb{C}$
+עבורו
+$\abs{\lambda - \lambda'} < \eps$.
+\end{exercise}
+
+\begin{exercise}
+תהי
+\[\text{.} A = \pmat{1 & 1 & -1 \\ 0 &  1 & 0 \\ 0 & 1 & 0} \in \Mat_3\prs{\mbb{C}}\]
+\begin{enumerate}
+
+\item מיצאו מטריצות
+$U,V \in \Mat_3\prs{\mbb{C}}$
+אוניטריות, ומטריצה
+$\Sigma \in \Mat_3\prs{\mbb{C}}$
+אלכסונית, עבורן
+$A = U \Sigma V^*$.
+
+\item
+מיצאו את
+\begin{align*}
+\text{.} \max\set{\norm{Av}}{\substack{v \in \mbb{C}^3 \\ \norm{v} = 1}}
+\end{align*}
+\end{enumerate}
+\end{exercise}
+
+\end{document}

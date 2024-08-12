@@ -6824,5 +6824,436 @@ $\Sigma^* = \Sigma$.
 
 \end{solution}
 
+\chapter{תבניות בילינאריות וריבועיות}
+
+\section{תבניות בילינאריות}
+
+\begin{definition}[תבנית בילינארית]
+יהי
+$V$
+מרחב וקטורי. תבנית בילינארית
+$f$
+על
+$V$
+היא העתקה
+$f \colon V \to V$
+שהינה לינארית בשני הרכיבים.
+\end{definition}
+
+\begin{remark}
+מעל
+$\mbb{C}$
+עוסקות לעתים בתבניות ססקווילינאריות ("אחת־וחצי לינאריות") במקום בתבניות בילינאריות. נדבר על אלו בהמשך.
+\end{remark}
+
+\begin{definition}[מטריצה מייצגת של תבנית בילינארית]
+יהי
+$V$
+מרחב וקטורי סוף־מימדי עם בסיס
+$B = \prs{v_1, \ldots, v_n}$,
+ותהי
+$f$
+תבנית בילינארית על
+$V$.
+\emph{המטריצה המייצגת}
+של
+$f$
+לפי
+$B$
+היא
+\begin{align*}
+\text{.} \brs{f}_B &= \pmat{f\prs{v_1, v_1} & \cdots & f\prs{v_1, v_n} \\ \vdots & \ddots & \vdots \\ f\prs{v_n,v_1} & \cdots & f\prs{v_n,v_n}}
+\end{align*}
+\end{definition}
+
+\begin{proposition}
+לכל
+$u,v \in V$
+מתקיים
+\[\text{.} \brs{u}_B^t \brs{f}_B \brs{v}_B = f\prs{u,v}\]
+
+בנוסף, אם
+$\brs{u}_B^t A \brs{v}_B = f\prs{u,v}$
+לכל
+$u,v \in V$,
+אז
+$A = \brs{f}_B$.
+\end{proposition}
+
+\begin{proof}
+נכתוב
+\begin{align*}
+u &= \sum_{i \in \brs{n}} \alpha_i v_i \\
+v &= \sum_{j \in \brs{n}} \beta v_j
+\end{align*}
+ואז
+\begin{align*}
+\brs{u}_B^t \brs{f}_B \brs{v}_B &= \sum_{i,j \in \brs{n}} \alpha_i \beta_j \brs{v_i}_B^t \brs{f}_B \brs{v_j}_B
+\\&= \sum_{i,j \in \brs{n}} \alpha_i \beta_j e_i^t \brs{f}_B e_j
+\\&= \sum_{i,j \in \brs{n}} \alpha_i \beta_j f\prs{v_i, v_j}
+\\&= f\prs{\sum_{i \in \brs{n}} \alpha_i v_i, \sum_{j \in \brs{n}} \beta_j v_j}
+\\ \text{.} \hphantom{\brs{u}_B^t \brs{f}_B \brs{v}_B} &= f\prs{u,v}
+\end{align*}
+
+לבסוף, ניתן לקחת
+$u = v_i, v = v_j$
+ואז
+$\brs{u}_B^t A \brs{v}_B = a_{i,j}$.
+לכן אם
+$\brs{u}_B^t A \brs{v}_B = f\prs{u,v}$
+לכל
+$u,v \in V$
+נקבל כי
+$A = \brs{f}_B$.
+\end{proof}
+
+\begin{corollary}
+יהיו
+$B,C$
+שני בסיסים של אותו מרחב וקטורי סוף־מימדי
+$V$,
+ותהי
+$f$
+תבנית בילינארית על
+$V$.
+אז
+\begin{align*}
+\text{.} \brs{f}_B = \prs{M^B_C}^t \brs{f}_C M^B_C
+\end{align*}
+\end{corollary}
+
+\begin{proof}
+לכל
+$u,v \in V$
+מתקיים
+\begin{align*}
+\brs{u}_B^t \prs{M^B_C}^t \brs{f}_C M^B_C \brs{v}_B &=
+\prs{M^B_C \brs{u}_B}^t \brs{f}_C M^B_C \brs{v}_B
+\\&= \brs{u}_C^t \brs{f}_C \brs{v}_C
+\\&= f\prs{u,v}
+\end{align*}
+לכן מהטענה נקבל שוויון.
+\end{proof}
+
+במקרה של אופרטור
+$T$
+על
+$V$
+הקשר בין
+$\brs{T}_B, \brs{T}_C$
+הוא דימיון. המסקנה מראה קשר אחר במקרה של תבניות בילינאריות, שמוביל להגדרה הבאה.
+
+\begin{definition}[מטריצות חופפות]
+מטריצות
+$A,B \in \Mat_n\prs{\mbb{F}}$
+נקראות
+\emph{חופפות}
+אם קיימת
+$P \in \Mat_n\prs{\mbb{F}}$
+\textbf{הפיכה}
+עבורה
+$B = P^t A P$.
+\end{definition}
+
+\begin{corollary}
+המטריצות
+$\brs{f}_B, \brs{f}_C$
+המייצגות תבנית בילינארית לפי בסיסים שונים, הינן חופפות.
+\end{corollary}
+
+\begin{remark}
+ניתן לשחזר את תבנית הבילינארית ממטריצה מייצגת שלה, ולמעשה ההעתקה
+$f \mapsto \brs{f}_B$
+הינה איזומורפיזם בין מרחב התבניות הבילינאריות והמרחב
+$\Mat_n\prs{\mbb{F}}$.
+\end{remark}
+
+\begin{definition}[תבנית בילינארית סימטרית]
+יהי
+$V$
+מרחב מכפלה פנימית ותהי
+$f$
+תבנית בילינארית על
+$V$.
+נגיד כי
+$f$
+\emph{סימטרית}
+אם
+$f\prs{u,v} = f\prs{v,u}$
+לכל
+$u,v \in V$.
+\end{definition}
+
+\begin{definition}
+יהי
+$V$
+מרחב מכפלה פנימית ותהי
+$f$
+תבנית בילינארית על
+$V$.
+נגיד כי
+$f$
+\emph{מוגדרת חיובית לחלוטין}
+אם
+$f\prs{u,u} > 0$
+לכל
+$u \in V$.
+
+נגדיר באופן דומה תבנית מוגדרת שלילית לחלוטין%
+\slash%
+אי־שלילית%
+\slash%
+אי־חיובית.
+\end{definition}
+
+\begin{exercisechap}
+תהיינה
+$A,B,P \in \Mat_n\prs{\mbb{R}}$
+כאשר
+$P$
+הפיכה ומתקיים
+$B = P^t A P$.
+
+הוכיחו או הפריכו את הטענות הבאות.
+\begin{enumerate}
+\item $\det\prs{A} = \det\prs{B}$.
+\item ל־%
+$A,B$
+יש אותם ערכים עצמיים.
+\item $\rank\prs{A} = \rank\prs{B}$.
+\item $A$
+הפיכה אם ורק אם
+$B$
+הפיכה, וכאשר זה מתקיים
+$A^{-1}, B^{-1}$
+חופפות.
+\end{enumerate}
+\end{exercisechap}
+
+\begin{solution}
+\begin{enumerate}
+\item מתקיים
+\[\det\prs{B} = \det\prs{P^t A P} = \det\prs{P^t} \det\prs{A} \det\prs{P}\]
+ולכן יש שוויון אם ורק אם
+$\det\prs{P^t} \det\prs{P} = 1$.
+אבל,
+$\det\prs{P^t} = \det\prs{P}$
+ולכן זה מתקיים אם ורק אם
+$\det\prs{P} \in \set{\pm 1}$.
+זה לא חייב להיות המצב. למשל, נוכל לקחת
+$A = I_n, B = 4I_n, P = 2I_n$.
+
+\item הדוגמא הקודמת מראה שהערכים העצמיים לא נשמרים.
+
+\item הדרגה נשמרת כי
+$P^t, P$
+הפיכות.
+
+\item נניח כי
+$A$
+הפיכה. אז
+$B$
+הפיכה כי הדרגות שלהן שוות.
+נשים לב כי
+\[B^{-1} = \prs{P^t A P}^{-1} = P^{-1} A^{-1} \prs{P^t}^{-1}\]
+ועבור
+$\tilde{P} = \prs{P^t}^{-1}$
+נקבל
+$B^{-1} = \tilde{P}^t A^{-1} \tilde{P}$.
+\end{enumerate}
+\end{solution}
+
+\begin{exercisechap}
+תהי
+\begin{align*}
+    g\prs{v,w} = v_1 w_1 - v_2 w_2
+\end{align*}
+תבנית בילינארית על
+$V \coloneqq \mbb{R}^2$.
+
+\begin{enumerate}
+    \item מיצאו את כל האיזומטריות
+    של התבנית
+    $g$.
+    כלומר, מיצאו כל
+    $T \in \End_{\mbb{R}}\prs{V}$
+    עבורן
+    $f\prs{T\prs{v}, T\prs{w}} = f\prs{v,w}$.
+    
+    \item התבנית
+    $g$
+    אינה חיובית, ולכן אין לנו מושג של אורך. אבל, עדיין אפשר להסתכל על
+    $g\prs{v,v}$
+    ולחשוב עליו כאנלוגי לריבוע של האורך.
+    מיצאו את כל הוקטורים
+    $v \in V$
+    עבורם
+    $g\prs{v,v} = 1$.
+\end{enumerate}
+\end{exercisechap}
+
+\begin{solution}
+\begin{enumerate}
+    \item
+    תהי
+    $T \in \End_{\mbb{R}}\prs{V}$
+    איזומטריה של
+    $g$
+    ונכתוב
+    $\brs{T}_E = \pmat{a & b \\ c & d}$.
+    אז
+    \begin{align*}
+        a^2 - c^2 &= g\prs{\pmat{a\\c}, \pmat{a\\c}} = g\prs{T\prs{e_1}, T\prs{e_1}} = g\prs{e_1, e_1} = 1 \\
+        b^2 - d^2 &= g\prs{\pmat{b\\d}, \pmat{b\\d}} = g\prs{T\prs{e_2}, T\prs{e_2}} = g\prs{e_2, e_2} = -1 \\
+        \text{.} ab - cd &= g\prs{\pmat{a\\c}, \pmat{b\\d}} = g\prs{T\prs{e_1}, T\prs{e_2}} = g\prs{e_1, e_2} = 0
+    \end{align*}
+    עבור
+    \begin{align*}
+        \sinh\prs{x} \coloneqq \frac{e^x - e^{-x}}{2} \\
+        \text{,}\cosh\prs{x} \coloneqq \frac{e^x + e^{-x}}{2}
+    \end{align*}
+    ידוע שמתקיים
+    $\cosh^2\prs{x} - \sinh^2\prs{x} = 1$.
+    כיוון ש־%
+    $\sinh, \cosh$
+    פונקציות על, נוכל לכתוב
+    $a = \cosh\prs{\theta}$
+    ואז
+    $c = \sinh\prs{\theta}$.
+    באותו אופן,
+    $b = \cosh\prs{\rho}$
+    ואז
+    $d = -\sin\prs{\rho}$.
+    אז מהמשוואה השלישית ניתן לבדוק כי בהכרח
+    $\rho = \theta$
+    ולכן מתקיים
+    \[\text{.} \brs{T}_E = \pmat{\cosh\prs{\theta} & -\sinh\prs{\theta} \\ \sinh\prs{\theta} & \cosh\prs{\theta}}\]
+    
+    \item עבור
+    $v \in V$
+    מתקיים
+    $g\prs{v,v} = 1$
+    אם ורק אם
+    $v_1^2 - v_2^2 = 1$
+    אם ורק אם
+    $v_2 = \pm \sqrt{v_1^2 - 1}$.
+    הפתרונות
+    $\pmat{v_1 \\ v_2}$
+    יהוו היפרבולה במישור.
+\end{enumerate}
+\end{solution}
+
+\pagebreak
+
+\begin{exercisechap}
+\begin{enumerate}
+    \item תהי
+\[\text{.} A = \pmat{2 & 1 & 2 \\ 1 & 2 & 1 \\ 2 & 1 & 2} \in \Mat_3\prs{\mbb{Z}/5\mbb{Z}}\]
+מיצאו מטריצה
+$P \in \Mat_3\prs{\mbb{Z}/5\mbb{Z}}$
+הפיכה
+עבורה
+$P^t A P$
+אלכסונית.
+
+\item האם יכולנו לקחת מטריצה
+$P'$
+אחרת שתיתן תשובה מתאימה?
+
+\item האם יש מטריצה
+$Q \in \Mat_3\prs{\mbb{Z}/5\mbb{Z}}$
+הפיכה עבורה
+$Q^t A Q = I_3$?
+
+\item האם יש מטריצה
+$Q \in \Mat_3\prs{\mbb{Z}/5}$
+הפיכה עבורה
+$Q^t B Q = I_3$
+כאשר
+$B = \pmat{2 & 1 & 2 \\ 1 & 1 & 0 \\ 2 & 0 & 1}$?
+\end{enumerate}
+\end{exercisechap}
+
+\begin{solution}
+\begin{enumerate}
+    \item 
+ניזכר שמטריצה הפיכה
+$P$
+הינה כפל של מטריצות אלמנטריות. כפל משמאל במטריצה אלמנטרית
+$E$
+מתאים לפעולת דירוג על השורות, וכפל ב־%
+$E^t$
+מתאים לפעולת דירוג זהה על העמודות.
+
+לכן, ננסה לדרג את
+$A$
+למטריצה אלכסונית כאשר בכל שלב נבצע פעולת דירוג שורה ולאחריה פעולת דירוג עמודה מתאימה.
+
+נעשה זאת.
+
+\begin{align*}
+    A &= \pmat{2 & 1 & 2 \\ 1 & 2 & 1 \\ 2 & 1 & 2}
+    \\&\xrightarrow{R_2 \mapsto R_2 + 2 R_1}
+    \pmat{2 & 1 & 2 \\ 0 & 4 & 0 \\ 2 & 1 & 2}
+    \\&\xrightarrow{C_2 \mapsto C_2 + 2 C_1}
+    \pmat{2 & 0 & 2 \\ 0 & 4 & 0 \\ 2 & 0 & 2}
+    \\&\xrightarrow{R_3 \mapsto R_3 - R_1}
+    \pmat{2 & 0 & 2 \\ 0 & 4 & 0 \\ 0 & 0 & 0}
+    \\&\xrightarrow{C_3 \mapsto C_3 - C_1}
+    \pmat{2 & 0 & 0 \\ 0 & 4 & 0 \\ 0 & 0 & 0}
+\end{align*}
+
+נקבל כי
+\[P^t = \pmat{1 & 0 & 0 \\ 0 & 1 & 0 \\ -1 & 0 & 1} \pmat{1 & 0 & 0 \\ 2 & 1 & 0 \\ 0 & 0 & 1} = \pmat{1 & 0 & 0 \\ 2 & 1 & 0 \\ -1 & 0 & 1}\]
+מקיימת את הנדרש, ולכן ניקח
+\[\text{.} P = \pmat{1 & 2 & -1 \\ 0 & 1 & 0 \\ 0 & 0 & 1}\]
+
+\item כן. למשל, יכולנו קודם להחליף את השורות הראשונה והשלישית, ולקבל
+\[\prs{P'}^t = P^t \pmat{0 & 0 & 1 \\ 0 & 1 & 0 \\ 1 & 0 & 0} = \pmat{-1 & 0 & 1 \\ 2 & 1 & 0 \\ 1 & 0 & 0} \neq P^t\]
+ואז
+$P' \neq P$.
+
+\item קיבלנו
+$P^t A P = \diag\prs{2,4,0}$
+וזאת אינה מטריצה מדרגה מלאה. דרגה נשמרת תחת חפיפת מטריצות, ולכן לא יתכן שיש
+$Q$
+כנדרש.
+
+\item ננסה דירוג לפי שורה ועמודה.
+\begin{align*}
+    B &= \pmat{2 & 1 & 2 \\ 1 & 1 & 0 \\ 2 & 0 & 1}
+    \\&\xrightarrow{R_3 \mapsto R_3 - R_1}
+    \pmat{2 & 1 & 2 \\ 1 & 1 & 0 \\ 0 & 4 & 4}
+    \\&\xrightarrow{C_3 \mapsto C_3 - C_1}
+    \pmat{2 & 1 & 0 \\ 1 & 1 & 4 \\ 0 & 4 & 4}
+    \\&\xrightarrow{R_2 \mapsto R_2 + 2 R_1}
+    \pmat{2 & 1 & 0 \\ 0 & 3 & 4 \\ 0 & 4 & 4}
+    \\&\xrightarrow{C_2 \mapsto C_2 + 2 C_1}
+    \pmat{2 & 0 & 0 \\ 0 & 3 & 4 \\ 0 & 4 & 4}
+    \\&\xrightarrow{R_3 \mapsto R_3 + 2 R_2}
+    \pmat{2 & 0 & 0 \\ 0 & 3 & 4 \\ 0 & 0 & 2}
+    \\&\xrightarrow{C_3 \mapsto C_3 + 2 C_2}
+    \pmat{2 & 0 & 0 \\ 0 & 3 & 0 \\ 0 & 0 & 2}
+\end{align*}
+כעת, נוכל לחלק איברים על האלכסון רק בריבוע, כיוון שיש לכפול גם את השורה וגם את העמודה באותו מספר. כיוון ש־%
+$3$
+אינו ריבוע ב־%
+$\mbb{Z}/5\mbb{Z}$
+לא נוכל לקבל ככה את מטריצת היחידה.
+גם, הדטרמיננטה של המטריצה שקיבלנו היא
+$2 \cdot 3 \cdot 2 \equiv 2$.
+הדטרמיננטה של מטריצות חופפות נבדלת בכפל בריבוע, אך לא יתכן
+$2 = a^2 \det\prs{I_3} = a^2$
+כי
+$2$
+אינו ריבוע.
+
+השיטה הזאת לא עובדת תמיד. יתכן מצב בו מטריצה אינה חופפת ליחידה אך כן בעלת דטרמיננטה שהינה ריבוע.
+למשל, המטריצה
+$\pmat{0 & 1 \\ 1 & 0} \in \Mat_3\prs{\mbb{Z}/5\mbb{Z}}$
+כזאת.
+\end{enumerate}
+\end{solution}
+
 \printbibliography
 \end{document}

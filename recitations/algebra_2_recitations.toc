@@ -28,3 +28,5 @@
 \contentsline {section}{\numberline {5.4}אופרטורים נורמליים וצמודים לעצמם, ומשפט הפירוק הספקטרלי}{50}{section.5.4}%
 \contentsline {section}{\numberline {5.5}פירוק לערכים סינגולריים ופירוק פולארי}{54}{section.5.5}%
 \contentsline {subsubsection}{מציאת פירוק פולארי}{57}{section*.3}%
+\contentsline {chapter}{\numberline {6}תבניות בילינאריות וריבועיות}{59}{chapter.6}%
+\contentsline {section}{\numberline {6.1}תבניות בילינאריות}{59}{section.6.1}%
