@@ -30,3 +30,9 @@
 \contentsline {subsubsection}{מציאת פירוק פולארי}{57}{section*.3}%
 \contentsline {chapter}{\numberline {6}תבניות בילינאריות וריבועיות}{59}{chapter.6}%
 \contentsline {section}{\numberline {6.1}תבניות בילינאריות}{59}{section.6.1}%
+\contentsline {section}{\numberline {6.2}חוק האינרציה של סילבסטר}{63}{section.6.2}%
+\contentsline {subsection}{\numberline {6.2.1}חזרה}{63}{subsection.6.2.1}%
+\contentsline {subsection}{\numberline {6.2.2}תרגילים}{64}{subsection.6.2.2}%
+\contentsline {section}{\numberline {6.3}קריטריון סילבסטר}{65}{section.6.3}%
+\contentsline {subsection}{\numberline {6.3.1}חזרה}{65}{subsection.6.3.1}%
+\contentsline {subsection}{\numberline {6.3.2}תרגילים}{65}{subsection.6.3.2}%

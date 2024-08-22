@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2022/dev/Debian) (preloaded format=xelatex 2024.3.16)  8 AUG 2024 09:15
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2022/dev/Debian) (preloaded format=xelatex 2024.3.16)  22 AUG 2024 09:19
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1049,47 +1049,48 @@ Package ntheorem Info: option `amsmath' handling for `thmmarks' loaded on input
 \c@algorithmstarred=\count469
 \c@currquestionctr=\count470
 \c@endquestionctr=\count471
-\c@currassumptionctr=\count472
-\c@endassumptionctr=\count473
-\c@currremarkctr=\count474
-\c@endremarkctr=\count475
-\c@currnotectr=\count476
-\c@endnotectr=\count477
-\c@currobservationctr=\count478
-\c@endobservationctr=\count479
-\c@currnotationctr=\count480
-\c@endnotationctr=\count481
-\c@currclaimctr=\count482
-\c@endclaimctr=\count483
-\c@currsummaryctr=\count484
-\c@endsummaryctr=\count485
-\c@summary=\count486
-\c@curracknowledgementctr=\count487
-\c@endacknowledgementctr=\count488
-\c@currcasectr=\count489
-\c@endcasectr=\count490
-\c@case=\count491
-\c@curroptionctr=\count492
-\c@endoptionctr=\count493
-\c@option=\count494
-\c@currconclusionctr=\count495
-\c@endconclusionctr=\count496
-\c@conclusion=\count497
-\c@currsolutionctr=\count498
-\c@endsolutionctr=\count499
-\c@solution=\count500
-\c@currmotivationctr=\count501
-\c@endmotivationctr=\count502
-\c@motivation=\count503
-\c@currnotationstarredctr=\count504
-\c@endnotationstarredctr=\count505
-\c@notationstarred=\count506
-\c@currexms_rawctr=\count507
-\c@endexms_rawctr=\count508
-\c@exms_raw=\count509
-\c@currexrs_rawctr=\count510
-\c@endexrs_rawctr=\count511
-\c@exrs_raw=\count512
+\c@question=\count472
+\c@currassumptionctr=\count473
+\c@endassumptionctr=\count474
+\c@currremarkctr=\count475
+\c@endremarkctr=\count476
+\c@currnotectr=\count477
+\c@endnotectr=\count478
+\c@currobservationctr=\count479
+\c@endobservationctr=\count480
+\c@currnotationctr=\count481
+\c@endnotationctr=\count482
+\c@currclaimctr=\count483
+\c@endclaimctr=\count484
+\c@currsummaryctr=\count485
+\c@endsummaryctr=\count486
+\c@summary=\count487
+\c@curracknowledgementctr=\count488
+\c@endacknowledgementctr=\count489
+\c@currcasectr=\count490
+\c@endcasectr=\count491
+\c@case=\count492
+\c@curroptionctr=\count493
+\c@endoptionctr=\count494
+\c@option=\count495
+\c@currconclusionctr=\count496
+\c@endconclusionctr=\count497
+\c@conclusion=\count498
+\c@currsolutionctr=\count499
+\c@endsolutionctr=\count500
+\c@solution=\count501
+\c@currmotivationctr=\count502
+\c@endmotivationctr=\count503
+\c@motivation=\count504
+\c@currnotationstarredctr=\count505
+\c@endnotationstarredctr=\count506
+\c@notationstarred=\count507
+\c@currexms_rawctr=\count508
+\c@endexms_rawctr=\count509
+\c@exms_raw=\count510
+\c@currexrs_rawctr=\count511
+\c@endexrs_rawctr=\count512
+\c@exrs_raw=\count513
 ) (/home/tealeaf/texmf/tex/latex/hebrewdoc/hebrewdoc.sty
 Package: hebrewdoc 2018/10/05 Hebrew Macros
 
@@ -1113,7 +1114,7 @@ Package: xkeyval 2020/11/20 v2.8 package option processing (HA)
 \XKV@toks=\toks55
 \XKV@tempa@toks=\toks56
 )
-\XKV@depth=\count513
+\XKV@depth=\count514
 File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
 ))
 (/usr/share/texlive/texmf-dist/tex/latex/fontspec/fontspec.sty
@@ -1122,17 +1123,17 @@ Package: fontspec 2022/01/15 v2.8a Font selection for XeLaTeX and LuaLaTeX
 (/usr/share/texlive/texmf-dist/tex/latex/fontspec/fontspec-xetex.sty
 Package: fontspec-xetex 2022/01/15 v2.8a Font selection for XeLaTeX and LuaLaTe
 X
-\l__fontspec_script_int=\count514
-\l__fontspec_language_int=\count515
-\l__fontspec_strnum_int=\count516
-\l__fontspec_tmp_int=\count517
-\l__fontspec_tmpa_int=\count518
-\l__fontspec_tmpb_int=\count519
-\l__fontspec_tmpc_int=\count520
-\l__fontspec_em_int=\count521
-\l__fontspec_emdef_int=\count522
-\l__fontspec_strong_int=\count523
-\l__fontspec_strongdef_int=\count524
+\l__fontspec_script_int=\count515
+\l__fontspec_language_int=\count516
+\l__fontspec_strnum_int=\count517
+\l__fontspec_tmp_int=\count518
+\l__fontspec_tmpa_int=\count519
+\l__fontspec_tmpb_int=\count520
+\l__fontspec_tmpc_int=\count521
+\l__fontspec_em_int=\count522
+\l__fontspec_emdef_int=\count523
+\l__fontspec_strong_int=\count524
+\l__fontspec_strongdef_int=\count525
 \l__fontspec_tmpa_dim=\dimen312
 \l__fontspec_tmpb_dim=\dimen313
 \l__fontspec_tmpc_dim=\dimen314
@@ -1212,17 +1213,17 @@ Package: bidi 2022/02/01 v36.4 Bidirectional typesetting in plain TeX and LaTeX
 Package: biditools 2022/02/01 v2.1 Programming tools for bidi package
 \@bidi@envbody=\toks57
 \@bidi@emptytoks=\toks58
-\bidi@poscount=\count525
-\bidi@tempcountb=\count526
+\bidi@poscount=\count526
+\bidi@tempcountb=\count527
 \bidi@temptoksa=\toks59
 \bidi@temptoksb=\toks60
-\bidi@dummies=\count527
+\bidi@dummies=\count528
 \bidi@are@these@correct=\toks61
 \bidi@toks@lista=\toks62
 \bidi@toks@listb=\toks63
-\bidi@stack@length=\count528
+\bidi@stack@length=\count529
 \bidi@empty@stack=\toks64
-\bidi@looprepeat@depth=\count529
+\bidi@looprepeat@depth=\count530
 )
 ==> First Aid for biditools.sty no longer applied!
     Expected:
@@ -1239,7 +1240,7 @@ Package zref Info: New property list: main on input line 764.
 Package zref Info: New property: default on input line 765.
 Package zref Info: New property: page on input line 766.
 )
-\c@abspage=\count530
+\c@abspage=\count531
 Package zref Info: New property: abspage on input line 66.
 )
 \@bidi@copyins@=\insert252
@@ -1248,12 +1249,12 @@ Package zref Info: New property: abspage on input line 66.
 File: latex-xetex-bidi.def 2022/02/01 v1.3.8 bidi adaptations for `latex.ltx' f
 or XeTeX engine
 \bidi@n@everypar=\toks65
-\bidi@column@check@number=\count531
+\bidi@column@check@number=\count532
 
 (/usr/share/texlive/texmf-dist/tex/xelatex/bidi/footnote-xetex-bidi.def
 File: footnote-xetex-bidi.def 2017/08/09 v1.1 bidi footnote macros for XeTeX en
 gine
-\c@footdir@label=\count532
+\c@footdir@label=\count533
 \footdir@toks=\toks66
 )
 (/usr/share/texlive/texmf-dist/tex/xelatex/bidi/book-xetex-bidi.def
@@ -1320,7 +1321,7 @@ f package for XeTeX engine
 File: loadingorder-xetex-bidi.def 2017/12/29 v0.97 making sure that bidi is the
  last package loaded
 )
-\bidi@digits=\count533
+\bidi@digits=\count534
 \bidi@digits@charclass=\XeTeXcharclass2
 \bidi@sepmark@charclass=\XeTeXcharclass3
 )
@@ -1332,17 +1333,17 @@ Package: hebrewcal 2019/12/03 v2.7 Hebrew calendar for polyglossia (adapted fro
 m hebcal.sty in Babel)
 
 (/usr/share/texlive/texmf-dist/tex/latex/polyglossia/cal-util.def
-\c@tmpA=\count534
-\c@tmpB=\count535
-\c@tmpC=\count536
-\c@tmpD=\count537
-\c@tmpE=\count538
-\c@tmpF=\count539
+\c@tmpA=\count535
+\c@tmpB=\count536
+\c@tmpC=\count537
+\c@tmpD=\count538
+\c@tmpE=\count539
+\c@tmpF=\count540
 )
-\hebrewday=\count540
-\hebrewmonth=\count541
-\hebrewyear=\count542
-\@common=\count543
+\hebrewday=\count541
+\hebrewmonth=\count542
+\hebrewyear=\count543
+\@common=\count544
 )
 The property list \polyglossia@langsetup contains the pairs (without outer
 braces):
@@ -1489,12 +1490,12 @@ Package: stylish 2018/10/05 Stylish Book Design
 
 (/usr/share/texlive/texmf-dist/tex/latex/csquotes/csquotes.sty
 Package: csquotes 2021-02-22 v5.2l context-sensitive quotations (JAW)
-\csq@reset=\count544
-\csq@gtype=\count545
-\csq@glevel=\count546
-\csq@qlevel=\count547
-\csq@maxlvl=\count548
-\csq@tshold=\count549
+\csq@reset=\count545
+\csq@gtype=\count546
+\csq@glevel=\count547
+\csq@qlevel=\count548
+\csq@maxlvl=\count549
+\csq@tshold=\count550
 \csq@ltx@everypar=\toks67
 
 (/usr/share/texlive/texmf-dist/tex/latex/csquotes/csquotes.def
@@ -1520,66 +1521,66 @@ Package: enumitem 2019/06/20 v3.9 Customized lists
 \enit@outerparindent=\dimen316
 \enit@toks=\toks68
 \enit@inbox=\box89
-\enit@count@id=\count550
-\enitdp@description=\count551
+\enit@count@id=\count551
+\enitdp@description=\count552
 ))
 (/usr/share/texlive/texmf-dist/tex/latex/caption/subcaption.sty
 Package: subcaption 2020/10/07 v1.3j Sub-captions (AR)
-\c@subfigure=\count552
-\c@subtable=\count553
+\c@subfigure=\count553
+\c@subtable=\count554
 )
 (/usr/share/texlive/texmf-dist/tex/latex/biblatex/biblatex.sty
 Package: biblatex 2022/02/02 v3.17 programmable bibliographies (PK/MW)
 
 (/usr/share/texlive/texmf-dist/tex/latex/logreq/logreq.sty
 Package: logreq 2010/08/04 v1.0 xml request logger
-\lrq@indent=\count554
+\lrq@indent=\count555
 
 (/usr/share/texlive/texmf-dist/tex/latex/logreq/logreq.def
 File: logreq.def 2010/08/04 v1.0 logreq spec v1.0
 ))
-\c@tabx@nest=\count555
-\c@listtotal=\count556
-\c@listcount=\count557
-\c@liststart=\count558
-\c@liststop=\count559
-\c@citecount=\count560
-\c@citetotal=\count561
-\c@multicitecount=\count562
-\c@multicitetotal=\count563
-\c@instcount=\count564
-\c@maxnames=\count565
-\c@minnames=\count566
-\c@maxitems=\count567
-\c@minitems=\count568
-\c@citecounter=\count569
-\c@maxcitecounter=\count570
-\c@savedcitecounter=\count571
-\c@uniquelist=\count572
-\c@uniquename=\count573
-\c@refsection=\count574
-\c@refsegment=\count575
-\c@maxextratitle=\count576
-\c@maxextratitleyear=\count577
-\c@maxextraname=\count578
-\c@maxextradate=\count579
-\c@maxextraalpha=\count580
-\c@abbrvpenalty=\count581
-\c@highnamepenalty=\count582
-\c@lownamepenalty=\count583
-\c@maxparens=\count584
-\c@parenlevel=\count585
-\blx@tempcnta=\count586
-\blx@tempcntb=\count587
-\blx@tempcntc=\count588
-\c@blx@maxsection=\count589
-\c@blx@maxsegment@0=\count590
-\blx@notetype=\count591
-\blx@parenlevel@text=\count592
-\blx@parenlevel@foot=\count593
-\c@blx@sectionciteorder@0=\count594
-\blx@entrysetcounter=\count595
-\blx@biblioinstance=\count596
+\c@tabx@nest=\count556
+\c@listtotal=\count557
+\c@listcount=\count558
+\c@liststart=\count559
+\c@liststop=\count560
+\c@citecount=\count561
+\c@citetotal=\count562
+\c@multicitecount=\count563
+\c@multicitetotal=\count564
+\c@instcount=\count565
+\c@maxnames=\count566
+\c@minnames=\count567
+\c@maxitems=\count568
+\c@minitems=\count569
+\c@citecounter=\count570
+\c@maxcitecounter=\count571
+\c@savedcitecounter=\count572
+\c@uniquelist=\count573
+\c@uniquename=\count574
+\c@refsection=\count575
+\c@refsegment=\count576
+\c@maxextratitle=\count577
+\c@maxextratitleyear=\count578
+\c@maxextraname=\count579
+\c@maxextradate=\count580
+\c@maxextraalpha=\count581
+\c@abbrvpenalty=\count582
+\c@highnamepenalty=\count583
+\c@lownamepenalty=\count584
+\c@maxparens=\count585
+\c@parenlevel=\count586
+\blx@tempcnta=\count587
+\blx@tempcntb=\count588
+\blx@tempcntc=\count589
+\c@blx@maxsection=\count590
+\c@blx@maxsegment@0=\count591
+\blx@notetype=\count592
+\blx@parenlevel@text=\count593
+\blx@parenlevel@foot=\count594
+\c@blx@sectionciteorder@0=\count595
+\blx@entrysetcounter=\count596
+\blx@biblioinstance=\count597
 \labelnumberwidth=\skip77
 \labelalphawidth=\skip78
 \biblabelsep=\skip79
@@ -1591,9 +1592,9 @@ File: logreq.def 2010/08/04 v1.0 logreq spec v1.0
 \blx@bcfin=\read3
 \blx@bcfout=\write5
 \blx@langwohyphens=\language87
-\c@mincomprange=\count597
-\c@maxcomprange=\count598
-\c@mincompwidth=\count599
+\c@mincomprange=\count598
+\c@maxcomprange=\count599
+\c@mincompwidth=\count600
 Package biblatex Info: Trying to load biblatex default data model...
 Package biblatex Info: ... file 'blx-dm.def' found.
 
@@ -1604,74 +1605,74 @@ Package biblatex Info: Trying to load biblatex style data model...
 Package biblatex Info: ... file 'alphabetic.dbx' not found.
 Package biblatex Info: Trying to load biblatex custom data model...
 Package biblatex Info: ... file 'biblatex-dm.cfg' not found.
-\c@afterword=\count600
-\c@savedafterword=\count601
-\c@annotator=\count602
-\c@savedannotator=\count603
-\c@author=\count604
-\c@savedauthor=\count605
-\c@bookauthor=\count606
-\c@savedbookauthor=\count607
-\c@commentator=\count608
-\c@savedcommentator=\count609
-\c@editor=\count610
-\c@savededitor=\count611
-\c@editora=\count612
-\c@savededitora=\count613
-\c@editorb=\count614
-\c@savededitorb=\count615
-\c@editorc=\count616
-\c@savededitorc=\count617
-\c@foreword=\count618
-\c@savedforeword=\count619
-\c@holder=\count620
-\c@savedholder=\count621
-\c@introduction=\count622
-\c@savedintroduction=\count623
-\c@namea=\count624
-\c@savednamea=\count625
-\c@nameb=\count626
-\c@savednameb=\count627
-\c@namec=\count628
-\c@savednamec=\count629
-\c@translator=\count630
-\c@savedtranslator=\count631
-\c@shortauthor=\count632
-\c@savedshortauthor=\count633
-\c@shorteditor=\count634
-\c@savedshorteditor=\count635
-\c@labelname=\count636
-\c@savedlabelname=\count637
-\c@institution=\count638
-\c@savedinstitution=\count639
-\c@lista=\count640
-\c@savedlista=\count641
-\c@listb=\count642
-\c@savedlistb=\count643
-\c@listc=\count644
-\c@savedlistc=\count645
-\c@listd=\count646
-\c@savedlistd=\count647
-\c@liste=\count648
-\c@savedliste=\count649
-\c@listf=\count650
-\c@savedlistf=\count651
-\c@location=\count652
-\c@savedlocation=\count653
-\c@organization=\count654
-\c@savedorganization=\count655
-\c@origlocation=\count656
-\c@savedoriglocation=\count657
-\c@origpublisher=\count658
-\c@savedorigpublisher=\count659
-\c@publisher=\count660
-\c@savedpublisher=\count661
-\c@language=\count662
-\c@savedlanguage=\count663
-\c@origlanguage=\count664
-\c@savedoriglanguage=\count665
-\c@pageref=\count666
-\c@savedpageref=\count667
+\c@afterword=\count601
+\c@savedafterword=\count602
+\c@annotator=\count603
+\c@savedannotator=\count604
+\c@author=\count605
+\c@savedauthor=\count606
+\c@bookauthor=\count607
+\c@savedbookauthor=\count608
+\c@commentator=\count609
+\c@savedcommentator=\count610
+\c@editor=\count611
+\c@savededitor=\count612
+\c@editora=\count613
+\c@savededitora=\count614
+\c@editorb=\count615
+\c@savededitorb=\count616
+\c@editorc=\count617
+\c@savededitorc=\count618
+\c@foreword=\count619
+\c@savedforeword=\count620
+\c@holder=\count621
+\c@savedholder=\count622
+\c@introduction=\count623
+\c@savedintroduction=\count624
+\c@namea=\count625
+\c@savednamea=\count626
+\c@nameb=\count627
+\c@savednameb=\count628
+\c@namec=\count629
+\c@savednamec=\count630
+\c@translator=\count631
+\c@savedtranslator=\count632
+\c@shortauthor=\count633
+\c@savedshortauthor=\count634
+\c@shorteditor=\count635
+\c@savedshorteditor=\count636
+\c@labelname=\count637
+\c@savedlabelname=\count638
+\c@institution=\count639
+\c@savedinstitution=\count640
+\c@lista=\count641
+\c@savedlista=\count642
+\c@listb=\count643
+\c@savedlistb=\count644
+\c@listc=\count645
+\c@savedlistc=\count646
+\c@listd=\count647
+\c@savedlistd=\count648
+\c@liste=\count649
+\c@savedliste=\count650
+\c@listf=\count651
+\c@savedlistf=\count652
+\c@location=\count653
+\c@savedlocation=\count654
+\c@organization=\count655
+\c@savedorganization=\count656
+\c@origlocation=\count657
+\c@savedoriglocation=\count658
+\c@origpublisher=\count659
+\c@savedorigpublisher=\count660
+\c@publisher=\count661
+\c@savedpublisher=\count662
+\c@language=\count663
+\c@savedlanguage=\count664
+\c@origlanguage=\count665
+\c@savedoriglanguage=\count666
+\c@pageref=\count667
+\c@savedpageref=\count668
 \shorthandwidth=\skip85
 \shortjournalwidth=\skip86
 \shortserieswidth=\skip87
@@ -1701,19 +1702,19 @@ Package biblatex Info: ... file 'biblatex.def' found.
 
 (/usr/share/texlive/texmf-dist/tex/latex/biblatex/biblatex.def
 File: biblatex.def 2022/02/02 v3.17 biblatex compatibility (PK/MW)
-\c@textcitecount=\count668
-\c@textcitetotal=\count669
-\c@textcitemaxnames=\count670
-\c@biburlbigbreakpenalty=\count671
-\c@biburlbreakpenalty=\count672
-\c@biburlnumpenalty=\count673
-\c@biburlucpenalty=\count674
-\c@biburllcpenalty=\count675
+\c@textcitecount=\count669
+\c@textcitetotal=\count670
+\c@textcitemaxnames=\count671
+\c@biburlbigbreakpenalty=\count672
+\c@biburlbreakpenalty=\count673
+\c@biburlnumpenalty=\count674
+\c@biburlucpenalty=\count675
+\c@biburllcpenalty=\count676
 \biburlbigskip=\muskip21
 \biburlnumskip=\muskip22
 \biburlucskip=\muskip23
 \biburllcskip=\muskip24
-\c@smartand=\count676
+\c@smartand=\count677
 )
 Package biblatex Info: Trying to load bibliography style 'alphabetic'...
 Package biblatex Info: ... file 'alphabetic.bbx' found.
@@ -1725,8 +1726,8 @@ Package biblatex Info: ... file 'standard.bbx' found.
 
 (/usr/share/texlive/texmf-dist/tex/latex/biblatex/bbx/standard.bbx
 File: standard.bbx 2022/02/02 v3.17 biblatex bibliography style (PK/MW)
-\c@bbx:relatedcount=\count677
-\c@bbx:relatedtotal=\count678
+\c@bbx:relatedcount=\count678
+\c@bbx:relatedtotal=\count679
 ))
 Package biblatex Info: Trying to load citation style 'alphabetic'...
 Package biblatex Info: ... file 'alphabetic.cbx' found.
@@ -1844,7 +1845,7 @@ Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 (/usr/share/texlive/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count679
+\c@section@level=\count680
 )
 LaTeX Info: Redefining \ref on input line 51.
 LaTeX Info: Redefining \pageref on input line 51.
@@ -2124,8 +2125,31 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [61]
 [62]
+Overfull \hbox (3.83301pt too wide) in paragraph at lines 7263--7286
+[][]\TU/FrankRuehlCLM(0)/m/it/10 תהי $\OML/cmm/m/it/10 A \OMS/cmsy/m/n/10 2 [][
+] []$ \TU/FrankRuehlCLM(0)/m/it/10 סימטרית. $\OML/cmm/m/it/10 A$ \TU/FrankRuehl
+CLM(0)/m/it/10 חופפת למטריצה יחידה מהצורה $[]$.[]
+ []
 
-LaTeX Warning: Empty bibliography on input line 7258.
+[63]
+Package hyperref Info: bookmark level for unknown algorithmx defaults to 0 on i
+nput line 7399.
+ [64] [65]
+Overfull \hbox (5.71169pt too wide) detected at line 7616
+[]
+ []
+
+
+Overfull \hbox (20.99078pt too wide) detected at line 7637
+[]
+ []
+
+
+Underfull \vbox (badness 2293) has occurred while \output is active []
+
+ [66]
+
+LaTeX Warning: Empty bibliography on input line 7643.
 
 \tf@thm=\write8
 \openout8 = `algebra_2_recitations.thm'.
@@ -2180,7 +2204,7 @@ braces):
 >  {english/babelname}  =>  {american}
 >  {english/localnumeral}  =>  {polyglossia@C@localnumeral}
 >  {english/Localnumeral}  =>  {polyglossia@C@localnumeral}.
-[63] (./algebra_2_recitations.aux Setting \if@calendar@hebrew
+[67] (./algebra_2_recitations.aux Setting \if@calendar@hebrew
 Setting \if@calendar@hebrew
 LaTeX Info: Redefining \rmfamily on input line 21.
 LaTeX Info: Redefining \sffamily on input line 21.
@@ -2193,19 +2217,19 @@ Package rerunfilecheck Warning: File `algebra_2_recitations.out' has changed.
 (rerunfilecheck)                or use package `bookmark'.
 
 Package rerunfilecheck Info: Checksums for `algebra_2_recitations.out':
-(rerunfilecheck)             Before: 3DA4131CAD07481FE90F85E976A60D9A;6807
-(rerunfilecheck)             After:  B98DF0031349F71489DC055A9398173B;7264.
+(rerunfilecheck)             Before: B98DF0031349F71489DC055A9398173B;7264
+(rerunfilecheck)             After:  58B02D7A473768D402BAE22AD47A2F18;8110.
 Package logreq Info: Writing requests to 'algebra_2_recitations.run.xml'.
 \openout1 = `algebra_2_recitations.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 43145 strings out of 476191
- 916639 string characters out of 5812072
- 1863191 words of memory out of 5000000
- 63108 multiletter control sequences out of 15000+600000
+ 43151 strings out of 476191
+ 916712 string characters out of 5812072
+ 1863704 words of memory out of 5000000
+ 63114 multiletter control sequences out of 15000+600000
  477256 words of font info for 99 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  115i,20n,118p,1293b,878s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on algebra_2_recitations.pdf (65 pages).
+Output written on algebra_2_recitations.pdf (69 pages).
