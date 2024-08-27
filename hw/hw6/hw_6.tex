@@ -1,0 +1,184 @@
+\documentclass[a4paper,10pt,twoside,openany]{article}
+
+\usepackage[lang=hebrew]{maths}
+\usepackage{hebrewdoc}
+\usepackage{stylish}
+\usepackage{lipsum}
+\let\bs\blacksquare
+
+\setlength{\parindent}{0pt}
+
+%%%%%%%%%%%%
+% Styling %
+%%%%%%%%%%%%
+
+\usepackage{enumitem}
+
+%%%%%%%%%%%%%
+% Counters  %
+%%%%%%%%%%%%%
+
+\setcounter{section}{1}     
+            
+%BIBLIOGRAPHY
+\usepackage[
+backend=biber,
+style=alphabetic,
+]{biblatex}
+\addbibresource{bibliography.bib} %Imports bibliography file
+
+%%%%%%%%%%
+% Title  %
+%%%%%%%%%%
+\title{
+אלגברה ב' - תרגילי חזרה למבחן
+\\
+\vspace{1cm}
+\large{תאריך הגשה: 7.9.2024}
+}
+\date{}
+
+\begin{document}
+\maketitle
+
+\begin{exercise}
+נגיד כי וקטור
+$\pmat{a \\ b \\ c} \in \mbb{R}_3\brs{x}$
+עם מקדמים שלמים הינו
+\emph{וקטור פיתגורי}
+אם
+$\prs{a,b,c}$
+שלשה פיתגורית, כלומר
+$a,b,c$
+שלמים חיוביים ומתקיים
+\[\text{.} a^2 + b^2 = c^2\]
+
+תהי
+\[A = \pmat{1 & -2 & 2 \\ 2 & -1 & 2 \\ 2 & -2 & 3} \in \Mat_3\prs{\mbb{R}}\]
+ויהי
+\[\text{.} v_0 = \pmat{3 \\ 4 \\ 5} \in \mathbb{R}^3\]
+
+\begin{enumerate}
+\item
+הראו כי
+$v_0$
+וקטור פיתגורי וכי אם
+$v \in \mbb{R}^3$
+וקטור פיתגורי אז
+$Av$
+וקטור פיתגורי.
+
+\item
+הסיקו כי
+$A^k v_0$
+וקטור פיתגורי לכל
+$k$.
+
+\item
+חשבו את
+$A^k v_0$
+לכל
+$k \in \mbb{N}$,
+ומצאו וקטור פיתגורי
+$\pmat{a \\ b \\ c}$
+עבורו
+$a = 2025$.
+\end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+תהי
+\[\text{.} A = \pmat{0 & 1 & 0 & 1 \\ 1 & 0 & 1 & 0 \\ 0 & 1 & 0 & 1 \\ 1 & 0 & 1 & 0} \in \Mat_4\prs{\mbb{C}}\]
+מיצאו מטריצה
+$P \in \Mat_4\prs{\mbb{C}}$
+עבורה
+\[\text{.} P^t A P = \pmat{1 & 0 & 0 & 0 \\ 0 & 1 & 0 & 0 \\ 0 & 0 & 0 & 0 \\ 0 & 0 & 0 & 0}\]
+\end{exercise}
+
+\begin{exercise}
+תהי
+\[\text{.} A = \pmat{1 & 1 & 1 \\ 1 & 1 & -1 \\ -2 & 1 & 0} \in \Mat_3\prs{\mbb{R}}\]
+
+\begin{enumerate}
+\item הראו כי
+\[\text{.} \forall v \in \mbb{R}^3 \colon \sqrt{2} \norm{v} \leq \norm{Av} \leq \sqrt{6} \norm{v}\]
+
+\item עבור
+$\alpha \in \brs{0,1}$
+חשבו את
+$\norm{A \pmat{\alpha \\ \sqrt{1 - \alpha^2} \\ 0}}$.
+
+\item מצאו וקטור
+$v \in \mbb{R}^3$
+עבורו
+$\norm{v} = 1$
+וגם
+$\norm{Av} = 2$.
+\end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+יהי
+$V = \mbb{R}_2\brs{x}$
+עם המכפלה הפנימית
+\[\text{,} \trs{p,q} = p\prs{-1} q\prs{-1} + p\prs{0} q\prs{0} + p\prs{1} q\prs{1}\]
+ותהי
+\begin{align*}
+T \colon V &\to V \\
+\text{.} ax^2 + bx + c &\mapsto bx^2 + ax + 2c
+\end{align*}
+
+\begin{enumerate}
+\item מיצאו בסיס אורתונורמלי
+$B$
+של
+$V$
+עבורו
+$\brs{T}^B$
+אלכסונית.
+
+\item מיצאו
+$p \in \mbb{R}_2\brs{x}$
+עבורו
+$\norm{p} = 1$
+וגם
+$\norm{T\prs{p}} = \frac{4}{3}$.
+
+\textbf{רמז:}
+חפשו
+$p$
+מהצורה
+$\alpha u + \sqrt{1 - \alpha^2} v$
+עבור
+$u,v$
+וקטורים עצמיים מהבסיס
+$B$
+שמצאתן.
+\end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+יהי
+$V$
+מרחב מכפלה פנימית סוף־מימדי מעל
+$\mbb{C}$
+ותהי
+$T \colon V \to V$.
+
+\begin{enumerate}
+\item הראו כי
+$\ker\prs{T^*} = \im\prs{T}^\perp$.
+\item הראו כי
+$\im\prs{T^*} = \ker\prs{T}^\perp$.
+\item
+נניח כי
+$T^2 = T$.
+הראו כי
+$T$
+הטלה אורתוגונלית אם ורק אם
+$T$
+הרמיטית.
+\end{enumerate}
+\end{exercise}
+
+\end{document}
