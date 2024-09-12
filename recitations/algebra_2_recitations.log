@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2022/dev/Debian) (preloaded format=xelatex 2024.3.16)  22 AUG 2024 09:19
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2022/dev/Debian) (preloaded format=xelatex 2024.3.16)  12 SEP 2024 21:37
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2211,23 +2211,17 @@ LaTeX Info: Redefining \sffamily on input line 21.
 LaTeX Info: Redefining \ttfamily on input line 21.
  Setting \if@calendar@hebrew
 Setting \if@calendar@hebrew)
-
-Package rerunfilecheck Warning: File `algebra_2_recitations.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `algebra_2_recitations.out':
-(rerunfilecheck)             Before: B98DF0031349F71489DC055A9398173B;7264
-(rerunfilecheck)             After:  58B02D7A473768D402BAE22AD47A2F18;8110.
+Package rerunfilecheck Info: File `algebra_2_recitations.out' has not changed.
+(rerunfilecheck)             Checksum: 58B02D7A473768D402BAE22AD47A2F18;8110.
 Package logreq Info: Writing requests to 'algebra_2_recitations.run.xml'.
 \openout1 = `algebra_2_recitations.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 43151 strings out of 476191
- 916712 string characters out of 5812072
- 1863704 words of memory out of 5000000
- 63114 multiletter control sequences out of 15000+600000
+ 43153 strings out of 476191
+ 916738 string characters out of 5812072
+ 1864614 words of memory out of 5000000
+ 63116 multiletter control sequences out of 15000+600000
  477256 words of font info for 99 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  115i,20n,118p,1293b,878s stack positions out of 5000i,500n,10000p,200000b,80000s
